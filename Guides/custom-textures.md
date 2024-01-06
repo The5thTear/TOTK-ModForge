@@ -21,34 +21,34 @@ Creating custom textures is incredibly simple, and I'm here to teach you!
 
 There are multiple texture types, including:
 
-[Albedo](#albedo),  
-[Specular Maps (Spm)](#specular-maps),  
-[Normal Maps (Nrm)](#normal-maps),  
-[Emission Maps (Emc/Emm)](#emission-maps), as well as  
+[Albedo](#albedo)   
+[Specular Maps (Spm)](#specular-maps)  
+[Normal Maps (Nrm)](#normal-maps)  
+[Emission Maps (Emc/Emm)](#emission-maps)  
 [Gn*](#gn), and  
-[em0](#em0).  
+[em0](#em0)  
 
-Here are the use cases and logistics of each type:
+## Here are the use cases and logistics of each type:
 
 ### Albedo:
 
-Known - Used For Textures Color
+> #### Known - Used For Textures Color
 
 Albedo textures are used for all forms of color in the game. Albedo textures are basic, but the quality can differ depending on your textures 2. [Section 2 - Texture Import Formats](#texture-import-formats)
 
 ### Specular Maps:
 
-Known - Used For Reflectiveness
+> #### Known - Used For Reflectiveness
 
 Specular textures are used 
 
 ### Normal Maps:
 
-Known - Used For Detail/Reflectiveness Direction
+> #### Known - Used For Detail/Reflectiveness Direction
 
 ### Emission Maps:
 
-Known - Used For Glowing Textures
+> #### Known - Used For Glowing Textures
 
 Emission Maps are used in any sort of glowing material. Some emission maps have special requirements, sometimes materials handle the emission color (namely the zonai weapons), while otherwise the color is handled by the textures themselves.
 
