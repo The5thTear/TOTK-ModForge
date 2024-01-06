@@ -11,15 +11,14 @@ Greetings modders! Whether you're new or familiar with textures, this comprehens
 > #### 1.3: BC4 Alpha
 
 > #### 1.4: ResourceSizeTable Tool
-
-
+  
 **Alright, let's get started.**
 
 ## 1.1: Creating Custom Textures:
 
-Creating custom textures is incredibly simple, and I'm here to teach you!
+> ### Creating custom textures is incredibly simple, and I'm here to teach you!
 
-There are multiple texture types, including:
+***There are multiple texture types, including:***
 
 [Albedo](#albedo)   
 [Specular Maps (Spm)](#specular-maps)  
@@ -28,13 +27,15 @@ There are multiple texture types, including:
 [Gn*](#gn), and  
 [em0](#em0)  
 
-## Here are the use cases and logistics of each type:
+## Type Use Cases + Logistics:
 
 ### Albedo:
 
 > #### Known - Used For Textures Color
 
-Albedo textures are used for all forms of color in the game. Albedo textures are basic, but the quality can differ depending on your textures 2. [Section 2 - Texture Import Formats](#texture-import-formats)
+Albedo textures are used for all forms of color in the game. Albedo textures are basic, but the quality can differ depending on your textures  
+  
+[Section 2 - Texture Import Formats](#texture-import-formats)
 
 ### Specular Maps:
 
@@ -56,21 +57,21 @@ For making things emissive, see the [Materials (not done)]() guide.
 
 ### Here is an example of the two common emissive textures:
 
-Enemy_LikeLike_Fire - Fire Like - Body_WeakPoint_Emc  
+> *Enemy_LikeLike_Fire - Fire Like - Body_WeakPoint_Emc*  
   
 ![LikeLike: Texture Artifacts!](/Assets/GuideImages/custom-textures/Enemy_LikeLike_Fire_Body_Weak_Emc.png)  
 
-Item_Parasail - Twilight Fabric - Item_Parasail_Fabric_Emc.38  
+> *Item_Parasail - Twilight Fabric - Item_Parasail_Fabric_Emc.38*  
   
 ![Parasail: Twilight Fabric!](/Assets/GuideImages/custom-textures/Item_Parasail_Fabric_Emc.38.png)  
 
 ### There is also another thing to keep in mind, some emission is controlled by the [Albedo](#albedo) texture, as well as the Emc/Emm texture, (co-dependance)!:
 
-Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Alb  
+> *Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Alb*  
   
 ![Albedo: Related To Emm!](/Assets/GuideImages/custom-textures/Weapon_Sword_164_Blade_Alb.png)  
 
-Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Emm  
+> *Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Emm*  
   
 ![Emission: Related To Alb!](/Assets/GuideImages/custom-textures/Weapon_Sword_164_Blade_Emm.png)  
 
