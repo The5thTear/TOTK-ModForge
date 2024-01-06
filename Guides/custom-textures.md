@@ -4,15 +4,15 @@ Greetings modders! Whether you're new or familiar with textures, this comprehens
 
 ### 1. Table Of Contents:
 
-#### 1.1: Creating Custom Textures
+> #### 1.1: Creating Custom Textures
 
-#### 1.2: Custom Texture Formats
+> #### 1.2: Custom Texture Formats
 
-#### 1.3: BC4 Alpha
+> #### 1.3: BC4 Alpha
 
-#### 1.4: ResourceSizeTable Tool
+> #### 1.4: ResourceSizeTable Tool
 
-Alright, let's get started.
+**Alright, let's get started.**
 
 ## 1.1: Creating Custom Textures:
 
