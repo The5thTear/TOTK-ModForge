@@ -81,7 +81,8 @@ For making things emissive, see the [Materials (not done)]() guide.
   
 ***If you wanted the entire mesh to glow, you would have to make the Albedo fully green, and the Emission completely white!***
   
-> (remember const_color and const_value1 control the emission color and emission strength in most materials: [(See Guide Here - (not finished))]())
+> (remember const_color and const_value1 control the emission color and emission strength in most materials:   
+[(See Guide Here - (not finished))]())
 
 ### Gn*:
 
