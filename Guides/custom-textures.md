@@ -4,13 +4,13 @@ Greetings modders! Whether you're new or familiar with textures, this comprehens
 
 ### 1. Table Of Contents:
 
-> #### 1.1: Creating Custom Textures
+> #### 1.1: [Creating Custom Textures](#11-creating-custom-textures-1)
 
-> #### 1.2: Custom Texture Formats
+> #### 1.2: [Custom Texture Formats](#12-custom-texture-formats)
 
-> #### 1.3: BC4 Alpha
+> #### 1.3: [Toolbox Alpha](#13-toolbox-alpha)
 
-> #### 1.4: ResourceSizeTable Tool
+> #### 1.4: [ResourceSizeTable Tool](#14-resourcesizetable-tool)
   
 **Alright, let's get started.**
 
@@ -77,21 +77,31 @@ For making things emissive, see the [Materials (not done)]() guide.
 
 >In this special case, the albedo texture and emission texture are co-dependant! If you were to make the Albedo texture completely green, without changing the emission, nothing would change, and vice versa.  
   
-**So for this case, if you wanted to change the pattern of emission, you would have to change both textures!**
+## So for this case, if you wanted to change the pattern of emission, you would have to change both textures!
   
-***If you wanted the entire mesh to glow, you would have to make the Albedo fully green, and the Emission completely white!***
+# If you wanted the entire mesh to glow, you would have to make the Albedo fully green, and the Emission completely white!***
+  
   
 > (remember const_color and const_value1 control the emission color and emission strength in most materials:   
 [(See Guide Here - (not finished))]())
 
-### Gn*:
+### Gn(#):
 
 > #### Unknown - Sometimes Emission, Sometimes Animation (Zonai Effects, etc.) **"*"** represents a number (3, 4, etc..)
+
+## If you would like to do your own research here, some models that use gn(#) textures include:
+
+Weapon_Sword_070
+(more to be added later)
 
 ### em0:
 
 > #### Unknown - Some Sort Of Emission Type
 
-Now that you have a basic understanding of how the game handles textures, let's discuss creating them.
+This is most likely similar to [Emission](#emission-maps)
 
-## Texture Import Formats
+### Now that you have a basic understanding of how the game handles textures, let's discuss creating them.
+
+## Texture Import Formats:
+
+## STB Alpha Option:
