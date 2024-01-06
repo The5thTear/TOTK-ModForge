@@ -75,13 +75,13 @@ For making things emissive, see the [Materials (not done)]() guide.
   
 ![Emission: Related To Alb!](/Assets/GuideImages/custom-textures/Weapon_Sword_164_Blade_Emm.png)  
 
-In this special case, the albedo texture and emission texture are co-dependant! If you were to make the Albedo texture completely green, without changing the emission, nothing would change, and vice versa.  
+>In this special case, the albedo texture and emission texture are co-dependant! If you were to make the Albedo texture completely green, without changing the emission, nothing would change, and vice versa.  
   
-So for this case, if you wanted to change the pattern of emission, you would have to change both textures!
+**So for this case, if you wanted to change the pattern of emission, you would have to change both textures!**
   
-If you wanted the entire mesh to glow, you would have to make the Albedo fully green, and the Emission completely white!
+***If you wanted the entire mesh to glow, you would have to make the Albedo fully green, and the Emission completely white!***
   
-(remember const_color and const_value1 control the emission color and emission strength in most materials)
+> (remember const_color and const_value1 control the emission color and emission strength in most materials: [(See Guide Here - (not finished))]())
 
 ### Gn*:
 
