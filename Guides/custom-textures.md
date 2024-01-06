@@ -24,9 +24,9 @@ Here are the use cases and logistics of each type:
 
 #### Albedo:
 
-    Known - Used For Textures Color
+Known - Used For Textures Color
 
-    Albedo textures are used for all forms of color in the game. Albedo textures are basic, but the quality can differ depending on your textures 2. [Section 2 - Texture Import Formats](#texture-import-formats)
+Albedo textures are used for all forms of color in the game. Albedo textures are basic, but the quality can differ depending on your textures 2. [Section 2 - Texture Import Formats](#texture-import-formats)
 
 #### Specular Maps:
 
@@ -34,27 +34,27 @@ Here are the use cases and logistics of each type:
 
 #### Emission Maps:
 
-    Known - Used For Glowing Textures
+Known - Used For Glowing Textures
 
-    Emission Maps are used in any sort of glowing material. Some emission maps have special requirements, sometimes materials handle the emission color (namely the zonai weapons), while otherwise the color is handled by the textures themselves.
+Emission Maps are used in any sort of glowing material. Some emission maps have special requirements, sometimes materials handle the emission color (namely the zonai weapons), while otherwise the color is handled by the textures themselves.
 
-    There is also another thing to keep in mind, some emission is controlled by the [Albedo](#albedo) texture, as well as the Emc/Emm texture.
+There is also another thing to keep in mind, some emission is controlled by the [Albedo](#albedo) texture, as well as the Emc/Emm texture.
 
-    For making things emissive, see the [Materials (not done)]() guide.
+For making things emissive, see the [Materials (not done)]() guide.
 
-    Here is an example of the two common emissive textures:
+Here is an example of the two common emissive textures:
 
-    Weapon_Sword_164 - Mighty Zonaite Sword - 
+Weapon_Sword_164 - Mighty Zonaite Sword - 
 
-    (remember const_color and const_value1 control the emission color and emission strength in most materials)
+(remember const_color and const_value1 control the emission color and emission strength in most materials)
 
 #### Gn*:
 
-    Unknown - Sometimes Emission, Sometimes Animation (Zonai Effects, etc.) * represents a number (3, 4, etc..)
+Unknown - Sometimes Emission, Sometimes Animation (Zonai Effects, etc.) * represents a number (3, 4, etc..)
 
 #### em0:
 
-    Unknown - Some Sort Of Emission Type
+Unknown - Some Sort Of Emission Type
 
 Now that you have a basic understanding of how the game handles textures, let's discuss creating them.
 
