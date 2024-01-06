@@ -58,7 +58,7 @@ For making things emissive, see the [Materials (not done)]() guide.
 
 Here is an example of the two common emissive textures:
 
-Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Alb
+Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Alb  
 ![Albedo: Related To Emc/Emm!](/Assets/GuideImages/custom-textures/Weapon_Sword_164_Blade_Alb.png)
 
 (remember const_color and const_value1 control the emission color and emission strength in most materials)
