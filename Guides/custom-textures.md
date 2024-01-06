@@ -52,14 +52,19 @@ Known - Used For Glowing Textures
 
 Emission Maps are used in any sort of glowing material. Some emission maps have special requirements, sometimes materials handle the emission color (namely the zonai weapons), while otherwise the color is handled by the textures themselves.
 
-There is also another thing to keep in mind, some emission is controlled by the [Albedo](#albedo) texture, as well as the Emc/Emm texture.
+
 
 For making things emissive, see the [Materials (not done)]() guide.
 
 Here is an example of the two common emissive textures:
 
+There is also another thing to keep in mind, some emission is controlled by the [Albedo](#albedo) texture, as well as the Emc/Emm texture.
+
 Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Alb  
-![Albedo: Related To Emc/Emm!](/Assets/GuideImages/custom-textures/Weapon_Sword_164_Blade_Alb.png)
+![Albedo: Related To Emm!](/Assets/GuideImages/custom-textures/Weapon_Sword_164_Blade_Alb.png)
+
+Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Emm  
+![Emission: Related To Alb!](/Assets/GuideImages/custom-textures/Weapon_Sword_164_Blade_Emm.png)
 
 (remember const_color and const_value1 control the emission color and emission strength in most materials)
 
