@@ -57,17 +57,21 @@ For making things emissive, see the [Materials (not done)]() guide.
 ### Here is an example of the two common emissive textures:
 
 Enemy_LikeLike_Fire - Fire Like - Body_WeakPoint_Emc  
+  
 ![LikeLike: Texture Artifacts!](/Assets/GuideImages/custom-textures/Enemy_LikeLike_Fire_Body_Weak_Emc.png)  
 
 Item_Parasail - Twilight Fabric - Item_Parasail_Fabric_Emc.38  
+  
 ![Parasail: Twilight Fabric!](/Assets/GuideImages/custom-textures/Item_Parasail_Fabric_Emc.38.png)  
 
 ### There is also another thing to keep in mind, some emission is controlled by the [Albedo](#albedo) texture, as well as the Emc/Emm texture, (co-dependance)!:
 
 Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Alb  
+  
 ![Albedo: Related To Emm!](/Assets/GuideImages/custom-textures/Weapon_Sword_164_Blade_Alb.png)  
 
 Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Emm  
+  
 ![Emission: Related To Alb!](/Assets/GuideImages/custom-textures/Weapon_Sword_164_Blade_Emm.png)  
 
 In this special case, the albedo texture and emission texture are co-dependant! If you were to make the Albedo texture completely green, without changing the emission, nothing would change, and vice versa.  
