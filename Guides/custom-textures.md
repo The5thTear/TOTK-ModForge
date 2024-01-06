@@ -85,11 +85,11 @@ For making things emissive, see the [Materials (not done)]() guide.
 
 ### Gn*:
 
-Unknown - Sometimes Emission, Sometimes Animation (Zonai Effects, etc.) * represents a number (3, 4, etc..)
+> #### Unknown - Sometimes Emission, Sometimes Animation (Zonai Effects, etc.) **"*"** represents a number (3, 4, etc..)
 
 ### em0:
 
-Unknown - Some Sort Of Emission Type
+> #### Unknown - Some Sort Of Emission Type
 
 Now that you have a basic understanding of how the game handles textures, let's discuss creating them.
 
