@@ -30,17 +30,23 @@ There are multiple texture types, including:
 
 Here are the use cases and logistics of each type:
 
-#### Albedo:
+### Albedo:
 
 Known - Used For Textures Color
 
 Albedo textures are used for all forms of color in the game. Albedo textures are basic, but the quality can differ depending on your textures 2. [Section 2 - Texture Import Formats](#texture-import-formats)
 
-#### Specular Maps:
+### Specular Maps:
 
-#### Normal Maps:
+Known - Used For Reflectiveness
 
-#### Emission Maps:
+Specular textures are used 
+
+### Normal Maps:
+
+Known - Used For Detail/Reflectiveness Direction
+
+### Emission Maps:
 
 Known - Used For Glowing Textures
 
@@ -52,15 +58,16 @@ For making things emissive, see the [Materials (not done)]() guide.
 
 Here is an example of the two common emissive textures:
 
-Weapon_Sword_164 - Mighty Zonaite Sword - 
+Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Alb
+![Albedo: Related To Emc/Emm!](Assets/GuideImages/custom-textures/Weapon_Sword_164_Blade_Alb.png)
 
 (remember const_color and const_value1 control the emission color and emission strength in most materials)
 
-#### Gn*:
+### Gn*:
 
 Unknown - Sometimes Emission, Sometimes Animation (Zonai Effects, etc.) * represents a number (3, 4, etc..)
 
-#### em0:
+### em0:
 
 Unknown - Some Sort Of Emission Type
 
