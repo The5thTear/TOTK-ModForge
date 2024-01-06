@@ -12,13 +12,14 @@ Greetings modders! Whether you're new or familiar with textures, this comprehens
 
 > #### 1.4: ResourceSizeTable Tool
 
+
 **Alright, let's get started.**
 
 ## 1.1: Creating Custom Textures:
 
 Creating custom textures is incredibly simple, and I'm here to teach you!
 
-There are multiple texture types, including Albedo, Specular Maps(Spm), Normal Maps (Nrm), Emission Maps (Emc/Emm), as well as Gn*, and em0.
+There are multiple texture types, including [Albedo](#albedo), [Specular Maps (Spm)](#specular-maps), [Normal Maps (Nrm)](#normal-maps), [Emission Maps (Emc/Emm)](#emission-maps), as well as [Gn*](#gn), and [em0](#em0).
 
 Here are the use cases and logistics of each type:
 
