@@ -79,7 +79,7 @@ For making things emissive, see the [Materials (not done)]() guide.
   
 ## So for this case, if you wanted to change the pattern of emission, you would have to change both textures!
   
-# If you wanted the entire mesh to glow, you would have to make the Albedo fully green, and the Emission completely white!***
+## If you wanted the entire mesh to glow, you would have to make the Albedo fully green, and the Emission completely white!
   
   
 > (remember const_color and const_value1 control the emission color and emission strength in most materials:   
