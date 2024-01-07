@@ -57,7 +57,9 @@ See Here: [Section 2 - Texture Import Formats](#texture-import-formats)
   
 ![Blue Specular Map](/Assets/GuideImages/custom-textures/Weapon_Sword_113_Spm.png)  
   
-Editing the black and white maps is straightforward (with white being the most shiny and black (transparency) being the least); Albedo textures can be used to create them in combination with the [next point](#normalmap-online). However, for blue and white specular textures, it's more efficient to convert them to black and white than to manually edit them in their colored form.
+### Editing the black and white maps is straightforward (with white being the most shiny and black (transparency) being the least);
+  
+> *Albedo textures can be used to create them in combination with the [next point](#normalmap-online). However, for blue and white specular textures, it's more efficient to convert them to black and white than to manually edit them in their colored form.*
   
 2. ### NormalMap Online
   
@@ -77,7 +79,7 @@ Editing the black and white maps is straightforward (with white being the most s
   
 > ### In TotK, similar to Specular maps, there are two types, purple-ish normal maps, and golden normal maps.
 
-**As far as I know, there is no difference between them, and generating them from and Albedo texture, is easy using [Normal Map Online](https://cpetry.github.io/NormalMap-Online/)**
+**As far as I know, there is no difference between them, and generating them from and Albedo texture is easy using [Normal Map Online](https://cpetry.github.io/NormalMap-Online/)**
 
 #### Here are examples of both types:  
   
