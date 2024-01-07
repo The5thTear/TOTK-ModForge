@@ -41,14 +41,14 @@ Albedo textures are used for all forms of color in the game. Albedo textures are
 
 > #### Known - Used For Reflectiveness
 
-Specular textures are used for the shininess or reflectivity of a model.  
+***Specular textures are used for the shininess or reflectivity of a model.***  
   
-Specular textures are incredibly simple, and there are only 2 valuable pieces of info regarding them:
+## Specular textures are incredibly simple, and there are only 2 valuable pieces of info regarding them:
 
 1. ### Different Specular Colors
   
-Specular Maps can come in a black and white format, or a blue format.
-
+*Specular Maps can come in a black and white format, or a blue format.*  
+  
 > *Weapon_Sword_125 - Forest Dwellers Sword - Specular Map (B&W)
   
 ![B&W Specular Map](/Assets/GuideImages/custom-textures/Weapon_Sword_125_Spm.png)  
@@ -57,9 +57,16 @@ Specular Maps can come in a black and white format, or a blue format.
   
 ![Blue Specular Map](/Assets/GuideImages/custom-textures/Weapon_Sword_113_Spm.png)  
   
+Editing the black and white maps is straightforward (with white being the most shinty and nothing being the least); albedo textures can be used for them in combination with the [next point](#normalmap-online). However, for blue and white specular textures, it's more efficient to convert them to black and white than to manually edit them in their colored form.
+  
 2. ### NormalMap Online
+  
+> This is a useful tool, both for creating Nrm textures, as well as Spm textures!
 
+*While the interface is dated, it is also intuitive, so feel free to try it out!*
 
+[Normal Map Online](https://cpetry.github.io/NormalMap-Online/)
+  
 ### Normal Maps:
 
 > #### Known - Used For Detail/Reflectiveness Direction
