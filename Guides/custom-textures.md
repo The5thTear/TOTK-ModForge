@@ -6,11 +6,11 @@ Greetings modders! Whether you're new or familiar with textures, this comprehens
 
 > #### 1.1: [Creating Custom Textures](#11-creating-custom-textures-1)
 
-> #### 1.2: [Custom Texture Formats](#12-custom-texture-formats)
+> #### 1.2: [Custom Texture Formats](#texture-import-formats)
 
-> #### 1.3: [Toolbox Alpha](#13-toolbox-alpha)
+> #### 1.3: [Toolbox Alpha](#stb-alpha-option)
 
-> #### 1.4: [ResourceSizeTable Tool](#14-resourcesizetable-tool)
+> #### 1.4: [ResourceSizeTable Tool](#restbl-tool-usage)
   
 **Alright, let's get started.**
 
