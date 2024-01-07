@@ -41,11 +41,30 @@ Albedo textures are used for all forms of color in the game. Albedo textures are
 
 > #### Known - Used For Reflectiveness
 
-Specular textures are used 
+Specular textures are used for the shininess or reflectivity of a model.  
+  
+Specular textures are incredibly simple, and there are only 2 valuable pieces of info regarding them:
+
+1. ### Different Specular Colors
+  
+Specular Maps can come in a black and white format, or a blue format.
+
+> *Weapon_Sword_125 - Forest Dwellers Sword - Specular Map (B&W)
+  
+![B&W Specular Map](/Assets/GuideImages/custom-textures/Weapon_Sword_125_Spm.png)  
+  
+> *Weapon_Sword_113 - Knight's Broadsword - Specular Map (Blue)
+  
+![Blue Specular Map](/Assets/GuideImages/custom-textures/Weapon_Sword_113_Spm.png)  
+  
+2. ### NormalMap Online
+
 
 ### Normal Maps:
 
 > #### Known - Used For Detail/Reflectiveness Direction
+
+
 
 ### Emission Maps:
 
