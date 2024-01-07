@@ -164,10 +164,10 @@ For example, if you want a high quality texture, you can use BC7_SRGB. While for
 
 > Alb (High Quality) - BC7_SRGB  
 > Alb (Low Quality) - BC1_UNORM  
-> Nrm (Purple-ish Image) -   
-> Nrm (Yellow Image) -   
-> Spm (B&W Image) -   
-> Spm (Blue Image) -   
+> Nrm (Purple-ish Image) - BC1_UNORM  
+> Nrm (Yellow Image) - BC5_UNORM  
+> Spm (B&W Image) - BC4_UNORM  
+> Spm (Blue Image) - BC5_UNORM  
 > Emc - BC7_SRGB  
 > Emm - BC7_SRGB  
 > Gn# - Unknown  
