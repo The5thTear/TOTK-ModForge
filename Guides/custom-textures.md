@@ -131,5 +131,12 @@ For example, if you want a high quality texture, you can use BC7_SRGB. While for
   
 ## STB Alpha Option:
 
+This is a very small yet crucial point in this guide, which is required for transparent textures to work.  
+  
+When importing a texture, PLEASE check the alpha option:  
+  
+> Toolbox: Alpha Import Setting
+![Toolbox: Don't forget this!](/Assets/GuideImages/custom-textures/Screenshot_695.png)  
+
 ## RESTBL Tool Usage:
 See the restbl tool guide here: [RESTBL-GUIDE]()
