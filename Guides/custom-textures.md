@@ -87,12 +87,12 @@ For making things emissive, see the [Materials (not done)]() guide.
 
 ### Gn(#):
 
-> #### Unknown - Sometimes Emission, Sometimes Animation (Zonai Effects, etc.) **"*"** represents a number (3, 4, etc..)
+> #### Unknown - Sometimes Emission, Sometimes Animation (Zonai Effects, etc.) # represents a number (3, 4, etc..)
 
-## If you would like to do your own research here, some models that use gn(#) textures include:
+***If you would like to do your own research here, some models that use gn(#) textures include:***
 
-Weapon_Sword_070
-(more to be added later)
+> Weapon_Sword_070
+> (more to be added later)
 
 ### em0:
 
@@ -100,8 +100,36 @@ Weapon_Sword_070
 
 This is most likely similar to [Emission](#emission-maps)
 
-### Now that you have a basic understanding of how the game handles textures, let's discuss creating them.
+#### Now that you have a basic understanding of how the game handles textures, let's discuss creating them.
+
+For whichever type of texture you would like to make, you can search the type in the TexToGo folder of your romfs dump.  
+  
+If you would like to make an Nrm texture, you can search Nrm, and so on.
+
+You can copy, paste, and rename whichever textures into your mods TexToGo folder, and then you can continue throughout the guide.
 
 ## Texture Import Formats:
 
+### Import Types
+
+> Some textures require different format selection depending on their type.  
+  
+For example, if you want a high quality texture, you can use BC7_SRGB. While for lower quality, out of focus textures, you can use BC1 UNORM.
+
+#### I will now provide a list of textures, and the reccomended import types to avoid issues:
+
+> Alb (High Quality) - BC7_SRGB
+> Alb (Low Quality) - BC1_UNORM
+> Nrm (Purple-ish Image) - 
+> Nrm (Yellow Image) - 
+> Spm (B&W Image) - 
+> Spm (Blue Image) - 
+> Emc - BC7_SRGB
+> Emm - BC7_SRGB
+> Gn# - Unknown
+> em0 - Unknown
+
 ## STB Alpha Option:
+
+## RESTBL Tool Usage:
+See the restbl tool guide here: [RESTBL-GUIDE]()
