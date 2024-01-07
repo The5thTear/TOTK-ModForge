@@ -70,9 +70,23 @@ Editing the black and white maps is straightforward (with white being the most s
 ### Normal Maps:
 
 > #### Known - Used For Detail/Reflectiveness Direction
+  
+Normal maps are a type of texture used in 3D modeling to simulate the illusion of complex surface details without increasing the model's geometric complexity. They contain information about the directions of surface normals, which are used to alter the way light interacts with the surface, giving a more realistic appearance of bumps and indentations. Essentially, normal maps provide a way to add detailed textures and depth effects efficiently, enhancing the visual richness of 3D objects.
 
+In TotK, similar to Specular maps, there are two types, purple-ish normal maps, and golden normal maps.
 
+As far as I know, there is no difference between them, and generating them from and Albedo texture, is easy using [Normal Map Online](https://cpetry.github.io/NormalMap-Online/)
 
+Here are examples of both types:  
+  
+> *Weapon_Sword_166 - Gloom Sword - Nrm (Purple-ish)*
+
+![Normal Maps: Purple-ish!](/Assets/GuideImages/custom-textures/Weapon_Sword_166_Nrm.png)  
+  
+> *Weapon_Sword_163 - Strong Zonaite Sword - Nrm (Golden)*
+
+![Normal Maps: Golden!](/Assets/GuideImages/custom-textures/Weapon_Sword_163_Nrm.png)  
+  
 ### Emission Maps:
 
 > #### Known - Used For Glowing Textures
