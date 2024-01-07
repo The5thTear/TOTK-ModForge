@@ -33,9 +33,9 @@ Greetings modders! Whether you're new or familiar with textures, this comprehens
 
 > #### Known - Used For Textures Color
 
-Albedo textures are used for all forms of color in the game. Albedo textures are basic, but the quality can differ depending on your textures  
+Albedo textures are used for all forms of color in the game. Albedo textures are basic, but the quality can differ depending on your textures so import settings are important.  
   
-[Section 2 - Texture Import Formats](#texture-import-formats)
+See Here: [Section 2 - Texture Import Formats](#texture-import-formats)
 
 ### Specular Maps:
 
@@ -57,7 +57,7 @@ Albedo textures are used for all forms of color in the game. Albedo textures are
   
 ![Blue Specular Map](/Assets/GuideImages/custom-textures/Weapon_Sword_113_Spm.png)  
   
-Editing the black and white maps is straightforward (with white being the most shinty and nothing being the least); albedo textures can be used for them in combination with the [next point](#normalmap-online). However, for blue and white specular textures, it's more efficient to convert them to black and white than to manually edit them in their colored form.
+Editing the black and white maps is straightforward (with white being the most shiny and black (transparency) being the least); Albedo textures can be used to create them in combination with the [next point](#normalmap-online). However, for blue and white specular textures, it's more efficient to convert them to black and white than to manually edit them in their colored form.
   
 2. ### NormalMap Online
   
@@ -71,13 +71,15 @@ Editing the black and white maps is straightforward (with white being the most s
 
 > #### Known - Used For Detail/Reflectiveness Direction
   
-Normal maps are a type of texture used in 3D modeling to simulate the illusion of complex surface details without increasing the model's geometric complexity. They contain information about the directions of surface normals, which are used to alter the way light interacts with the surface, giving a more realistic appearance of bumps and indentations. Essentially, normal maps provide a way to add detailed textures and depth effects efficiently, enhancing the visual richness of 3D objects.
+### Normal maps are a type of texture used in 3D modeling to simulate the illusion of complex surface details without increasing the model's geometric complexity.  
+  
+> *They contain information about the directions of surface normals, which are used to alter the way light interacts with the surface, giving a more realistic appearance of bumps and indentations. Essentially, normal maps provide a way to add detailed textures and depth effects efficiently, enhancing the visual richness of 3D objects.*
+  
+> ### In TotK, similar to Specular maps, there are two types, purple-ish normal maps, and golden normal maps.
 
-In TotK, similar to Specular maps, there are two types, purple-ish normal maps, and golden normal maps.
+**As far as I know, there is no difference between them, and generating them from and Albedo texture, is easy using [Normal Map Online](https://cpetry.github.io/NormalMap-Online/)**
 
-As far as I know, there is no difference between them, and generating them from and Albedo texture, is easy using [Normal Map Online](https://cpetry.github.io/NormalMap-Online/)
-
-Here are examples of both types:  
+#### Here are examples of both types:  
   
 > *Weapon_Sword_166 - Gloom Sword - Nrm (Purple-ish)*
 
