@@ -2,15 +2,21 @@
 
 Greetings modders! Whether you're new or familiar with textures, this comprehensive guide is your key to unlocking the world of custom textures in TOTK and beyond.
 
-### 1. Table Of Contents:
+- [Ultimate TOTK Modding Guide - Custom Textures](#ultimate-totk-modding-guide---custom-textures)
+  - [1.1: Creating Custom Textures:](#11-creating-custom-textures)
+  - [Type Use Cases + Logistics:](#type-use-cases--logistics)
+    - [Albedo:](#albedo)
+    - [Specular Maps:](#specular-maps)
+    - [Normal Maps:](#normal-maps)
+    - [Emission Maps:](#emission-maps)
+    - [Gn(#):](#gn)
+    - [em0:](#em0)
 
-> #### 1.1: [Creating Custom Textures](#11-creating-custom-textures-1)
+  - [Texture Import Formats:](#texture-import-formats)
+    - [Import Types](#import-types)
+  - [STB Alpha Option:](#stb-alpha-option)
+  - [RESTBL Tool Usage:](#restbl-tool-usage)
 
-> #### 1.2: [Custom Texture Formats](#texture-import-formats)
-
-> #### 1.3: [Toolbox Alpha](#stb-alpha-option)
-
-> #### 1.4: [ResourceSizeTable Tool](#restbl-tool-usage)
   
 **Alright, let's get started.**
 
@@ -184,4 +190,4 @@ When importing a texture, PLEASE check the alpha option:
 ![Toolbox: Don't forget this!](/Assets/GuideImages/custom-textures/Screenshot_695.png)  
 
 ## RESTBL Tool Usage:
-See the restbl tool guide here: [RESTBL-GUIDE]()
+See the restbl tool guide here: [RESTBL-GUIDE](/Guides/restbl-guide.md)
