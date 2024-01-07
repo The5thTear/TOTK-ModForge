@@ -162,6 +162,7 @@ This is a very small yet crucial point in this guide, which is required for tran
 When importing a texture, PLEASE check the alpha option:  
   
 > Toolbox: Alpha Import Setting
+  
 ![Toolbox: Don't forget this!](/Assets/GuideImages/custom-textures/Screenshot_695.png)  
 
 ## RESTBL Tool Usage:
