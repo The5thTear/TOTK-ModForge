@@ -7,3 +7,5 @@
 #### This repository will **EVENTUALLY** contain guides, and info, for whatever your heart desires.
 
 I really hope this helps you on your modding journey, as well as your journey to ***greatness!***
+
+> *I'm glad I can be your librarian :)*
