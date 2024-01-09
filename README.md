@@ -1,2 +1,9 @@
 # TOTK-ModForge
-Your hub for comprehensive Nintendo game modding guides—model swapping, texture creation, exefs manipulation, unknown formats, parameter files, and beyond. Explore in-game info resources for TOTK and beyond. Join a vibrant modding community for endless creative possibilities.
+
+## Welcome!
+
+> This is a *personal project* of mine I've been thinking about for **months**, and I'm *slowly finishing it*.
+
+#### This repository will **EVENTUALLY** contain guides, and info, for whatever your heart desires.
+
+I really hope this helps you on your modding journey, as well as your journey to ***greatness!***
