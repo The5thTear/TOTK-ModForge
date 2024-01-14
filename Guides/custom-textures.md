@@ -137,12 +137,23 @@ For making things emissive, see the [Materials (not done)]() guide.
 
 ### Gn(#):
 
-> #### Unknown - Sometimes Emission, Sometimes Animation (Zonai Effects, etc.) # represents a number (3, 4, etc..)
+Speculated to stand for **Graphic Number**, some in game textures have multiple of the same Gn# textures with the *higher number* being *higher quality.*
 
-***If you would like to do your own research here, some models that use gn(#) textures include:***
+This kind of system allows game engines to load the most appropriate texture based on the player's distance from an object (level of detail), the hardware capabilities, or the graphics settings selected by the player. This ensures that the game can run efficiently on various systems while still providing the best possible visual experience.
 
-> Weapon_Sword_070
-> (more to be added later)
+    Gn0 could be the lowest detail version for very distant objects.
+
+    Gn1 might provide detail for far/distant views.
+
+    Gn2 could represent textures that are for medium to far views.
+
+    Gn3 would be for medium to close views.
+
+    Gn4 would be for close views.
+
+    Gn5 would be for very close up views.
+
+It's a common approach in game development to have such LOD (Level of Detail) systems to maintain performance while providing high-quality visuals where they are most needed. This ensures that the game's performance remains stable without compromising on the visual richness, especially in a vast, open-world game like TLOZ TOTK.
 
 ### em0:
 
