@@ -1,16 +1,23 @@
+/* ... Your existing CSS for the individual pages ... */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Creates a responsive grid with min 100px columns */
+    gap: 10px; /* Adjust the gap between items as needed */
+    padding: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.grid-item:hover {
+    transform: scale(1.1); /* Scale up on hover */
+    z-index: 10; /* Ensure the scaled item is above the others */
+}
+
 body {
     font-family: 'Lexend', sans-serif; /* Use Lexend as the primary font */
     background-color: #1e1e1e; /* Dark background similar to VS Code */
     color: #d4d4d4; /* Light grey text color for contrast */
-}
-
-.grid-container {
-    display: flex;
-    flex-direction: row; /* Align children horizontally */
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    padding: 20px;
 }
 
 .grid-item {
@@ -18,8 +25,8 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 100%;
-    height: 80vh; /* Adjust based on your design, considering a 9:16 ratio */
+    width: 100px;
+    height: 100px; /* Adjust based on your design, considering a 9:16 ratio */
     background-size: cover;
     background-position: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -103,3 +110,4 @@ body {
     text-decoration: none; /* Removes underline from links */
     color: inherit; /* Keeps the text color the same as the parent */
 }
+

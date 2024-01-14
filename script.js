@@ -9,17 +9,4 @@ document.addEventListener('DOMContentLoaded', function() {
             aboutMe.style.display = 'none';
         }
     }); // This closing brace was missing
-
-    // Video hover functionality
-    var gridItems = document.querySelectorAll('.grid-item');
-    gridItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            const videoSrc = this.getAttribute('data-video');
-            this.innerHTML = `<div class="video-overlay"><video src="${videoSrc}" autoplay loop muted></video></div>`;
-        });
-
-        item.addEventListener('mouseleave', function() {
-            this.removeChild(this.firstChild);
-        });
-    });
 });
