@@ -6,9 +6,9 @@ body {
 
 .grid-container {
     display: flex;
-    flex-direction: row; /* Align children horizontally */
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap */
+    align-items: flex-start; /* Align items at the start */
+    justify-content: center; /* Center items horizontally */
     gap: 15px;
     padding: 20px;
 }
@@ -18,26 +18,25 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 100%;
-    height: 80vh; /* Adjust based on your design, considering a 9:16 ratio */
+    width: 200px; /* Set width to 200px */
+    height: 200px; /* Set height to 200px to maintain a 1:1 aspect ratio */
     background-size: cover;
     background-position: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border: 1px solid #3c3c3c; /* Slightly lighter border for visibility */
+    border: 1px solid #3c3c3c;
     overflow: hidden;
-    color: white; /* Set the text color to white */
-    font-weight: 700; /* Lexend Bold */
-    filter: grayscale(100%); /* Start with the item in grayscale */
-    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Include filter in the transition */
-    flex: 1; /* Each item will take up equal space */
-    border-radius: 15px; /* Round the corners */
-    cursor: pointer; /* Change cursor to indicate item is interactive */
+    color: white;
+    font-weight: 700;
+    filter: grayscale(100%);
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    cursor: pointer;
 }
 
 .grid-item:hover {
-    transform: scale(1.1); /* Scale up on hover */
-    filter: grayscale(0%); /* Remove grayscale filter to show full color */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Add more shadow for a lifting effect */
+    transform: scale(1.1);
+    filter: grayscale(0%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
 
