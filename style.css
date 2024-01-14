@@ -38,6 +38,7 @@ body {
     transform: scale(1.1); /* Scale up on hover */
     filter: grayscale(0%); /* Remove grayscale filter to show full color */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Add more shadow for a lifting effect */
+    z-index: 10;
 }
 
 .about-me {
