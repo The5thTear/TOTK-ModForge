@@ -10,16 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }); // This closing brace was missing
 
-    // Video hover functionality
-    var gridItems = document.querySelectorAll('.grid-item');
-    gridItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            const videoSrc = this.getAttribute('data-video');
-            this.innerHTML = `<div class="video-overlay"><video src="${videoSrc}" autoplay loop muted></video></div>`;
-        });
-
-        item.addEventListener('mouseleave', function() {
-            this.removeChild(this.firstChild);
+    document.addEventListener('DOMContentLoaded', function() {
+        var gridItems = document.querySelectorAll('.grid-item');
+    
+        gridItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                var url = this.getAttribute('data-url');
+                if (url) {
+                    window.location.href = url;
+                }
+            });
         });
     });
 });
