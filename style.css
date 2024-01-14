@@ -18,7 +18,6 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 100%;
     height: 80vh; /* Adjust based on your design, considering a 9:16 ratio */
     background-size: cover;
     background-position: center;
