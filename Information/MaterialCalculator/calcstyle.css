@@ -10,27 +10,37 @@ body {
 
 .result-block {
     margin-bottom: 20px;
-    padding: 10px;
-    background-color: #444; /* Slightly lighter grey for the blocks */
-    border-radius: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
 }
 
 .material-div {
     margin-bottom: 10px;
-    padding: 10px;
-    background-color: #555; /* Even lighter grey for material divs */
-    border-radius: 3px;
+    padding: 15px;
+    background-color: #4a4a4a; /* Slightly lighter grey for material divs */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* subtle shadow for each material */
+    transition: transform 0.2s ease-in-out; /* smooth transition for hover effect */
+}
+
+.material-div:hover {
+    transform: translateY(-2px); /* slight lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* enhanced shadow on hover */
 }
 
 .material-textures {
     font-weight: bold;
+    margin-top: 10px;
+    display: block; /* ensuring it takes its own line */
 }
 
 ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 5px; /* spacing before the list starts */
 }
 
 li {
     margin: 5px 0;
+    padding-left: 10px; /* aligning text nicely */
 }

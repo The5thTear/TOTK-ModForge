@@ -79,9 +79,12 @@ function displayResults(results) {
 }
 
 function getTextureType(textureName) {
-    if (textureName.includes('Alb')) return 'Color Map';
+    if (textureName.includes('Alb')) return 'Albedo Texture (Color)';
     if (textureName.includes('Nrm')) return 'Normal Map';
     if (textureName.includes('Spm')) return 'Specular Map';
+    if (textureName.includes('Emm')) return 'Emission Texture';
+    if (textureName.includes('Emc')) return 'Emission Color';
+    if (textureName.includes('EmmMsk')) return 'Emission Mask';
     // Add more conditions for other texture types
     return 'Unknown Type';
 }
