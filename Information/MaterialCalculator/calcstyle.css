@@ -1,0 +1,13 @@
+.result-block {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.material-div {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+}
