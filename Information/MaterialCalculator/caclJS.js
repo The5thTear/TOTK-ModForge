@@ -60,31 +60,25 @@ function displayResults(results) {
     }
 
     results.forEach(item => {
-        let resultBlock = document.createElement('div');
-        resultBlock.classList.add('result-block');
-
         item.match.forEach(material => {
-            let materialName = Object.keys(material)[0]; // e.g., "Mt_Body"
+            let materialName = Object.keys(material)[0];
             let textures = material[materialName];
-
             let materialDiv = document.createElement('div');
             materialDiv.classList.add('material-div');
-            materialDiv.innerHTML = `<strong>${materialName}</strong> - ${item.key}<br>Material Textures:<br>`;
+            materialDiv.innerHTML = `<strong>${materialName}</strong> - ${item.key}<br><span class="material-textures">Material Textures:</span><ul>`;
 
             textures.forEach(texture => {
-                let textureType = getTextureType(texture); // Function to determine texture type
-                materialDiv.innerHTML += `${texture} (${textureType})<br>`;
+                let textureType = getTextureType(texture);
+                materialDiv.innerHTML += `<li>${texture} (${textureType})</li>`;
             });
 
-            resultBlock.appendChild(materialDiv);
+            materialDiv.innerHTML += '</ul>';
+            resultsDiv.appendChild(materialDiv);
         });
-
-        resultsDiv.appendChild(resultBlock);
     });
 }
 
 function getTextureType(textureName) {
-    // Define logic to determine texture type based on texture name
     if (textureName.includes('Alb')) return 'Color Map';
     if (textureName.includes('Nrm')) return 'Normal Map';
     if (textureName.includes('Spm')) return 'Specular Map';
