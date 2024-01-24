@@ -27,16 +27,26 @@ async function searchTextures() {
     for (const key in jsonData) {
         if (jsonData.hasOwnProperty(key)) {
             let materials = jsonData[key].Materials;
+            
             let match = materials.filter(material => {
                 let materialTextures = Object.keys(material).filter(k => k !== "Possible Skin Counts").map(k => material[k]).flat();
                 let skinCountMatch = !skinCountEnabled || (material['Possible Skin Counts'].includes(selectedSkinCount));
 
-                if (isRestricted) {
-                    // In restricted mode, every texture in the material must be in the selected textures
-                    // and the material must not have any textures that are not selected.
-                    return skinCountMatch && selectedTextures.every(st => materialTextures.some(t => t.includes(st))) &&
-                           materialTextures.every(t => selectedTextures.some(st => t.includes(st)));
+                // Non-Restricted Search
+                if (!isRestricted) {
+                    return skinCountMatch && materialTextures.some(t => selectedTextures.some(st => t.includes(st)));
                 }
+
+                // Restricted Search
+                const allSelectedPresent = selectedTextures.every(st => 
+                    materialTextures.some(mt => mt.includes(st))
+                );
+
+                const noExtraTextures = materialTextures.every(mt => 
+                    selectedTextures.some(st => mt.includes(st))
+                );
+
+                return skinCountMatch && allSelectedPresent && noExtraTextures;
             });
 
             if (match.length > 0) {
