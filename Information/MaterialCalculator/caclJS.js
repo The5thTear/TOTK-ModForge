@@ -22,35 +22,22 @@ async function searchTextures() {
     const skinCountEnabled = document.getElementById('skinCountToggle').checked;
     const selectedSkinCount = parseInt(document.getElementById('skinCount').value);
 
-    console.log("Selected Textures: ", selectedTextures);
-    console.log("Is Restricted: ", isRestricted);
-    console.log("Skin Count Enabled: ", skinCountEnabled);
-    console.log("Selected Skin Count: ", selectedSkinCount);
-
     let results = [];
 
     for (const key in jsonData) {
         if (jsonData.hasOwnProperty(key)) {
             let materials = jsonData[key].Materials;
-
-            console.log("Processing key: ", key);
-            console.log("Materials: ", materials);
-
             let match = materials.filter(material => {
-                let textures = Object.keys(material).filter(k => k !== "Possible Skin Counts").map(k => material[k]).flat();
-                
-                console.log("Textures: ", textures);
-
-                let textureMatch = selectedTextures.every(t => textures.includes(t));
+                let materialTextures = Object.keys(material).filter(k => k !== "Possible Skin Counts").map(k => material[k]).flat();
                 let skinCountMatch = !skinCountEnabled || (material['Possible Skin Counts'].includes(selectedSkinCount));
 
-                console.log("Texture Match: ", textureMatch);
-                console.log("Skin Count Match: ", skinCountMatch);
-
                 if (isRestricted) {
-                    return textureMatch && skinCountMatch && textures.every(t => selectedTextures.includes(t.split('.')[0]));
+                    // In restricted mode, every texture in the material must be in the selected textures
+                    return skinCountMatch && materialTextures.every(t => selectedTextures.some(st => t.includes(st)));
+                } else {
+                    // In non-restricted mode, at least one of the selected textures must be in the material textures
+                    return skinCountMatch && materialTextures.some(t => selectedTextures.some(st => t.includes(st)));
                 }
-                return textureMatch && skinCountMatch;
             });
 
             if (match.length > 0) {
@@ -61,6 +48,7 @@ async function searchTextures() {
 
     displayResults(results);
 }
+
 
 function displayResults(results) {
     const resultsDiv = document.getElementById('searchResults');
