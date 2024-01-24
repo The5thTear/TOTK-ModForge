@@ -32,20 +32,23 @@ async function searchTextures() {
                 let materialTextures = Object.keys(material).filter(k => k !== "Possible Skin Counts").map(k => material[k]).flat();
                 let skinCountMatch = !skinCountEnabled || (material['Possible Skin Counts'].includes(selectedSkinCount));
 
-                // Non-Restricted Search
-                if (!isRestricted) {
-                    return skinCountMatch && materialTextures.some(t => selectedTextures.some(st => t.includes(st)));
-                }
-
-                // Restricted Search
+                // Check if all selected textures are in the material textures
                 const allSelectedPresent = selectedTextures.every(st => 
                     materialTextures.some(mt => mt.includes(st))
                 );
 
+                // Non-Restricted Search: The material must contain all selected textures but can also have others.
+                if (!isRestricted) {
+                    return skinCountMatch && allSelectedPresent;
+                }
+
+                // Restricted Search: The material must contain only and all of the selected textures.
+                // Check if material textures don't have extra textures not included in selected textures
                 const noExtraTextures = materialTextures.every(mt => 
                     selectedTextures.some(st => mt.includes(st))
                 );
 
+                // Both conditions must be met for a match in Restricted Search
                 return skinCountMatch && allSelectedPresent && noExtraTextures;
             });
 
@@ -54,6 +57,9 @@ async function searchTextures() {
             }
         }
     }
+
+    displayResults(results);
+}
 
     displayResults(results);
 }
