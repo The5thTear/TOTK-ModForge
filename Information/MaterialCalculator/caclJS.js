@@ -33,10 +33,9 @@ async function searchTextures() {
 
                 if (isRestricted) {
                     // In restricted mode, every texture in the material must be in the selected textures
-                    return skinCountMatch && materialTextures.every(t => selectedTextures.some(st => t.includes(st)));
-                } else {
-                    // In non-restricted mode, at least one of the selected textures must be in the material textures
-                    return skinCountMatch && materialTextures.some(t => selectedTextures.some(st => t.includes(st)));
+                    // and the material must not have any textures that are not selected.
+                    return skinCountMatch && selectedTextures.every(st => materialTextures.some(t => t.includes(st))) &&
+                           materialTextures.every(t => selectedTextures.some(st => t.includes(st)));
                 }
             });
 
