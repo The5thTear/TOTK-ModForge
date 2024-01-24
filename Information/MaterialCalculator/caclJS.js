@@ -60,10 +60,36 @@ function displayResults(results) {
     }
 
     results.forEach(item => {
-        let div = document.createElement('div');
-        div.innerHTML = `<strong>${item.key}</strong>: ${JSON.stringify(item.match)}`;
-        resultsDiv.appendChild(div);
+        let resultBlock = document.createElement('div');
+        resultBlock.classList.add('result-block');
+
+        item.match.forEach(material => {
+            let materialName = Object.keys(material)[0]; // e.g., "Mt_Body"
+            let textures = material[materialName];
+
+            let materialDiv = document.createElement('div');
+            materialDiv.classList.add('material-div');
+            materialDiv.innerHTML = `<strong>${materialName}</strong> - ${item.key}<br>Material Textures:<br>`;
+
+            textures.forEach(texture => {
+                let textureType = getTextureType(texture); // Function to determine texture type
+                materialDiv.innerHTML += `${texture} (${textureType})<br>`;
+            });
+
+            resultBlock.appendChild(materialDiv);
+        });
+
+        resultsDiv.appendChild(resultBlock);
     });
+}
+
+function getTextureType(textureName) {
+    // Define logic to determine texture type based on texture name
+    if (textureName.includes('Alb')) return 'Color Map';
+    if (textureName.includes('Nrm')) return 'Normal Map';
+    if (textureName.includes('Spm')) return 'Specular Map';
+    // Add more conditions for other texture types
+    return 'Unknown Type';
 }
 
 function toggleSkinCountMenu() {
