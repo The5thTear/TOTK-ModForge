@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Texture and Skin Count Search Tool</title>
+    <link rel="stylesheet" type="text/css" href="calcstyle.css">
+</head>
+<body>
+    <h1>Texture and Skin Count Search Tool</h1>
+
+    <div>
+        <!-- Texture checkboxes -->
+        <label><input type="checkbox" name="texture" value="Alb"> Alb</label>
+        <label><input type="checkbox" name="texture" value="Spm"> Spm</label>
+        <label><input type="checkbox" name="texture" value="Nrm"> Nrm</label>
+        <!-- Add more checkboxes for each texture type -->
+    </div>
+
+    <div>
+        <label><input type="checkbox" id="restrictedSearch"> Restricted Search</label>
+    </div>
+
+    <div>
+        <label>Skincount? <input type="checkbox" id="skinCountToggle" onchange="toggleSkinCountMenu()"></label>
+        <div id="skinCountMenu" style="display: none;">
+            <button onclick="changeSkinCount(-1)">-</button>
+            <input type="number" id="skinCount" value="0" min="0" max="8" readonly>
+            <button onclick="changeSkinCount(1)">+</button>
+        </div>
+    </div>
+
+    <button onclick="searchTextures()">Search</button>
+
+    <div id="searchResults"></div>
+
+    <script src="caclJS.js"></script>
+</body>
+</html>
