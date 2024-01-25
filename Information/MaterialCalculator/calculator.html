@@ -5,8 +5,19 @@
     <link rel="stylesheet" type="text/css" href="calcstyle.css">
 </head>
 <body>
-    <h1>Texture and Skin Count Search Tool</h1>
-
+    <div class="header">
+        <h1>Texture and Skin Count Search Tool</h1>
+        <div class="controls">
+            <select id="skinCount" name="skinCount">
+                <!-- Options for skin count -->
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <!-- Add more options up to 8 -->
+                <option value="8">8</option>
+            </select>
+            <button onclick="searchTextures()">Search</button>
+        </div>
+    </div>
     <div>
         <!-- Texture checkboxes -->
         <label><input type="checkbox" name="texture" value="Alb"> Alb</label>
@@ -30,8 +41,6 @@
             <button onclick="changeSkinCount(1)">+</button>
         </div>
     </div>
-
-    <button onclick="searchTextures()">Search</button>
 
     <div id="searchResults"></div>
 

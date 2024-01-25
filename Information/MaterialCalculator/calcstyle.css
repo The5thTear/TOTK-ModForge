@@ -68,3 +68,57 @@ li {
 .Emc-color { color: #0055ff; } /* Example color for Emc */
 .EmmMsk-color { color: #6a6a6a; } /* Example color for EmmMsk */
 /* Add more color classes for other texture types */
+
+/* Existing imports and body styles remain unchanged... */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the skin count selector */
+select#skinCount {
+    -webkit-appearance: none; /* Removes default styling on iOS */
+    appearance: none;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc; /* You can adjust the color as needed */
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    font-size: 16px;
+    margin-right: 10px; /* Spacing between selector and search button */
+}
+
+/* Style for the search button */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #555; /* Slightly lighter grey for button */
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #666; /* Color change on hover */
+}
+
+/* Custom checkbox styles */
+input[type="checkbox"] {
+    -webkit-appearance: none; /* Removes default styling */
+    appearance: none;
+    background-color: #333; /* Dark background when not selected */
+    color: white;
+    width: 25px; /* Width of the checkbox */
+    height: 25px; /* Height of the checkbox */
+    border: 2px solid #ccc;
+}
