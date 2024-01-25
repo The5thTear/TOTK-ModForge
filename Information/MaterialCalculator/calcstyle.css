@@ -102,21 +102,6 @@ input[type="checkbox"]:checked + label {
     color: white; /* White label when checked */
 }
 
-/* Style for the checkbox before it is checked */
-input[type="checkbox"] + label:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    background-color: #333; /* Dark background when not selected */
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
 /* Style for the checkbox after it is checked */
 input[type="checkbox"]:checked + label:before {
     background-color: white; /* Background when checked */
