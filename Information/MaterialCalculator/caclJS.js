@@ -73,19 +73,23 @@ function displayResults(results) {
 
     results.forEach(item => {
         item.match.forEach(material => {
-            let materialName = Object.keys(material)[0];
-            let textures = material[materialName];
+            let materialName = Object.keys(material)[0]; // e.g., "Mt_Body"
+            let textures = material[materialName]; // array of texture names
+
             let materialDiv = document.createElement('div');
             materialDiv.classList.add('material-div');
-            materialDiv.innerHTML = `<strong>${materialName}</strong> - ${item.key}<br><span class="material-textures">Material Textures:</span><ul>`;
+            materialDiv.innerHTML = `<strong>${materialName}</strong> - ${item.key}<br><span class="material-textures">Material Textures:</span>`;
 
+            let ul = document.createElement('ul');
             textures.forEach(texture => {
-                let textureType = getTextureType(texture);
-                materialDiv.innerHTML += `<li>${texture} (${textureType})</li>`;
+                let li = document.createElement('li');
+                li.textContent = `${texture} (${getTextureType(texture)})`;
+                // Add a class for the texture type to the list item
+                li.classList.add(getTextureTypeClass(texture));
+                ul.appendChild(li); // Append the list item to the unordered list
             });
-
-            materialDiv.innerHTML += '</ul>';
-            resultsDiv.appendChild(materialDiv);
+            materialDiv.appendChild(ul); // Append the unordered list to the material div
+            resultsDiv.appendChild(materialDiv); // Append the material div to the results div
         });
     });
 }
@@ -99,6 +103,18 @@ function getTextureType(textureName) {
     if (textureName.includes('EmmMsk')) return 'Emission Mask';
     // Add more conditions for other texture types
     return 'Unknown Type';
+}
+
+function getTextureTypeClass(textureName) {
+    // Returns a class name based on the texture type
+    if (textureName.includes('Alb')) return 'Alb-color';
+    if (textureName.includes('Nrm')) return 'Nrm-color';
+    if (textureName.includes('Spm')) return 'Spm-color';
+    if (textureName.includes('Emm')) return 'Emm-color';
+    if (textureName.includes('Emc')) return 'Emc-color';
+    if (textureName.includes('EmmMsk')) return 'EmmMsk-color';
+    // Add more conditions for other texture types
+    return 'unknown-type';
 }
 
 function toggleSkinCountMenu() {

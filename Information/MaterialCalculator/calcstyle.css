@@ -1,11 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Hylia+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@700&display=swap');
 
 body {
     font-family: 'Lexend', sans-serif;
-    background-color: #333; /* Dark grey background */
-    color: white;
+    background-color: #1a1a1a; /* Darker grey background */
+    color: #ccc; /* Default text color to grey */
     line-height: 1.6;
     padding: 20px;
+}
+
+h1 {
+    font-family: 'Lexend', sans-serif; /* Apply Hylia Serif to titles */
+}
+
+label {
+    color: #777; /* Default label color to grey */
+    margin-right: 10px;
+}
+
+/* When a checkbox is checked, make the label text white */
+input[type=checkbox]:checked + label {
+    color: white;
 }
 
 .result-block {
@@ -37,10 +52,19 @@ body {
 ul {
     list-style-type: none;
     padding: 0;
-    margin-top: 5px; /* spacing before the list starts */
+    margin-top: 5px;
 }
 
 li {
     margin: 5px 0;
-    padding-left: 10px; /* aligning text nicely */
+    padding-left: 20px; /* Offset by 20 pixels to the right */
 }
+
+/* Assign different colors to each texture type */
+.Alb-color { color: #04ff00; } /* Example color for Alb */
+.Nrm-color { color: rgb(86, 137, 233); } /* Example color for Nrm */
+.Spm-color { color: #ffffff; } /* Example color for Spm */
+.Emm-color { color: #b4b4b4; } /* Example color for Emm */
+.Emc-color { color: #0055ff; } /* Example color for Emc */
+.EmmMsk-color { color: #6a6a6a; } /* Example color for EmmMsk */
+/* Add more color classes for other texture types */
