@@ -11,7 +11,7 @@
 body {
     font-family: 'Lexend', sans-serif;
     background-color: #121212; /* Darker grey background */
-    color: #cccccc; /* Light grey text color */
+    color: #00ff6e; /* Light grey text color */
     line-height: 1.6;
     padding: 20px;
 }
@@ -40,21 +40,21 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #555;
-    color: white;
+    background-color: #303030;
+    color: rgb(0, 255, 115);
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #666;
+    background-color: #484848;
 }
 
 /* Style for skin count label and selector */
 .controls label, .controls select {
     margin-right: 10px;
-    color: white; /* White text color for better visibility */
+    color: rgb(0, 255, 128); /* White text color for better visibility */
 }
 
 select#skinCount {
@@ -119,7 +119,7 @@ input[type="checkbox"] + label {
     transition: background-color 0.4s ease;
     border-bottom: 1px solid #777;
     cursor: pointer;
-    margin-bottom: 10px; /* This adds space between the dropdowns */
+    margin-bottom: 20px; /* This adds space between the dropdowns */
 }
 
 .material-button:hover {
@@ -148,4 +148,8 @@ ul li::before {
 ul {
     list-style-type: none; /* Remove default list styling */
     padding-left: 15px; /* Add padding to align with the material-info div */
+}
+
+#searchResults {
+    margin-top: 30px; /* Adjust the value as needed for more or less space */
 }
