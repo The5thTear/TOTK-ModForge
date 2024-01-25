@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Hylia+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@700&display=swap');
 
+@font-face {
+    font-family: 'Hylia Serif';
+    src: url('HyliaSerifBeta-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-family: 'Lexend', sans-serif;
     background-color: #121212; /* Darker grey background */
@@ -22,6 +29,7 @@ h1 {
 }
 
 .controls {
+    font-family: 'Hylia Serif', serif;
     display: flex;
     align-items: center;
 }
@@ -49,6 +57,7 @@ button:hover {
 }
 
 select#skinCount {
+    font-family: 'Hylia Serif', serif;
     -webkit-appearance: none;
     appearance: none;
     padding: 10px;
@@ -90,7 +99,7 @@ input[type="checkbox"]:checked:after {
 
 /* Checkbox label styling when not checked */
 input[type="checkbox"] + label {
-    color: #ffffff; /* Grey label */
+    color: #ffffff;
     padding-left: 30px; /* Space for custom checkbox */
     position: relative;
     cursor: pointer;
