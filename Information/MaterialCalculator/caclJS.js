@@ -61,9 +61,6 @@ async function searchTextures() {
     displayResults(results);
 }
 
-    displayResults(results);
-}
-
 
 function displayResults(results) {
     const resultsDiv = document.getElementById('searchResults');
