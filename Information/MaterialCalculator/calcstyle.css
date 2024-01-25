@@ -97,11 +97,6 @@ input[type="checkbox"] + label {
     display: inline-block;
 }
 
-/* Checkbox label styling when checked */
-input[type="checkbox"]:checked + label {
-    color: white; /* White label when checked */
-}
-
 /* Style for the checkbox after it is checked */
 input[type="checkbox"]:checked + label:before {
     background-color: white; /* Background when checked */
