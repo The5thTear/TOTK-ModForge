@@ -65,7 +65,7 @@ select#skinCount {
     border-radius: 5px;
     border: 1px solid #ccc;
     background-color: #333;
-    color: white;
+    color: rgb(0, 255, 157);
     font-size: 16px;
 }
 
@@ -85,7 +85,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-    background-color: white; /* White background when checked */
+    background-color: rgb(0, 255, 136); /* White background when checked */
 }
 
 input[type="checkbox"]:checked:after {
@@ -101,7 +101,7 @@ input[type="checkbox"]:checked:after {
 /* Checkbox label styling when not checked */
 input[type="checkbox"] + label {
     font-family: 'Hylia Serif', serif;
-    color: #ffffff;
+    color: #00ff6e;
     padding-left: 30px; /* Space for custom checkbox */
     position: relative;
     cursor: pointer;
