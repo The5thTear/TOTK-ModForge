@@ -121,3 +121,18 @@ input[type="checkbox"] + label:before {
 input[type="checkbox"]:checked + label:before {
     background-color: white; /* Background when checked */
 }
+
+/* Add this to your CSS file */
+
+/* Style for the skin count toggle label */
+label[for="skinCountToggle"] {
+    margin-right: 10px;
+    color: white; /* White text color for better visibility */
+}
+
+/* Style for the skin count toggle checkbox */
+#skinCountToggle {
+    -webkit-appearance: none;
+    appearance: none;
+    /* ... Add other styles to match the design of other checkboxes ... */
+}

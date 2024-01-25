@@ -128,3 +128,20 @@ function changeSkinCount(change) {
     currentCount = Math.min(Math.max(currentCount + change, 0), 8);
     skinCountInput.value = currentCount;
 }
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Attach change event listener to the skin count toggle
+    document.getElementById('skinCountToggle').addEventListener('change', function() {
+        // Get the skin count select element
+        const skinCountSelect = document.getElementById('skinCount');
+        
+        // Check if the toggle is checked
+        if (this.checked) {
+            // Show the skin count selector
+            skinCountSelect.style.display = 'block';
+        } else {
+            // Hide the skin count selector
+            skinCountSelect.style.display = 'none';
+        }
+    });
+});
