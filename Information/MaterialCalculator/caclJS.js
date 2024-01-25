@@ -138,10 +138,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Check if the toggle is checked
         if (this.checked) {
             // Show the skin count selector
-            skinCountSelect.style.display = 'block';
+            skinCountSelect.style.display = 'inline-block'; // or 'block', depending on your layout
         } else {
             // Hide the skin count selector
             skinCountSelect.style.display = 'none';
         }
     });
 });
+
