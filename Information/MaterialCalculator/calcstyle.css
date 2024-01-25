@@ -101,7 +101,7 @@ input[type="checkbox"]:checked:after {
 /* Checkbox label styling when not checked */
 input[type="checkbox"] + label {
     font-family: 'Hylia Serif', serif;
-    color: #00ff6e;
+    color: #00ff88;
     padding-left: 30px; /* Space for custom checkbox */
     position: relative;
     cursor: pointer;
