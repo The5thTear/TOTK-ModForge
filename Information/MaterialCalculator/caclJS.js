@@ -71,39 +71,42 @@ function displayResults(results) {
         return;
     }
 
-    results.forEach((item, index) => {
-        const materialButton = document.createElement('button');
-        materialButton.textContent = `${item.key}`;
-        materialButton.classList.add('material-button');
-        materialButton.setAttribute('type', 'button');
-        materialButton.addEventListener('click', function() {
-            this.nextElementSibling.classList.toggle('active');
-        });
-
-        const materialInfoDiv = document.createElement('div');
-        materialInfoDiv.classList.add('material-info');
-        materialInfoDiv.style.display = 'none';
-
+    results.forEach(item => {
         item.match.forEach(material => {
-            const materialName = Object.keys(material)[0];
-            const textures = material[materialName];
+            const materialName = Object.keys(material)[0]; // e.g., "Mt_Body"
+            const textures = material[materialName]; // array of texture names
+
+            // Create a button for each material that acts as the dropdown title
+            const materialButton = document.createElement('button');
+            materialButton.textContent = `${materialName} - ${item.key}`;
+            materialButton.classList.add('material-button');
+            materialButton.setAttribute('type', 'button');
+            
+            // Create a div that will contain the texture information, initially hidden
+            const materialInfoDiv = document.createElement('div');
+            materialInfoDiv.classList.add('material-info');
+
+            // Populate the texture information
             const textureList = document.createElement('ul');
             textures.forEach(texture => {
                 const li = document.createElement('li');
                 li.textContent = `${texture} (${getTextureType(texture)})`;
                 textureList.appendChild(li);
             });
+            materialInfoDiv.appendChild(textureList);
 
-            const materialDetailDiv = document.createElement('div');
-            materialDetailDiv.innerHTML = `<strong>${materialName}</strong>:`;
-            materialDetailDiv.appendChild(textureList);
-            materialInfoDiv.appendChild(materialDetailDiv);
+            // Event listener to toggle the display of the material info
+            materialButton.addEventListener('click', function() {
+                materialInfoDiv.classList.toggle('active');
+            });
+
+            // Append the button and info div to the results div
+            resultsDiv.appendChild(materialButton);
+            resultsDiv.appendChild(materialInfoDiv);
         });
-
-        resultsDiv.appendChild(materialButton);
-        resultsDiv.appendChild(materialInfoDiv);
     });
 }
+
 
 
 function getTextureType(textureName) {
