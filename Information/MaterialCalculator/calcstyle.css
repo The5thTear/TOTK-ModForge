@@ -153,3 +153,7 @@ ul {
 #searchResults {
     margin-top: 30px; /* Adjust the value as needed for more or less space */
 }
+
+#skinCountToggle {
+    color: #00ff6e;
+}
