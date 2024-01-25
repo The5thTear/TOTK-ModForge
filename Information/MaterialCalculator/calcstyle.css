@@ -90,14 +90,9 @@ input[type="checkbox"]:checked:after {
 
 /* Checkbox label styling when not checked */
 input[type="checkbox"] + label {
-    color: #777; /* Grey label */
+    color: #ffffff; /* Grey label */
     padding-left: 30px; /* Space for custom checkbox */
     position: relative;
     cursor: pointer;
     display: inline-block;
-}
-
-/* Style for the checkbox after it is checked */
-input[type="checkbox"]:checked + label:before {
-    background-color: white; /* Background when checked */
 }
