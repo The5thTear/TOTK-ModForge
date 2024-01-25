@@ -8,17 +8,23 @@
     <div class="header">
         <h1>Texture and Skin Count Search Tool</h1>
         <div class="controls">
+            <label><input type="checkbox" id="restrictedSearch"> Restricted Search</label>
             <select id="skinCount" name="skinCount">
                 <!-- Options for skin count -->
                 <option value="0">0</option>
                 <option value="1">1</option>
-                <!-- Add more options up to 8 -->
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
                 <option value="8">8</option>
             </select>
             <button onclick="searchTextures()">Search</button>
         </div>
     </div>
-    <div>
+    <div class="checkboxes">
         <!-- Texture checkboxes -->
         <label><input type="checkbox" name="texture" value="Alb"> Alb</label>
         <label><input type="checkbox" name="texture" value="Spm"> Spm</label>
@@ -27,19 +33,6 @@
         <label><input type="checkbox" name="texture" value="Emc"> Emc</label>
         <label><input type="checkbox" name="texture" value="EmmMsk"> EmmMsk</label>
         <!-- Add more checkboxes for each texture type -->
-    </div>
-
-    <div>
-        <label><input type="checkbox" id="restrictedSearch"> Restricted Search</label>
-    </div>
-
-    <div>
-        <label>Skincount? <input type="checkbox" id="skinCountToggle" onchange="toggleSkinCountMenu()"></label>
-        <div id="skinCountMenu" style="display: none;">
-            <button onclick="changeSkinCount(-1)">-</button>
-            <input type="number" id="skinCount" value="0" min="0" max="8" readonly>
-            <button onclick="changeSkinCount(1)">+</button>
-        </div>
     </div>
 
     <div id="searchResults"></div>
