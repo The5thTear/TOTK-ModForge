@@ -109,8 +109,8 @@ input[type="checkbox"] + label {
 }
 
 .material-button {
-    background-color: #333;
-    color: white;
+    background-color: #1d1d1d;
+    color: rgb(33, 33, 33);
     padding: 10px;
     width: 100%;
     text-align: left;
@@ -119,6 +119,7 @@ input[type="checkbox"] + label {
     transition: background-color 0.4s ease;
     border-bottom: 1px solid #777;
     cursor: pointer;
+    margin-bottom: 10px; /* This adds space between the dropdowns */
 }
 
 .material-button:hover {
@@ -126,8 +127,8 @@ input[type="checkbox"] + label {
 }
 
 .material-info {
-    padding: 0 18px;
-    background-color: #f9f9f9;
+    padding-left: 15px; /* This adds padding on the left side */
+    background-color: #0e0e0e;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     display: none;
@@ -136,4 +137,15 @@ input[type="checkbox"] + label {
 
 .material-info.active {
     display: block;
+}
+
+ul li::before {
+    content: "- "; /* Add a dash before each list item */
+    padding-right: 5px; /* Add space after the dash */
+}
+
+
+ul {
+    list-style-type: none; /* Remove default list styling */
+    padding-left: 15px; /* Add padding to align with the material-info div */
 }
