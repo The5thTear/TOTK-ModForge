@@ -107,3 +107,33 @@ input[type="checkbox"] + label {
     cursor: pointer;
     display: inline-block;
 }
+
+.material-button {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.4s ease;
+    border-bottom: 1px solid #777;
+    cursor: pointer;
+}
+
+.material-button:hover {
+    background-color: #444;
+}
+
+.material-info {
+    padding: 0 18px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    display: none;
+    color: black;
+}
+
+.material-info.active {
+    display: block;
+}

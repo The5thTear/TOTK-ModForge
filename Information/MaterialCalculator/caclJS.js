@@ -71,28 +71,40 @@ function displayResults(results) {
         return;
     }
 
-    results.forEach(item => {
-        item.match.forEach(material => {
-            let materialName = Object.keys(material)[0]; // e.g., "Mt_Body"
-            let textures = material[materialName]; // array of texture names
-
-            let materialDiv = document.createElement('div');
-            materialDiv.classList.add('material-div');
-            materialDiv.innerHTML = `<strong>${materialName}</strong> - ${item.key}<br><span class="material-textures">Material Textures:</span>`;
-
-            let ul = document.createElement('ul');
-            textures.forEach(texture => {
-                let li = document.createElement('li');
-                li.textContent = `${texture} (${getTextureType(texture)})`;
-                // Add a class for the texture type to the list item
-                li.classList.add(getTextureTypeClass(texture));
-                ul.appendChild(li); // Append the list item to the unordered list
-            });
-            materialDiv.appendChild(ul); // Append the unordered list to the material div
-            resultsDiv.appendChild(materialDiv); // Append the material div to the results div
+    results.forEach((item, index) => {
+        const materialButton = document.createElement('button');
+        materialButton.textContent = `${item.key}`;
+        materialButton.classList.add('material-button');
+        materialButton.setAttribute('type', 'button');
+        materialButton.addEventListener('click', function() {
+            this.nextElementSibling.classList.toggle('active');
         });
+
+        const materialInfoDiv = document.createElement('div');
+        materialInfoDiv.classList.add('material-info');
+        materialInfoDiv.style.display = 'none';
+
+        item.match.forEach(material => {
+            const materialName = Object.keys(material)[0];
+            const textures = material[materialName];
+            const textureList = document.createElement('ul');
+            textures.forEach(texture => {
+                const li = document.createElement('li');
+                li.textContent = `${texture} (${getTextureType(texture)})`;
+                textureList.appendChild(li);
+            });
+
+            const materialDetailDiv = document.createElement('div');
+            materialDetailDiv.innerHTML = `<strong>${materialName}</strong>:`;
+            materialDetailDiv.appendChild(textureList);
+            materialInfoDiv.appendChild(materialDetailDiv);
+        });
+
+        resultsDiv.appendChild(materialButton);
+        resultsDiv.appendChild(materialInfoDiv);
     });
 }
+
 
 function getTextureType(textureName) {
     if (textureName.includes('Alb')) return 'Albedo Texture (Color)';
