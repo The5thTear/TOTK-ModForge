@@ -1,98 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Hylia+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@700&display=swap');
 
-
-
-h1 {
-    font-family: 'Lexend', sans-serif; /* Apply Hylia Serif to titles */
-}
-
-/* When a checkbox is checked, make the label text white */
-input[type=checkbox]:checked + label {
-    color: white;
-}
-
-.result-block {
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
-}
-
-.material-div {
-    margin-bottom: 10px;
-    padding: 15px;
-    background-color: #4a4a4a; /* Slightly lighter grey for material divs */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* subtle shadow for each material */
-    transition: transform 0.2s ease-in-out; /* smooth transition for hover effect */
-}
-
-.material-div:hover {
-    transform: translateY(-2px); /* slight lift on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* enhanced shadow on hover */
-}
-
-.material-textures {
-    font-weight: bold;
-    margin-top: 10px;
-    display: block; /* ensuring it takes its own line */
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 5px;
-}
-
-li {
-    margin: 5px 0;
-    padding-left: 20px; /* Offset by 20 pixels to the right */
-}
-
-/* Assign different colors to each texture type */
-.Alb-color { color: #04ff00; } /* Example color for Alb */
-.Nrm-color { color: rgb(86, 137, 233); } /* Example color for Nrm */
-.Spm-color { color: #ffffff; } /* Example color for Spm */
-.Emm-color { color: #b4b4b4; } /* Example color for Emm */
-.Emc-color { color: #0055ff; } /* Example color for Emc */
-.EmmMsk-color { color: #6a6a6a; } /* Example color for EmmMsk */
-/* Add more color classes for other texture types */
-
-/* Existing imports and body styles remain unchanged... */
-
-/* Style for the skin count selector */
-select#skinCount {
-    -webkit-appearance: none; /* Removes default styling on iOS */
-    appearance: none;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc; /* You can adjust the color as needed */
-    background-color: #333; /* Dark background */
-    color: white; /* White text */
-    font-size: 16px;
-    margin-right: 10px; /* Spacing between selector and search button */
-}
-
-/* Style for the search button */
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    background-color: #555; /* Slightly lighter grey for button */
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #666; /* Color change on hover */
-}
-
 body {
     font-family: 'Lexend', sans-serif;
-    background-color: #121212; /* Even darker grey background */
-    color: #ccc;
+    background-color: #121212; /* Darker grey background */
+    color: #ccc; /* Light grey text color */
     line-height: 1.6;
     padding: 20px;
 }
@@ -104,39 +16,94 @@ body {
     padding-bottom: 20px;
 }
 
+h1 {
+    font-family: 'Hylia Serif', serif;
+    color: white; /* White color for the title */
+}
+
 .controls {
     display: flex;
     align-items: center;
 }
 
-h1 {
-    font-family: 'Hylia Serif', serif; /* Now using Hylia Serif */
-    color: white; /* Title color */
+/* Style for the search button */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-/* Adjust label color dynamically based on the checkbox state */
-label {
+button:hover {
+    background-color: #666;
+}
+
+/* Style for skin count label and selector */
+.controls label, .controls select {
     margin-right: 10px;
-    transition: color 0.3s ease;
+    color: white; /* White text color for better visibility */
 }
 
-input[type=checkbox] {
-    /* Hiding default checkbox */
-    opacity: 0;
+select#skinCount {
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+}
+
+/* Custom checkbox styles */
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #333; /* Dark grey background */
+    border-radius: 3px;
+    border: 2px solid #777; /* Grey border */
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: white; /* White background when checked */
+}
+
+input[type="checkbox"]:checked:after {
+    content: '✔';
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: black; /* Checkmark color */
 }
 
-input[type=checkbox] + label {
-    /* Custom checkbox styles */
-    display: inline-block;
+/* Checkbox label styling when not checked */
+input[type="checkbox"] + label {
+    color: #777; /* Grey label */
     padding-left: 30px; /* Space for custom checkbox */
     position: relative;
     cursor: pointer;
-    color: #777; /* Default label color to grey */
+    display: inline-block;
 }
 
-input[type=checkbox] + label:before {
-    /* Custom box for the checkbox */
+/* Checkbox label styling when checked */
+input[type="checkbox"]:checked + label {
+    color: white; /* White label when checked */
+}
+
+/* Style for the checkbox before it is checked */
+input[type="checkbox"] + label:before {
     content: '';
     position: absolute;
     left: 0;
@@ -150,18 +117,7 @@ input[type=checkbox] + label:before {
     transition: background-color 0.3s ease;
 }
 
-input[type=checkbox]:checked + label:before {
-    /* Change background when checked */
-    background-color: white;
-}
-
-input[type=checkbox]:checked + label:after {
-    /* Custom checkmark when checked */
-    content: '✔'; /* Unicode checkmark symbol */
-    position: absolute;
-    left: 4px;
-    top: 50%;
-    transform: translateY(-50%) scale(1.2);
-    color: black; /* Checkmark color */
-    font-size: 18px;
+/* Style for the checkbox after it is checked */
+input[type="checkbox"]:checked + label:before {
+    background-color: white; /* Background when checked */
 }
