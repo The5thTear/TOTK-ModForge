@@ -117,11 +117,6 @@ function getTextureTypeClass(textureName) {
     return 'unknown-type';
 }
 
-function toggleSkinCountMenu() {
-    const skinCountMenu = document.getElementById('skinCountMenu');
-    skinCountMenu.style.display = document.getElementById('skinCountToggle').checked ? 'block' : 'none';
-}
-
 function changeSkinCount(change) {
     const skinCountInput = document.getElementById('skinCount');
     let currentCount = parseInt(skinCountInput.value);
