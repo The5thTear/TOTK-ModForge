@@ -116,6 +116,7 @@ function getTextureType(textureName) {
     if (textureName.includes('Emm')) return 'Emission Texture';
     if (textureName.includes('Emc')) return 'Emission Color';
     if (textureName.includes('EmmMsk')) return 'Emission Mask';
+    if (textureName.includes('AO')) return 'Ambient Occlusion';
     if (textureName.includes('Gn0')) return 'Graphic #0';
     if (textureName.includes('Gn1')) return 'Graphic #1';
     if (textureName.includes('Gn2')) return 'Graphic #2';
