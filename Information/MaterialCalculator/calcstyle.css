@@ -157,3 +157,7 @@ ul {
 #skinCountToggle {
     color: #00ff6e;
 }
+
+* {
+    font-weight: normal;
+}
