@@ -26,3 +26,9 @@ body {
     line-height: 1.6;
     color: #333; /* You can choose any color you like */
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
