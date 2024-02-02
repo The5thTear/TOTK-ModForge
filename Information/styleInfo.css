@@ -18,8 +18,8 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 200px; /* Set width to 200px */
-    height: 200px; /* Set height to 200px to maintain a 1:1 aspect ratio */
+    width: 400px; /* Set width to 200px */
+    height: 400px; /* Set height to 200px to maintain a 1:1 aspect ratio */
     background-size: cover;
     background-position: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);

@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Hylia Serif';
+    src: url('HyliaSerifBeta-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply Hylia Serif to all headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Hylia Serif', serif;
+    color: #00ff73;
+    margin: 10;
+    padding: 10;
+}
+
+/* Apply Lexend Bold to the body text */
+body {
+    font-family: 'Lexend', sans-serif;
+    color: #ffffff; /* Light grey text color */
+    background-color: #121212; /* Darker grey background */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+p {
+    font-family: 'Lexend', sans-serif;
+    margin: 20;
+    padding: 10;
+}
+
+li {
+    font-family: 'Lexend', sans-serif;
+    margin: 10;
+    padding: 10;
+}
+
+/* Additional styling for the markdown container */
+#markdown-container {
+    font-family: 'Lexend', sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+    color: #ffffff; /* You can choose any color you like */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
