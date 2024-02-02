@@ -22,6 +22,7 @@ body {
 
 /* Additional styling for the markdown container */
 #markdown-container {
+    font-family: 'LexendBold', sans-serif;
     padding: 20px;
     line-height: 1.6;
     color: #ffffff; /* You can choose any color you like */
