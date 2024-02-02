@@ -8,11 +8,16 @@
 /* Apply Hylia Serif to all headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Hylia Serif', serif;
+    color: #ffffff;
 }
 
 /* Apply Lexend Bold to the body text */
 body {
     font-family: 'LexendBold', sans-serif;
+    background-color: #121212; /* Darker grey background */
+    color: #ffffff; /* Light grey text color */
+    line-height: 1.6;
+    padding: 20px;
 }
 
 /* Additional styling for the markdown container */
