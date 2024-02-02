@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Apply Lexend Bold to the body text */
 body {
-    font-family: 'LexendBold', sans-serif;
+    font-family: 'Lexend', sans-serif;
     color: #ffffff; /* Light grey text color */
     background-color: #121212; /* Darker grey background */
     line-height: 1.6;
@@ -21,12 +21,16 @@ body {
 }
 
 p {
-    font-family: 'LexendBold', sans-serif;
+    font-family: 'Lexend', sans-serif;
+}
+
+li {
+    font-family: 'Lexend', sans-serif;
 }
 
 /* Additional styling for the markdown container */
 #markdown-container {
-    font-family: 'LexendBold', sans-serif;
+    font-family: 'Lexend', sans-serif;
     padding: 20px;
     line-height: 1.6;
     color: #ffffff; /* You can choose any color you like */
