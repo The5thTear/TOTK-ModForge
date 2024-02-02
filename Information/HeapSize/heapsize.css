@@ -1,0 +1,16 @@
+/* Apply Hylia Serif to all headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'HyliaSerif', serif;
+}
+
+/* Apply Lexend Bold to the body text */
+body {
+    font-family: 'LexendBold', sans-serif;
+}
+
+/* Additional styling for the markdown container */
+#markdown-container {
+    padding: 20px;
+    line-height: 1.6;
+    color: #333; /* You can choose any color you like */
+}
