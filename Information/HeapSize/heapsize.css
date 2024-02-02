@@ -9,6 +9,8 @@
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Hylia Serif', serif;
     color: #00ff73;
+    margin: 10;
+    padding: 10;
 }
 
 /* Apply Lexend Bold to the body text */
@@ -22,10 +24,14 @@ body {
 
 p {
     font-family: 'Lexend', sans-serif;
+    margin: 20;
+    padding: 10;
 }
 
 li {
     font-family: 'Lexend', sans-serif;
+    margin: 10;
+    padding: 10;
 }
 
 /* Additional styling for the markdown container */
@@ -40,10 +46,4 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
