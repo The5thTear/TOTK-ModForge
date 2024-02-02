@@ -1,6 +1,13 @@
+@font-face {
+    font-family: 'Hylia Serif';
+    src: url('HyliaSerifBeta-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Apply Hylia Serif to all headings */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'HyliaSerif', serif;
+    font-family: 'Hylia Serif', serif;
 }
 
 /* Apply Lexend Bold to the body text */
