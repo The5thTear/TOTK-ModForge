@@ -11,6 +11,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #00ff73;
     margin: 10;
     padding: 10;
+    font-weight: normal;
 }
 
 /* Apply Lexend Bold to the body text */
