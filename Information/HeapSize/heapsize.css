@@ -20,6 +20,10 @@ body {
     padding: 20px;
 }
 
+p {
+    font-family: 'LexendBold', sans-serif;
+}
+
 /* Additional styling for the markdown container */
 #markdown-container {
     font-family: 'LexendBold', sans-serif;
