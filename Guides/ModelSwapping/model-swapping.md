@@ -1,3 +1,5 @@
+# Ultimate TOTK Modding Guide - Model Swapping + Materials
+
 **Greetings modders!** Whether you're a seasoned enthusiast or a novice explorer, this comprehensive guide is your key to unlocking the world of model swapping in TOTK and *beyond*.
 
 ### 3. Model Preparation
@@ -54,7 +56,7 @@ Materials are incredibly painful to deal with, but hopefully this should make un
 
 Here are some images to help you understand where everything is located in our first requisite, [Switch Toolbox](https://github.com/KillzXGaming/Switch-Toolbox)!
 
-![BasicLayout](/Guides/ModelSwapping/Assets/Screenshot_150.png)
+![BasicLayout](./Assets/Screenshot_150.png)
 
 Here, the purple circle is surrounding the model. The model's "wireframe" is being diplayed since we have the "Mt_Body" material selected. In Toolbox, when selecting a material, the affected verticies are displayed to help the user visualize what they're doing.
   
@@ -62,7 +64,7 @@ The pink bracket is highlighting the *`Materials`* tab of the model. Here you ca
   
 Finally, the blue brackets are highlighting textures. The bracket on the left highlights every texture that is currently available to Toolbox and/or what textures are currently being utilized by the model. While the right bracket highlights what textures the material you have selected is using.
 
-![ShaderParameters](/Guides/ModelSwapping/Assets/Screenshot_151.png)
+![ShaderParameters](./Assets/Screenshot_151.png)
 
 This screenshot highlights the *`Shader Parameters`* tab! Here you can find and adjust parameters.
 
@@ -70,7 +72,7 @@ This screenshot highlights the *`Shader Parameters`* tab! Here you can find and 
 
 The white arrow is pointing to the parameter used for emmision strength *(`const_value_0` on emissive materials)*. While the green bracket is highlighting the shaders *`Const_Color`* parameters, which in some cases control emission color.
 
-![ObjectRelations](/Guides/ModelSwapping/Assets/Screenshot_152.png)
+![ObjectRelations](./Assets/Screenshot_152.png)
   
 In this final image we have 3 important areas. The first thing you should notice (shown by the green arrow) is that we have an **object** selected, *not a material.*
 
@@ -88,7 +90,7 @@ This is incredibly annoying, it can cause issues when trying to use a certain ma
 ## Why Does It Matter?
 When you use a *`Material`* with a *`Skin Count`* incompatible with an objects *`Mesh`*, the object can appear very deformed, or straight up invisible seen here:
 
-![BrokenMesh](/Guides/ModelSwapping/Assets/Screenshot_.png)
+![BrokenMesh](./Assets/Screenshot_.png)
 
 To mitigate this, we must find compatible *`Materials`*, that support your desired "*Texture Types*", with a compatible *`Skin Count`*.
 
@@ -103,7 +105,7 @@ There are a *plethora* of *`Material Types`*, but they can be placed into 3 cate
 The first category of *`Materials`* is a type that does **NOT** support transparency. Opaque materials are for anything that requires **FULL** coverage, without transparent parts in the texture.
 
 The Icon in Toolbox looks like this:  
-![OpaqueIcon](/Guides/ModelSwapping/Assets/Screenshot_154.png)
+![OpaqueIcon](./Assets/Screenshot_154.png)
 
 ### Translucent:
 The second *`Material`* category is a very rare one. This material type supports `Translucency`! This could be used for water, for something glowing, etc..
@@ -111,13 +113,13 @@ The second *`Material`* category is a very rare one. This material type supports
 > Translucency is the term for something that is semi-transparent.
 
 The Icon in Toolbox looks like this:  
-![TranslucentIcon](/Guides/ModelSwapping/Assets/Screenshot_155.png)
+![TranslucentIcon](./Assets/Screenshot_155.png)
 
 ### Transparency Support:
 The third and final *`Material`* category is one that *supports* transparent "Masking". This means that some parts of the texture can be transparent, and some can be opaque. This can be used on clothing, and more..
 
 The Icon in Toolbox looks like this:  
-![TransparentIcon](/Guides/ModelSwapping/Assets/Screenshot_156.png)
+![TransparentIcon](./Assets/Screenshot_156.png)
 
 ## Material Oddities:
 Some materials behave much differently than others do. For example, a simple material for displaying one color, VS the Zonai String material that Mineru uses are very different and function in different ways.

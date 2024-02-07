@@ -74,21 +74,15 @@ img {
 }
 
 #markdown-container {
-    width: 50%;
-    margin-left: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    box-sizing: border-box;
-    float: left;
-    height: calc(100vh - 20px);
-    overflow-y: auto;
-}
-
-#main-title {
-    /* Ensuring the main title is not affected by the markdown header styles */
-    font-size: 2em; /* Or whatever size you prefer */
-    margin-bottom: 0.5em; /* Add some space below the title */
+    width: 50%; /* Set the width to take up half of the screen */
+    margin-left: 20px; /* 20 pixels space from the left */
+    margin-top: 10px; /* 10 pixels space from the top */
+    margin-bottom: 10px; /* 10 pixels space from the bottom */
+    padding: 10px; /* Padding inside the container */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    float: left; /* Float to the left */
+    height: calc(100vh - 20px); /* Full height minus the vertical margins */
+    overflow-y: auto; /* Add scroll if content is longer than the screen */
 }
 
 blockquote {
@@ -97,8 +91,30 @@ blockquote {
     color: #cccccc; /* Light grey text color */
     padding: 0.5em 10px; /* Padding inside the blockquote */
     margin: 0; /* Resetting margins */
-    margin-left: 20px; /* Space before blockquote */
-    margin-top: 10px; /* Space above blockquote */
-    margin-bottom: 10px; /* Space below blockquote */
+    margin-left: 10px; /* Space before blockquote */
+    margin-top: 5px; /* Space above blockquote */
+    margin-bottom: 5px; /* Space below blockquote */
     font-style: italic; /* Typically blockquotes are italicized */
+}
+
+/* Unvisited link */
+a:link {
+    color: #00c8ff; /* Pink color for unvisited links */
+    text-decoration: none; /* Removes underline */
+}
+
+/* Visited link */
+a:visited {
+    color: #0080ff; /* Purple color for visited links */
+}
+
+/* Mouse over link */
+a:hover {
+    color: #00ff91; /* Blue color on hover */
+    text-decoration: underline; /* Underlines link on hover */
+}
+
+/* Selected link */
+a:active {
+    color: #ffffff; /* Black color for active links */
 }
