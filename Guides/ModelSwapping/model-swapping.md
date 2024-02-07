@@ -40,7 +40,7 @@ Ladies and Gentleman, fasten your seatbelts, this is gonna be a long one :)
   
 > This guide is split into two parts, since materials are a complex aspect in models, we might as well cover them both here.
 
-# Materials:
+# Materials:  
   
 ## What are they?
 Tears of the Kingdoms material system is incredibly versatile. With intricacies still unknown, comprehending them can be an incredibly taxing endeavor.
@@ -48,7 +48,7 @@ Tears of the Kingdoms material system is incredibly versatile. With intricacies 
 Luckily, I'm here to help!
 
 In the context of TotK, a material is a word used to describe a piece of a model that stores texture, color, and shader information.
-
+  
 ## So.. What's The Catch?
 Unfortunately, there is a catch..
 
