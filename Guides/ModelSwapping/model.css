@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+pre, code {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 5px;
+    font-family: 'Courier New', monospace;
+    display: block;
+    margin: 1em 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+    box-shadow: 0 0 5px #ccc;
+    border: 1px solid #ddd;
+}
+
+/* For embeds, you would need a class or an identifier for the embedded content */
+.embed {
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin: 20px 0;
+}
+
+/* Replicate the specific colors, sizes, and any additional styling from the screenshot where applicable */

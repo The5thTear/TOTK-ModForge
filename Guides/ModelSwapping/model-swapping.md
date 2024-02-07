@@ -1,27 +1,9 @@
 # Ultimate TOTK Modding Guide - Model Swapping + Materials
 
-Greetings modders! Whether you're a seasoned enthusiast or a novice explorer, this comprehensive guide is your key to unlocking the world of model swapping in TOTK and beyond.
-
-#### 1.3 Overview of Modding in TOTK
-Get a lay of the land with an introductory overview, setting the stage for your modding escapades.
-
-### 2. Prerequisites
-For this guide, you will need a basic understanding of the [ResourceSizeTable](/Guides/restbl-guide.md), as well as a basic understanding of [Blender](https://www.blender.org/).
-
-#### 2.1 Required Software
-Equip yourself with the essential tools, including NX Editor, Switch Toolbox, and image editing software. Ensure you have a full TOTK game dump and a basic grasp of RESTBL and Blender.
-
-#### 2.2 Game Dump and File Structure
-Navigate the intricacies of TOTK's file structure, laying the foundation for your modding playground.
-
-#### 2.3 Basic Knowledge of RESTBL and Blender
-Master the basics of RESTBL and Blender, your trusty companions in the world of TOTK modding.
+**Greetings modders!** Whether you're a seasoned enthusiast or a novice explorer, this comprehensive guide is your key to unlocking the world of model swapping in TOTK and *beyond*.
 
 ### 3. Model Preparation
 Before attempting to implement your model in game, we will need to prepare, and curate your model to ensure 100% compatability.
-
-#### 3.1 Obtaining or Creating Models and Textures
-Choose your arsenal: either extract models from BOTW, source them from free model repositories, or craft your own masterpieces.
 
 #### 3.2 Choosing Between Model Swapping and Adding New Models
 Dive into the decision-making process: swap existing models or introduce entirely new creations? The choice is yours.
@@ -32,7 +14,9 @@ Uncover the secrets of ModelInfo within the Actor's Pack File, a crucial aspect 
 
 ## Purpose:
 
-I've decided to make this guide, to ensure nobody else has to experience the struggles I experienced during my learning curve. When I first started, I followed the model swapping guide called ["Model Swapping (Quick N' Dirty)"](https://gamebanana.com/tuts/16170).
+I've decided to make this guide, to ensure nobody else has to experience the struggles I experienced during my learning curve. When I first started, I followed the model swapping guide called:
+
+["Model Swapping (Quick N' Dirty)"](https://gamebanana.com/tuts/16170).
   
 This guide was useful, of course. However, it lacked many key details, pointers, and it was quite vague.
   
@@ -68,7 +52,7 @@ In the context of TotK, a material is a word used to describe a piece of a model
 ## So.. What's The Catch?
 Unfortunately, there is a catch..
 
-Materials are incredibly painful to deal with (until now).
+Materials are incredibly painful to deal with, but hopefully this should make understanding them easier.
 
 Here are some images to help you understand where everything is located in our first requisite, [Switch Toolbox](https://github.com/KillzXGaming/Switch-Toolbox)!
 
@@ -115,18 +99,36 @@ To mitigate this, we must find compatible *`Materials`*, that support your desir
 > It can be seen here: [Material Calculator - The5thTear](https://the5thtear.github.io/TOTK-ModForge/Information/MaterialCalculator/calculator.html)
 
 ## Material Types:
-There are a plethora of material types, but they can be placed into 3 categories.
+There are a *plethora* of *`Material Types`*, but they can be placed into 3 categories.
 
 ### Opaque:
-The first category of materials is a type that does NOT support transparency. Opaque materials are for anything that requires FULL coverage, without holes.
+The first category of *`Materials`* is a type that does **NOT** support transparency. Opaque materials are for anything that requires **FULL** coverage, without transparent parts in the texture.
 
-The Icon in Toolbox looks like this:
-
+The Icon in Toolbox looks like this:  
+![OpaqueIcon](/Guides/ModelSwapping/Assets/Screenshot_154.png)
 
 ### Translucent:
+The second *`Material`* category is a very rare one. This material type supports `Translucency`! This could be used for water, for something glowing, etc..
 
+> Translucency is the term for something that is semi-transparent.
+
+The Icon in Toolbox looks like this:  
+![TranslucentIcon](/Guides/ModelSwapping/Assets/Screenshot_155.png)
 
 ### Transparency Support:
+The third and final *`Material`* category is one that *supports* transparent "Masking". This means that some parts of the texture can be transparent, and some can be opaque. This can be used on clothing, and more..
 
+The Icon in Toolbox looks like this:  
+![TransparentIcon](/Guides/ModelSwapping/Assets/Screenshot_156.png)
+
+## Material Oddities:
+Some materials behave much differently than others do. For example, a simple material for displaying one color, VS the Zonai String material that Mineru uses are very different and function in different ways.
+
+## Fuck around: Find out.
+This is my favorite thing to say whenever somebody asks a modding question. If you don't know the answer to something, then test your theories until you figure it out!
+
+> You have the keys to the castle, now let's open the door...
 
 # Models:
+
+## 
