@@ -7,7 +7,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     display: inline-block; /* Make the header inline-block so the border fits to content */
-    border-bottom: 2px solid #cccccc; /* Light grey line for headers */
+    border-bottom: 1px solid #cccccc; /* Light grey line for headers */
     padding-bottom: 5px;
     margin-bottom: 10px; /* Add some margin below the header */
     padding-right: 15px; /* Add 15px padding to the right of the header text */
@@ -74,4 +74,16 @@ img {
     float: left; /* Float to the left */
     height: calc(100vh - 20px); /* Full height minus the vertical margins */
     overflow-y: auto; /* Add scroll if content is longer than the screen */
+}
+
+blockquote {
+    border-left: 4px solid #cccccc; /* Light grey border on the left */
+    background-color: #2d2d2d; /* Darker background to stand out */
+    color: #cccccc; /* Light grey text color */
+    padding: 0.5em 10px; /* Padding inside the blockquote */
+    margin: 0; /* Resetting margins */
+    margin-left: 20px; /* Space before blockquote */
+    margin-top: 10px; /* Space above blockquote */
+    margin-bottom: 10px; /* Space below blockquote */
+    font-style: italic; /* Typically blockquotes are italicized */
 }
