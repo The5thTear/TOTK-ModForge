@@ -10,23 +10,23 @@ document.addEventListener('DOMContentLoaded', function() {
             const htmlContent = marked.parse(markdown);
             markdownContainer.innerHTML = htmlContent;
 
-            // Code to create markers must be here to ensure headers are available in the DOM
+            // Create markers after the markdown content is loaded
             const headers = document.querySelectorAll('#markdown-container h1, #markdown-container h2');
-            headers.forEach(header => {
+            headers.forEach((header, index) => {
                 const marker = document.createElement('div');
                 marker.classList.add('marker');
-                const headerPosition = header.offsetTop / markdownContainer.scrollHeight * 100;
+                const headerPosition = (header.offsetTop + header.clientHeight / 2) / markdownContainer.scrollHeight * 100;
                 marker.style.top = headerPosition + '%';
+                marker.textContent = header.textContent; // Set the text content of the marker
 
                 marker.addEventListener('click', () => {
-                    window.scrollTo(0, header.offsetTop);
+                    window.scrollTo({ top: header.offsetTop, behavior: 'smooth' });
                 });
 
                 navigationContainer.appendChild(marker);
             });
         })
         .catch(error => console.error('Error fetching Markdown:', error));
-
     // Zoom in button event listener
     document.getElementById('zoom-in').addEventListener('click', function() {
         scale += 0.1;

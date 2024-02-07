@@ -162,19 +162,26 @@ a:active {
     position: fixed;
     right: 0;
     top: 0;
-    width: 20px; /* Width of the scrollbar */
+    width: 20px; /* Adjust as needed */
     height: 100%;
-    background: #333; /* Dark background for the scrollbar */
-    z-index: 2000; /* Ensure it's above other content */
+    background: #333;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .marker {
-    width: 10px;
-    height: 10px;
-    background: #fff;
-    position: absolute;
-    left: -10px; /* Align markers to the left of the scrollbar */
-    border-radius: 50%;
+    font-family: 'Hylia Serif', sans-serif;
+    color: #ffffff;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    user-select: none;
     cursor: pointer;
+    padding: 5px 0; /* Adjust as needed */
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     /* Additional styles for the markers */
 }
