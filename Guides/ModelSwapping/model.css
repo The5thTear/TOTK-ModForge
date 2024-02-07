@@ -84,6 +84,7 @@ img {
     float: left; /* Float to the left */
     height: calc(100vh - 20px); /* Full height minus the vertical margins */
     overflow-y: auto; /* Add scroll if content is longer than the screen */
+    overflow: visible; /* This should be set to ensure contents can be seen outside the container */
 }
 
 blockquote {
@@ -122,9 +123,10 @@ a:active {
 
 .zoom-controls {
     position: absolute;
-    top: 10px; /* Adjust as necessary for your layout */
-    right: 10px; /* Adjust as necessary for your layout */
-    z-index: 10; /* Ensure the controls appear above other content */
+    top: 0; /* Adjust this value as needed */
+    right: 0; /* Adjust this value as needed */
+    z-index: 1000; /* Higher value to ensure it's above other content */
+    /* ... other styles ... */
 }
 
 .zoom-controls button {
