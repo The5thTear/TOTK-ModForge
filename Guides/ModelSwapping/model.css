@@ -1,12 +1,17 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* or Arial, sans-serif; based on your preference */
     line-height: 1.6;
+    background-color: #1f1f1f; /* Dark background */
+    color: #cccccc; /* Light grey text */
 }
 
 h1, h2, h3, h4, h5, h6 {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid #cccccc; /* Light grey line for headers */
+    color: #cccccc; /* Light grey text for headers */
     padding-bottom: 5px;
     font-weight: bold;
+    margin-top: 20px; /* Adding some spacing to the top of headers */
+    padding-top: 20px; /* Adding padding to the top for a better look */
 }
 
 strong {
@@ -18,9 +23,10 @@ em {
 }
 
 pre, code {
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    padding: 5px;
+    background-color: #2d2d2d; /* Slightly lighter dark shade for code blocks */
+    border: 1px solid #3c3c3c; /* Border color for code blocks */
+    color: #cccccc; /* Light grey text for code */
+    padding: 10px; /* More padding for readability */
     font-family: 'Courier New', monospace;
     display: block;
     margin: 1em 0;
@@ -31,15 +37,15 @@ img {
     height: auto;
     display: block;
     margin: 20px 0;
-    box-shadow: 0 0 5px #ccc;
-    border: 1px solid #ddd;
+    box-shadow: 0 0 5px #3c3c3c; /* Shadow for images */
+    border: 1px solid #3c3c3c; /* Border color for images */
 }
 
-/* For embeds, you would need a class or an identifier for the embedded content */
+/* Styles for embedded content */
 .embed {
-    border: 1px solid #ddd;
+    border: 1px solid #3c3c3c;
     padding: 5px;
     margin: 20px 0;
+    background-color: #2d2d2d; /* Background for embeds */
+    color: #cccccc; /* Text color for embeds */
 }
-
-/* Replicate the specific colors, sizes, and any additional styling from the screenshot where applicable */
