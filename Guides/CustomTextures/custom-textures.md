@@ -57,11 +57,11 @@ See Here: [Section 2 - Texture Import Formats](#texture-import-formats)
   
 > *Weapon_Sword_125 - Forest Dwellers Sword - Specular Map (B&W)
   
-![B&W Specular Map](/Assets/GuideImages/custom-textures/Weapon_Sword_125_Spm.png)  
+![B&W Specular Map](/Guides/CustomTextures/Assets/Weapon_Sword_125_Spm.png)  
   
 > *Weapon_Sword_113 - Knight's Broadsword - Specular Map (Blue)
   
-![Blue Specular Map](/Assets/GuideImages/custom-textures/Weapon_Sword_113_Spm.png)  
+![Blue Specular Map](/Guides/CustomTextures/Assets/Weapon_Sword_113_Spm.png)  
   
 ### Editing the black and white maps is straightforward (with white being the most shiny and black (transparency) being the least);
   
@@ -91,11 +91,11 @@ See Here: [Section 2 - Texture Import Formats](#texture-import-formats)
   
 > *Weapon_Sword_166 - Gloom Sword - Nrm (Purple-ish)*
 
-![Normal Maps: Purple-ish!](/Assets/GuideImages/custom-textures/Weapon_Sword_166_Nrm.png)  
+![Normal Maps: Purple-ish!](/Guides/CustomTextures/Assets/Weapon_Sword_166_Nrm.png)  
   
 > *Weapon_Sword_163 - Strong Zonaite Sword - Nrm (Golden)*
 
-![Normal Maps: Golden!](/Assets/GuideImages/custom-textures/Weapon_Sword_163_Nrm.png)  
+![Normal Maps: Golden!](/Guides/CustomTextures/Assets/Weapon_Sword_163_Nrm.png)  
   
 ### Emission Maps:
 
@@ -109,21 +109,21 @@ For making things emissive, see the [Materials (not done)]() guide.
 
 > *Enemy_LikeLike_Fire - Fire Like - Body_WeakPoint_Emc*  
   
-![LikeLike: Texture Artifacts!](/Assets/GuideImages/custom-textures/Enemy_LikeLike_Fire_Body_Weak_Emc.png)  
+![LikeLike: Texture Artifacts!](/Guides/CustomTextures/Assets/Enemy_LikeLike_Fire_Body_Weak_Emc.png)  
 
 > *Item_Parasail - Twilight Fabric - Item_Parasail_Fabric_Emc.38*  
   
-![Parasail: Twilight Fabric!](/Assets/GuideImages/custom-textures/Item_Parasail_Fabric_Emc.38.png)  
+![Parasail: Twilight Fabric!](/Guides/CustomTextures/Assets/Item_Parasail_Fabric_Emc.38.png)  
 
 ### There is also another thing to keep in mind, some emission is controlled by the [Albedo](#albedo) texture, as well as the Emc/Emm texture, (co-dependance)!:
 
 > *Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Alb*  
   
-![Albedo: Related To Emm!](/Assets/GuideImages/custom-textures/Weapon_Sword_164_Blade_Alb.png)  
+![Albedo: Related To Emm!](/Guides/CustomTextures/Assets/Weapon_Sword_164_Blade_Alb.png)  
 
 > *Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Emm*  
   
-![Emission: Related To Alb!](/Assets/GuideImages/custom-textures/Weapon_Sword_164_Blade_Emm.png)  
+![Emission: Related To Alb!](/Guides/CustomTextures/Assets/Weapon_Sword_164_Blade_Emm.png)  
 
 >In this special case, the albedo texture and emission texture are co-dependant! If you were to make the Albedo texture completely green, without changing the emission, nothing would change, and vice versa.  
   
@@ -198,7 +198,7 @@ When importing a texture, PLEASE check the alpha option:
   
 > Toolbox: Alpha Import Setting
   
-![Toolbox: Don't forget this!](/Assets/GuideImages/custom-textures/Screenshot_695.png)  
+![Toolbox: Don't forget this!](/Guides/CustomTextures/Assets/Screenshot_695.png)  
 
 ## RESTBL Tool Usage:
 See the restbl tool guide here: [RESTBL-GUIDE](/Guides/restbl-guide.md)

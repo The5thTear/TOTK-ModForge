@@ -108,6 +108,25 @@ When you use a *`Material`* with a *`Skin Count`* incompatible with an objects *
 
 ![BrokenMesh](/Guides/ModelSwapping/Assets/Screenshot_.png)
 
+To mitigate this, we must find compatible *`Materials`*, that support your desired "*Texture Types*", with a compatible *`Skin Count`*.
+
+*Luckily*, I have created a tool to simplify this process and make it much easier.
+
+> It can be seen here: [Material Calculator - The5thTear](https://the5thtear.github.io/TOTK-ModForge/Information/MaterialCalculator/calculator.html)
+
+## Material Types:
+There are a plethora of material types, but they can be placed into 3 categories.
+
+### Opaque:
+The first category of materials is a type that does NOT support transparency. Opaque materials are for anything that requires FULL coverage, without holes.
+
+The Icon in Toolbox looks like this:
+
+
+### Translucent:
+
+
+### Transparency Support:
 
 
 # Models:
