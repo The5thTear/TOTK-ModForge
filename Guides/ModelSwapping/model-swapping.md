@@ -1,16 +1,25 @@
 # Ultimate TOTK Modding Guide - Model Swapping + Materials
 
-**Greetings modders!** Whether you're a seasoned enthusiast or a novice explorer, this comprehensive guide is your key to unlocking the world of model swapping in TOTK and *beyond*.
+**Greetings modders!**   
+  
+Whether you're a seasoned enthusiast or a novice explorer, this comprehensive guide is your key to unlocking the world of model swapping in TOTK and *beyond*.
 
-### 3. Model Preparation
-Before attempting to implement your model in game, we will need to prepare, and curate your model to ensure 100% compatability.
-
-#### 3.2 Choosing Between Model Swapping and Adding New Models
-Dive into the decision-making process: swap existing models or introduce entirely new creations? The choice is yours.
-
-#### 3.3 Understanding ModelInfo in the Actor's Pack File
-Uncover the secrets of ModelInfo within the Actor's Pack File, a crucial aspect of successful model integration.
-
+- [Ultimate TOTK Modding Guide - Model Swapping + Materials](#ultimate-totk-modding-guide---model-swapping--materials)
+  - [Purpose:](#purpose)
+  - [Background:](#background)
+- [Materials:](#materials)
+  - [What are they?](#what-are-they)
+  - [So.. What's The Catch?](#so-whats-the-catch)
+  - [Skin Counts : Welcome To Hell.](#skin-counts--welcome-to-hell)
+  - [Why Does It Matter?](#why-does-it-matter)
+  - [Material Types:](#material-types)
+    - [Opaque:](#opaque)
+    - [Translucent:](#translucent)
+    - [Transparency Support:](#transparency-support)
+  - [Material Oddities:](#material-oddities)
+  - [Fuck around: Find out.](#fuck-around-find-out)
+- [Models:](#models)
+  - [](#)
 
 ## Purpose:
 
