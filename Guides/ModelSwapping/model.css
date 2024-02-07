@@ -74,6 +74,7 @@ img {
 }
 
 #markdown-container {
+    position: relative;
     width: 55%; /* Set the width to take up half of the screen */
     margin-left: 20px; /* 20 pixels space from the left */
     margin-top: 10px; /* 10 pixels space from the top */
@@ -117,4 +118,19 @@ a:hover {
 /* Selected link */
 a:active {
     color: #ffffff; /* Black color for active links */
+}
+
+.zoom-controls {
+    position: absolute;
+    top: 10px; /* Adjust as necessary for your layout */
+    right: 10px; /* Adjust as necessary for your layout */
+    z-index: 10; /* Ensure the controls appear above other content */
+}
+
+.zoom-controls button {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+    margin-left: 5px;
+    /* additional styling... */
 }

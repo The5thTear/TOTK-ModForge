@@ -8,3 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error fetching Markdown:', error));
 });
+
+let scale = 1; // base scale level
+
+document.getElementById('zoom-in').addEventListener('click', function() {
+    scale += 0.1;
+    markdownContainer.style.transform = 'scale(' + scale + ')';
+});
+
+document.getElementById('zoom-out').addEventListener('click', function() {
+    scale -= 0.1;
+    if (scale < 0.1) { scale = 0.1; } // prevent container from becoming too small
+    markdownContainer.style.transform = 'scale(' + scale + ')';
+});
