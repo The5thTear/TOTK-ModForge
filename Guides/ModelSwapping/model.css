@@ -74,15 +74,21 @@ img {
 }
 
 #markdown-container {
-    width: 50%; /* Set the width to take up half of the screen */
-    margin-left: 20px; /* 20 pixels space from the left */
-    margin-top: 10px; /* 10 pixels space from the top */
-    margin-bottom: 10px; /* 10 pixels space from the bottom */
-    padding: 10px; /* Padding inside the container */
-    box-sizing: border-box; /* Include padding in the width calculation */
-    float: left; /* Float to the left */
-    height: calc(100vh - 20px); /* Full height minus the vertical margins */
-    overflow-y: auto; /* Add scroll if content is longer than the screen */
+    width: 50%;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    float: left;
+    height: calc(100vh - 20px);
+    overflow-y: auto;
+}
+
+#main-title {
+    /* Ensuring the main title is not affected by the markdown header styles */
+    font-size: 2em; /* Or whatever size you prefer */
+    margin-bottom: 0.5em; /* Add some space below the title */
 }
 
 blockquote {

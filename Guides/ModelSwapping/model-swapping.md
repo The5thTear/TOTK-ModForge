@@ -1,5 +1,3 @@
-# Ultimate TOTK Modding Guide - Model Swapping + Materials
-
 **Greetings modders!** Whether you're a seasoned enthusiast or a novice explorer, this comprehensive guide is your key to unlocking the world of model swapping in TOTK and *beyond*.
 
 ### 3. Model Preparation
