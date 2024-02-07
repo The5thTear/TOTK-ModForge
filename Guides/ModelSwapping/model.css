@@ -157,3 +157,24 @@ a:active {
 .zoom-controls button:hover {
     background-color: #5a5a5a; /* Slightly darker grey when hovered */
 }
+
+#navigation-container {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 20px; /* Width of the scrollbar */
+    height: 100%;
+    background: #333; /* Dark background for the scrollbar */
+    z-index: 2000; /* Ensure it's above other content */
+}
+
+.marker {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    position: absolute;
+    left: -10px; /* Align markers to the left of the scrollbar */
+    border-radius: 50%;
+    cursor: pointer;
+    /* Additional styles for the markers */
+}
