@@ -6,13 +6,37 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    display: inline-block; /* Make the header inline-block so the border fits to content */
     border-bottom: 2px solid #cccccc; /* Light grey line for headers */
-    color: #cccccc; /* Light grey text for headers */
     padding-bottom: 5px;
-    font-weight: bold;
-    margin-top: 20px; /* Adding some spacing to the top of headers */
-    padding-top: 20px; /* Adding padding to the top for a better look */
+    margin-bottom: 10px; /* Add some margin below the header */
+    padding-right: 15px; /* Add 15px padding to the right of the header text */
 }
+
+/* Style code blocks */
+pre, code {
+    display: inline-block; /* Make code blocks inline-block to fit content */
+    white-space: pre-wrap; /* Allows the text to wrap */
+    word-break: break-word; /* Breaks the words at the end of the line */
+    background-color: #2d2d2d;
+    border: 1px solid #3c3c3c;
+    color: #cccccc;
+    padding: 5px;
+    margin: 0; /* Remove default margin */
+    vertical-align: middle; /* Align with the baseline of the surrounding text */
+    overflow: auto; /* Adds scrolling to the code block if content is too wide */
+    max-width: 100%; /* Ensures it doesn't overflow horizontally */
+}
+
+/* If you are using 'pre' tags inside 'code', you may need to reset some styles */
+pre code {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    max-width: initial;
+}
+
 
 strong {
     font-weight: bold;
@@ -20,16 +44,6 @@ strong {
 
 em {
     font-style: italic;
-}
-
-pre, code {
-    background-color: #2d2d2d; /* Slightly lighter dark shade for code blocks */
-    border: 1px solid #3c3c3c; /* Border color for code blocks */
-    color: #cccccc; /* Light grey text for code */
-    padding: 10px; /* More padding for readability */
-    font-family: 'Courier New', monospace;
-    display: block;
-    margin: 1em 0;
 }
 
 img {
@@ -48,4 +62,16 @@ img {
     margin: 20px 0;
     background-color: #2d2d2d; /* Background for embeds */
     color: #cccccc; /* Text color for embeds */
+}
+
+#markdown-container {
+    width: 50%; /* Set the width to take up half of the screen */
+    margin-left: 20px; /* 20 pixels space from the left */
+    margin-top: 10px; /* 10 pixels space from the top */
+    margin-bottom: 10px; /* 10 pixels space from the bottom */
+    padding: 10px; /* Padding inside the container */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    float: left; /* Float to the left */
+    height: calc(100vh - 20px); /* Full height minus the vertical margins */
+    overflow-y: auto; /* Add scroll if content is longer than the screen */
 }
