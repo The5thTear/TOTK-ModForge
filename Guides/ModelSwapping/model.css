@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Hylia Serif', sans-serif;
     font-weight: normal;
     display: inline-block; /* Make the header inline-block so the border fits to content */
-    border-bottom: 1px solid #cccccc; /* Light grey line for headers */
+    border-bottom: 1px solid #878787; /* Light grey line for headers */
     padding-bottom: 5px;
     margin-bottom: 10px; /* Add some margin below the header */
     padding-right: 15px; /* Add 15px padding to the right of the header text */
