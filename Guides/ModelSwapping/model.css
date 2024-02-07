@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     line-height: 1.6;
     background-color: #1f1f1f; /* Dark background */
     color: #cccccc; /* Light grey text */
@@ -39,14 +39,25 @@ pre, code {
     max-width: 100%; /* Ensures it doesn't overflow horizontally */
 }
 
-/* If you are using 'pre' tags inside 'code', you may need to reset some styles */
-pre code {
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: none;
-    max-width: initial;
+/* Inline code blocks */
+code {
+    background-color: #2d2d2d; /* Dark background for contrast */
+    color: #cccccc; /* Light text for readability */
+    padding: 2px 4px; /* Reduced vertical padding and horizontal padding */
+    font-size: 0.85em; /* Smaller font size */
+    border-radius: 3px; /* Optional: rounded corners for aesthetic */
+    font-family: 'Courier New', monospace; /* Monospaced font for code */
+    line-height: normal; /* Adjust this to reduce the space between lines of text */
 }
+
+/* Block-level code blocks (within pre elements) may have different styling */
+pre code {
+    padding: 5px; /* More padding for block-level code */
+    display: block;
+    overflow-x: auto; /* Horizontal scrolling for long lines of code */
+    /* other styles... */
+}
+
 
 
 strong {
