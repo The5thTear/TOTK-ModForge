@@ -13,6 +13,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: 'Hylia Serif', sans-serif;
+    font-weight: normal;
     display: block; /* This will ensure that the header takes up the full line */
     margin-top: 20px; /* You can adjust the top margin as needed */
     margin-bottom: 10px; /* You can adjust the bottom margin as needed */
