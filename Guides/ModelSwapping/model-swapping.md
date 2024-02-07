@@ -19,7 +19,7 @@ Whether you're a seasoned enthusiast or a novice explorer, this comprehensive gu
   - [Material Oddities:](#material-oddities)
   - [Fuck around: Find out.](#fuck-around-find-out)
 - [Models:](#models)
-  - [](#)
+  - [Desired Results?](#desired-results)
 
 ## Purpose:
 
@@ -140,4 +140,4 @@ This is my favorite thing to say whenever somebody asks a modding question. If y
 
 # Models:
 
-## 
+## Desired Results?
