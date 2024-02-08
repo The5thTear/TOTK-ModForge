@@ -134,7 +134,7 @@ The Icon in *`Toolbox`* looks like this:
 ![TransparentIcon](./Assets/Screenshot_156.png)
 
 ## Material Oddities:
-Some materials behave much differently than others do. For example, a simple material for displaying one color, VS the {#00ff73}Zonai String{#00ff73} material that Mineru uses are very different and function in different ways.
+Some materials behave much differently than others do. For example, a simple material for displaying one color, VS the {#00ff73}Zonai String} material that Mineru uses are very different and function in different ways.
 
 ## Fuck around: Find out.
 This is my favorite thing to say whenever somebody asks a modding question. If you don't know the answer to something, then test your theories until you figure it out!

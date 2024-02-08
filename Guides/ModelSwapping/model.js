@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to replace color tags with span elements
     function processColors(text) {
-        return text.replace(/\{#([0-9a-fA-F]{6})\}/g, (match, color) => {
-            return `<span style="color: #${color}">`;
+        return text.replace(/\{#([0-9a-fA-F]{6})\}(.*?)\}/g, (match, color, content) => {
+            return `<span style="color: #${color}">${content}</span>`;
         });
     }
 
