@@ -3,11 +3,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const navigationContainer = document.getElementById('navigation-container');
     let scale = 1; // base scale level
 
+    // Function to extract color from the color tag
+    function extractColor(text) {
+        const colorRegex = /\{#([0-9a-fA-F]{6})\}/;
+        const match = text.match(colorRegex);
+        return match ? '#' + match[1] : null;
+    }
+
+    // Function to replace color tags with span elements
+    function processColors(text) {
+        return text.replace(/\{#([0-9a-fA-F]{6})\}/g, (match, color) => {
+            return `<span style="color: #${color}">`;
+        });
+    }
+
     // Fetch and display the markdown content
     fetch('model-swapping.md')
         .then(response => response.text())
         .then(markdown => {
-            const htmlContent = marked.parse(markdown);
+            // Process color tags in the markdown content
+            const processedMarkdown = processColors(markdown);
+            const htmlContent = marked.parse(processedMarkdown);
             markdownContainer.innerHTML = htmlContent;
 
             // Create markers after the markdown content is loaded
@@ -15,9 +31,18 @@ document.addEventListener('DOMContentLoaded', function() {
             headers.forEach((header, index) => {
                 const marker = document.createElement('div');
                 marker.classList.add('marker');
+
+                // Extract color from the text content
+                const headerColor = extractColor(header.textContent);
+
+                // Assign the extracted color to the marker
+                if (headerColor) {
+                    marker.style.backgroundColor = headerColor;
+                }
+
                 const headerPosition = (header.offsetTop + header.clientHeight / 2) / markdownContainer.scrollHeight * 100;
                 marker.style.top = headerPosition + '%';
-                marker.textContent = header.textContent; // Set the text content of the marker
+                marker.innerHTML = header.innerHTML; // Set the HTML content of the marker
 
                 marker.addEventListener('click', () => {
                     window.scrollTo({ top: header.offsetTop, behavior: 'smooth' });
@@ -27,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         })
         .catch(error => console.error('Error fetching Markdown:', error));
+
     // Zoom in button event listener
     document.getElementById('zoom-in').addEventListener('click', function() {
         scale += 0.1;

@@ -124,17 +124,17 @@ The second *`Material`* category is a very rare one. This material type supports
 
 > Translucency is the term for something that is semi-transparent.
 
-The Icon in Toolbox looks like this:  
+The Icon in *`Toolbox`* looks like this:  
 ![TranslucentIcon](./Assets/Screenshot_155.png)
 
 ### Transparency Support:
-The third and final *`Material`* category is one that *supports* transparent "Masking". This means that some parts of the texture can be transparent, and some can be opaque. This can be used on clothing, and more..
+The third and final *`Material`* category is one that *supports* transparent "Masking". This means that some parts of the texture *can* be transparent, and some can be opaque. This can be used on clothing, and **more..**
 
-The Icon in Toolbox looks like this:  
+The Icon in *`Toolbox`* looks like this:  
 ![TransparentIcon](./Assets/Screenshot_156.png)
 
 ## Material Oddities:
-Some materials behave much differently than others do. For example, a simple material for displaying one color, VS the Zonai String material that Mineru uses are very different and function in different ways.
+Some materials behave much differently than others do. For example, a simple material for displaying one color, VS the {#00ff73}Zonai String{#00ff73} material that Mineru uses are very different and function in different ways.
 
 ## Fuck around: Find out.
 This is my favorite thing to say whenever somebody asks a modding question. If you don't know the answer to something, then test your theories until you figure it out!
@@ -155,6 +155,8 @@ The ModelInfo Swap is the most simple of 3 methods. A good example of said model
 This mod is made with a simple ModelInfoRef edit!
 
 In the .pack.zs file related to the Phantom Ganon enemy, located under `Component/ModelInfo`, there is a bgyml file containing data relavant to the model the Actor uses.
+
+By changing the reference to the model from the "gloomified" Phantom Ganon, to the regular variant, the Actor uses the regular model instead, giving us our end result.
 
 ### Model Swap:
 
