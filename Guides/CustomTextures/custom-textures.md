@@ -7,13 +7,22 @@ Greetings modders! Whether you're new or familiar with textures, this comprehens
   - [Type Use Cases + Logistics:](#type-use-cases--logistics)
     - [Albedo:](#albedo)
     - [Specular Maps:](#specular-maps)
+  - [Specular textures are incredibly simple, and there are only 2 valuable pieces of info regarding them:](#specular-textures-are-incredibly-simple-and-there-are-only-2-valuable-pieces-of-info-regarding-them)
+    - [Editing the black and white maps is straightforward (with white being the most shiny and black (transparency) being the least);](#editing-the-black-and-white-maps-is-straightforward-with-white-being-the-most-shiny-and-black-transparency-being-the-least)
     - [Normal Maps:](#normal-maps)
+    - [Normal maps are a type of texture used in 3D modeling to simulate the illusion of complex surface details without increasing the model's geometric complexity.](#normal-maps-are-a-type-of-texture-used-in-3d-modeling-to-simulate-the-illusion-of-complex-surface-details-without-increasing-the-models-geometric-complexity)
+      - [Here are examples of both types:](#here-are-examples-of-both-types)
     - [Emission Maps:](#emission-maps)
+    - [Here is an example of the two common emissive textures:](#here-is-an-example-of-the-two-common-emissive-textures)
+    - [There is also another thing to keep in mind, some emission is controlled by the Albedo texture, as well as the Emc/Emm texture, (co-dependance)!:](#there-is-also-another-thing-to-keep-in-mind-some-emission-is-controlled-by-the-albedo-texture-as-well-as-the-emcemm-texture-co-dependance)
+  - [So for this case, if you wanted to change the pattern of emission, you would have to change both textures!](#so-for-this-case-if-you-wanted-to-change-the-pattern-of-emission-you-would-have-to-change-both-textures)
+  - [If you wanted the entire mesh to glow, you would have to make the Albedo fully green, and the Emission completely white!](#if-you-wanted-the-entire-mesh-to-glow-you-would-have-to-make-the-albedo-fully-green-and-the-emission-completely-white)
     - [Gn(#):](#gn)
     - [em0:](#em0)
-
+    - [Now that you have a basic understanding of how the game handles textures, let's discuss creating them.](#now-that-you-have-a-basic-understanding-of-how-the-game-handles-textures-lets-discuss-creating-them)
   - [Texture Import Formats:](#texture-import-formats)
     - [Import Types](#import-types)
+      - [I will now provide a list of textures, and the reccomended import types to avoid issues:](#i-will-now-provide-a-list-of-textures-and-the-reccomended-import-types-to-avoid-issues)
   - [STB Alpha Option:](#stb-alpha-option)
   - [RESTBL Tool Usage:](#restbl-tool-usage)
 
@@ -57,11 +66,11 @@ See Here: [Section 2 - Texture Import Formats](#texture-import-formats)
   
 > *Weapon_Sword_125 - Forest Dwellers Sword - Specular Map (B&W)
   
-![B&W Specular Map](/Guides/CustomTextures/Assets/Weapon_Sword_125_Spm.png)  
+![B&W Specular Map](./Assets/Weapon_Sword_125_Spm.png)  
   
 > *Weapon_Sword_113 - Knight's Broadsword - Specular Map (Blue)
   
-![Blue Specular Map](/Guides/CustomTextures/Assets/Weapon_Sword_113_Spm.png)  
+![Blue Specular Map](./Assets/Weapon_Sword_113_Spm.png)  
   
 ### Editing the black and white maps is straightforward (with white being the most shiny and black (transparency) being the least);
   
@@ -91,11 +100,11 @@ See Here: [Section 2 - Texture Import Formats](#texture-import-formats)
   
 > *Weapon_Sword_166 - Gloom Sword - Nrm (Purple-ish)*
 
-![Normal Maps: Purple-ish!](/Guides/CustomTextures/Assets/Weapon_Sword_166_Nrm.png)  
+![Normal Maps: Purple-ish!](./Assets/Weapon_Sword_166_Nrm.png)  
   
 > *Weapon_Sword_163 - Strong Zonaite Sword - Nrm (Golden)*
 
-![Normal Maps: Golden!](/Guides/CustomTextures/Assets/Weapon_Sword_163_Nrm.png)  
+![Normal Maps: Golden!](./Assets/Weapon_Sword_163_Nrm.png)  
   
 ### Emission Maps:
 
@@ -109,21 +118,21 @@ For making things emissive, see the [Materials (not done)]() guide.
 
 > *Enemy_LikeLike_Fire - Fire Like - Body_WeakPoint_Emc*  
   
-![LikeLike: Texture Artifacts!](/Guides/CustomTextures/Assets/Enemy_LikeLike_Fire_Body_Weak_Emc.png)  
+![LikeLike: Texture Artifacts!](./Assets/Enemy_LikeLike_Fire_Body_Weak_Emc.png)  
 
 > *Item_Parasail - Twilight Fabric - Item_Parasail_Fabric_Emc.38*  
   
-![Parasail: Twilight Fabric!](/Guides/CustomTextures/Assets/Item_Parasail_Fabric_Emc.38.png)  
+![Parasail: Twilight Fabric!](./Assets/Item_Parasail_Fabric_Emc.38.png)  
 
 ### There is also another thing to keep in mind, some emission is controlled by the [Albedo](#albedo) texture, as well as the Emc/Emm texture, (co-dependance)!:
 
 > *Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Alb*  
   
-![Albedo: Related To Emm!](/Guides/CustomTextures/Assets/Weapon_Sword_164_Blade_Alb.png)  
+![Albedo: Related To Emm!](./Assets/Weapon_Sword_164_Blade_Alb.png)  
 
 > *Weapon_Sword_164 - Mighty Zonaite Sword - Blade_Emm*  
   
-![Emission: Related To Alb!](/Guides/CustomTextures/Assets/Weapon_Sword_164_Blade_Emm.png)  
+![Emission: Related To Alb!](./Assets/Weapon_Sword_164_Blade_Emm.png)  
 
 >In this special case, the albedo texture and emission texture are co-dependant! If you were to make the Albedo texture completely green, without changing the emission, nothing would change, and vice versa.  
   
@@ -198,7 +207,7 @@ When importing a texture, PLEASE check the alpha option:
   
 > Toolbox: Alpha Import Setting
   
-![Toolbox: Don't forget this!](/Guides/CustomTextures/Assets/Screenshot_695.png)  
+![Toolbox: Don't forget this!](./Assets/Screenshot_695.png)  
 
 ## RESTBL Tool Usage:
 See the restbl tool guide here: [RESTBL-GUIDE](/Guides/restbl-guide.md)
