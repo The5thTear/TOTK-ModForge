@@ -20,6 +20,9 @@ Whether you're a seasoned enthusiast or a novice explorer, this comprehensive gu
   - [Fuck around: Find out.](#fuck-around-find-out)
 - [Models:](#models)
   - [Desired Results?](#desired-results)
+    - [ModelInfo Swap:](#modelinfo-swap)
+    - [Model Swap:](#model-swap)
+    - [Custom Actor Model Swap:](#custom-actor-model-swap)
 
 ## Purpose:
 
@@ -141,3 +144,20 @@ This is my favorite thing to say whenever somebody asks a modding question. If y
 # Models:
 
 ## Desired Results?
+When modelling in TotK, there are 3 different ways to do so. 
+
+### ModelInfo Swap:
+
+The ModelInfo Swap is the most simple of 3 methods. A good example of said model swap would be the "Phantom Ganon Glow Removal" mod by Aster.
+
+![GlowRemovalMod](./Assets/655025926ef6d.jpg)
+
+This mod is made with a simple ModelInfoRef edit!
+
+In the .pack.zs file related to the Phantom Ganon enemy, located under `Component/ModelInfo`, there is a bgyml file containing data relavant to the model the Actor uses.
+
+### Model Swap:
+
+### Custom Actor Model Swap:
+
+Now let's go into extreme detail for all of these methods. 
