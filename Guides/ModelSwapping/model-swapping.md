@@ -82,7 +82,7 @@ This screenshot highlights the *`Shader Parameters`* tab! Here you can find and 
 
 > Keep in mind each material has its own parameters!
 
-The {#ffffff}white arrow} is pointing to the parameter used for emmision strength *(`const_value_0` on emissive materials)*. While the {#9900ff}green bracket} is highlighting the shaders *`Const_Color`* parameters, which in some cases control emission color.
+The {#ffffff}white arrow} is pointing to the parameter used for emmision strength *(`const_value_0` on emissive materials)*. While the {#37ff29}green bracket} is highlighting the shaders *`Const_Color`* parameters, which in some cases control emission color.
 
 ![ObjectRelations](./Assets/Screenshot_152.png)
   
