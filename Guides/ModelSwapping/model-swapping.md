@@ -30,7 +30,7 @@ I've decided to make this guide, to ensure nobody else has to experience the str
 
 ["Model Swapping (Quick N' Dirty)"](https://gamebanana.com/tuts/16170).
   
-This guide was useful, of course. However, it lacked many key details, pointers, and it was quite vague.
+This guide was useful, of course. However, it lacked many key details, pointers, and it was {#ff0000}quite vague}.
   
 The screenshots, and other images provided in said guide were terrible, zoomed out, blurry, or just plain misleading.
 
@@ -70,11 +70,11 @@ Here are some images to help you understand where everything is located in our f
 
 ![BasicLayout](./Assets/Screenshot_150.png)
 
-Here, the purple circle is surrounding the model. The model's "wireframe" is being diplayed since we have the "Mt_Body" material selected. In Toolbox, when selecting a material, the affected verticies are displayed to help the user visualize what they're doing.
+Here, the {#9900ff}purple circle} is surrounding the model. The model's "wireframe" is being diplayed since we have the "Mt_Body" material selected. In Toolbox, when selecting a material, the affected verticies are displayed to help the user visualize what they're doing.
   
-The pink bracket is highlighting the *`Materials`* tab of the model. Here you can find existing materials, or import them!
+The {#ff00ee}pink bracket} is highlighting the *`Materials`* tab of the model. Here you can find existing materials, or import them!
   
-Finally, the blue brackets are highlighting textures. The bracket on the left highlights every texture that is currently available to Toolbox and/or what textures are currently being utilized by the model. While the right bracket highlights what textures the material you have selected is using.
+Finally, the {#00a2ff}blue brackets} are highlighting textures. The bracket on the left highlights every texture that is currently available to Toolbox and/or what textures are currently being utilized by the model. While the right bracket highlights what textures the material you have selected is using.
 
 ![ShaderParameters](./Assets/Screenshot_151.png)
 
@@ -82,17 +82,17 @@ This screenshot highlights the *`Shader Parameters`* tab! Here you can find and 
 
 > Keep in mind each material has its own parameters!
 
-The white arrow is pointing to the parameter used for emmision strength *(`const_value_0` on emissive materials)*. While the green bracket is highlighting the shaders *`Const_Color`* parameters, which in some cases control emission color.
+The {#ffffff}white arrow} is pointing to the parameter used for emmision strength *(`const_value_0` on emissive materials)*. While the {#9900ff}green bracket} is highlighting the shaders *`Const_Color`* parameters, which in some cases control emission color.
 
 ![ObjectRelations](./Assets/Screenshot_152.png)
   
-In this final image we have 3 important areas. The first thing you should notice (shown by the green arrow) is that we have an **object** selected, *not a material.*
+In this final image we have 3 important areas. The first thing you should notice {#37ff29}(shown by the green arrow)} is that we have an **object** selected, *not a material.*
 
 In this object view, we have some pieces of information *crucial* to finding the right material for the job, as well as assigning said material to the object.
 
-The blue arrow points to the objects "*`Material Information`*", a small field which determines what material is assigned to an object. The material can be changed to anything currently imported into the model by selecting the dropdown and choosing the desired material.
+The {#2990ff}blue arrow} points to the objects "*`Material Information`*", a small field which determines what material is assigned to an object. The material can be changed to anything currently imported into the model by selecting the dropdown and choosing the desired material.
 
-The red arrow is pointing to one of the most confusing fields for beginners... Skin Counts
+The {#ff0000}red arrow} is pointing to one of the most confusing fields for beginners... Skin Counts
 
 ## Skin Counts : Welcome To Hell.
 The term "Skin Count" is used to describe the amount of influence for a single vertex a bone has. The reason an issue is, Nintendo compiles shader code ONLY for what the certain mesh requires.
