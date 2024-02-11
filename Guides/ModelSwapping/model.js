@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to create an image sequence
     function createImageSequence(element) {
-        const images = element.getAttribute('data-images').split(',');
-        const transitionTime = parseInt(element.getAttribute('data-time'), 10);
+        const images = Array.from(element.querySelectorAll('img')).map(img => img.getAttribute('src'));
+        const transitionTime = parseInt(element.getAttribute('time'), 10);
         let currentIndex = 0;
 
         function updateImage() {
