@@ -3,6 +3,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const navigationContainer = document.getElementById('navigation-container');
     let scale = 1; // base scale level
 
+    // Override the marked library to interpret HTML comments as raw HTML
+    const markedOriginal = marked;
+    marked = function (src, opt, callback) {
+        if (opt && opt.html) {
+            return markedOriginal(src, opt, callback);
+        } else {
+            return markedOriginal(src.replace(/<!--([\s\S]+?)-->/g, '<!-- $1 -->'), opt, callback);
+        }
+    };
+
     // Function to extract color from the color tag
     function extractColor(text) {
         const colorRegex = /\{#([0-9a-fA-F]{6})\}/;
@@ -41,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
         updateImage();
     }
 
-
     fetch('model-swapping.md')
         .then(response => response.text())
         .then(markdown => {
@@ -63,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
             customDelimitedMatches.forEach((match, index) => {
                 htmlContent = htmlContent.replace(`{IMAGE_SEQUENCE_${index}}`, match);
             });
-
 
             markdownContainer.innerHTML = htmlContent;
 
