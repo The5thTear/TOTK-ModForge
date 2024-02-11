@@ -3,16 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const navigationContainer = document.getElementById('navigation-container');
     let scale = 1; // base scale level
 
-    // Override the marked library to interpret HTML comments as raw HTML
-    const markedOriginal = marked;
-    marked = function (src, opt, callback) {
-        if (opt && opt.html) {
-            return markedOriginal(src, opt, callback);
-        } else {
-            return markedOriginal(src.replace(/<!--([\s\S]+?)-->/g, '<!-- $1 -->'), opt, callback);
-        }
-    };
-
     // Function to extract color from the color tag
     function extractColor(text) {
         const colorRegex = /\{#([0-9a-fA-F]{6})\}/;
@@ -66,8 +56,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 processedMarkdown = processedMarkdown.replace(match, `{IMAGE_SEQUENCE_${index}}`);
             });
 
-            const htmlContent = marked(processedMarkdown);
+            // Preprocess the Markdown content by converting HTML comments
+            const preprocessedMarkdown = processedMarkdown.replace(/<!--([\s\S]+?)-->/g, '<!-- $1 -->');
 
+            // Use marked to convert the preprocessed Markdown to HTML
+            const htmlContent = marked(preprocessedMarkdown);
 
             // Replace placeholders with actual image sequences
             customDelimitedMatches.forEach((match, index) => {
