@@ -148,18 +148,25 @@ This is my favorite thing to say whenever somebody asks a modding question. If y
 
 ### ModelInfo Swap:
 
-The ModelInfo Swap is the most simple of 3 methods. A good example of said model swap would be the "Phantom Ganon Glow Removal" mod by Aster.
+The ModelInfo Swap is the most simple of 3 methods. A good example of said model swap would be the "**Phantom Ganon Glow Removal**" mod by [***Aster***]().
 
-![GlowRemovalMod](./Assets/655025926ef6d.jpg)
+{[GlowRemovalMod](./Assets/655025926ef6d.jpg), [GlowRemovalMod2](655025926ada3.jpg): Time="3"}{.image-sequence}
 
-This mod is made with a simple ModelInfoRef edit!
 
-In the .pack.zs file related to the Phantom Ganon enemy, located under `Component/ModelInfo`, there is a bgyml file containing data relavant to the model the Actor uses.
+> This mod is made with a simple ModelInfoRef edit!
+
+In the .pack.zs file related to the Phantom Ganon enemy (as well as anything else that uses a model), located under `Component/ModelInfo`, there is a byml file containing data relavant to the model the Actor uses.
 
 By changing the reference to the model from the "gloomified" Phantom Ganon, to the regular variant, the Actor uses the regular model instead, giving us our end result.
 
 ### Model Swap:
 
+The Model Swap is the second most complex method. It involves exporting the model, replacing it, weighting the new model to the armature, exporting with the correct settings, setting up the correct materials, and more!
+
+A good example of model swapping would be "**All Champions**" by [***ATK_SUPPA***](https://gamebanana.com/members/2175315).
+
 ### Custom Actor Model Swap:
+
+A custom actor model swap involves **BOTH** the ModelInfoRef edit method, as well as the Model Swap method.
 
 Now let's go into extreme detail for all of these methods. 
