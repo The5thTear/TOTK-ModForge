@@ -19,7 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
         let currentIndex = 0;
 
         function updateImage() {
-            markdownContainer.innerHTML = `<img src="${images[currentIndex]}" alt="Image">`;
+            const imgElement = document.createElement('img');
+            imgElement.src = images[currentIndex];
+            imgElement.alt = 'Image';
+            markdownContainer.innerHTML = ''; // Clear existing content
+            markdownContainer.appendChild(imgElement);
             currentIndex = (currentIndex + 1) % images.length;
             setTimeout(updateImage, transitionTime * 1000);
         }
