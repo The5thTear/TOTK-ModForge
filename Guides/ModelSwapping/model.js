@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const markdownContainer = document.getElementById('markdown-container');
     const navigationContainer = document.getElementById('navigation-container');
     let scale = 1; // base scale level
@@ -13,15 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to replace color tags with span elements
     function processColors(text) {
         return text.replace(/\{#([0-9a-fA-F]{6})\}(.*?)\}/g, (match, color, content) => {
-            return `<span style="color: #${color}">${content}</span>`;
-        });
-    }
-
-    // Function to extract image sequence information
-    function processImageSequence(text) {
-        return text.replace(/\{\[(.*?)\]: Time="(\d+)"\}\{\.image-sequence\}/g, (match, images, time) => {
-            const imageList = images.split(',').map(image => image.trim());
-            return `<div class="image-sequence" data-images="${imageList.join(',')}" data-time="${time}"></div>`;
+            return `<span style="color: ${color}">${content}</span>`;
         });
     }
 
@@ -43,10 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('model-swapping.md')
         .then(response => response.text())
         .then(markdown => {
-            // Process image sequences
-            const processedMarkdownWithImages = processImageSequence(markdown);
             // Process color tags in the markdown content
-            const processedMarkdown = processColors(processedMarkdownWithImages);
+            const processedMarkdown = processColors(markdown);
             const htmlContent = marked.parse(processedMarkdown);
             markdownContainer.innerHTML = htmlContent;
 
@@ -80,15 +70,15 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => console.error('Error fetching Markdown:', error));
 
     // Zoom in button event listener
-    document.getElementById('zoom-in').addEventListener('click', function() {
+    document.getElementById('zoom-in').addEventListener('click', function () {
         scale += 0.1;
-        markdownContainer.style.transform = 'scale(' + scale + ')';
+        markdownContainer.style.transform = `scale(${scale})`;
     });
 
     // Zoom out button event listener
-    document.getElementById('zoom-out').addEventListener('click', function() {
+    document.getElementById('zoom-out').addEventListener('click', function () {
         scale -= 0.1;
         if (scale < 0.1) { scale = 0.1; }
-        markdownContainer.style.transform = 'scale(' + scale + ')';
+        markdownContainer.style.transform = `scale(${scale})`;
     });
 });
