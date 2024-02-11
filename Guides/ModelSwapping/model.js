@@ -28,15 +28,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
             currentIndex = (currentIndex + 1) % images.length;
 
-            setTimeout(updateImage, transitionTime * 1000);
+            if (currentIndex === 0) {
+                // If it's the last image, remove the current image sequence element from the DOM
+                element.parentNode.removeChild(element);
+            } else {
+                // Continue the image sequence
+                setTimeout(updateImage, transitionTime * 1000);
+            }
         }
 
         // Start the image sequence
         updateImage();
-
-        // Remove the current image sequence element from the DOM after the first image is displayed
-        element.parentNode.removeChild(element);
     }
+
 
     fetch('model-swapping.md')
         .then(response => response.text())
