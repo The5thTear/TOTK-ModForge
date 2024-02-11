@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Use a custom delimiter to prevent the Markdown parser from interpreting image sequences
             const customDelimiter = /<!--image-sequence-->([\s\S]*?)<!--\/image-sequence-->/g;
-            const customDelimitedMatches = processedMarkdown.match(customDelimiter);
+            const customDelimitedMatches = processedMarkdown.match(customDelimiter) || [];
 
             // Replace custom delimited image sequences with a placeholder
             customDelimitedMatches.forEach((match, index) => {
@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
             customDelimitedMatches.forEach((match, index) => {
                 htmlContent = htmlContent.replace(`{IMAGE_SEQUENCE_${index}}`, match);
             });
+
 
             markdownContainer.innerHTML = htmlContent;
 
