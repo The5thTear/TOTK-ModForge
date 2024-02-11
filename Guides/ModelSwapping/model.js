@@ -37,7 +37,23 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(markdown => {
             // Process color tags in the markdown content
             const processedMarkdown = processColors(markdown);
+
+            // Use a custom delimiter to prevent the Markdown parser from interpreting image sequences
+            const customDelimiter = /<!--image-sequence-->([\s\S]*?)<!--\/image-sequence-->/g;
+            const customDelimitedMatches = processedMarkdown.match(customDelimiter);
+
+            // Replace custom delimited image sequences with a placeholder
+            customDelimitedMatches.forEach((match, index) => {
+                processedMarkdown = processedMarkdown.replace(match, `{IMAGE_SEQUENCE_${index}}`);
+            });
+
             const htmlContent = marked.parse(processedMarkdown);
+
+            // Replace placeholders with actual image sequences
+            customDelimitedMatches.forEach((match, index) => {
+                htmlContent = htmlContent.replace(`{IMAGE_SEQUENCE_${index}}`, match);
+            });
+
             markdownContainer.innerHTML = htmlContent;
 
             // Create image sequences after the markdown content is loaded
