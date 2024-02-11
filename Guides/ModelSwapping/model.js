@@ -66,7 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 processedMarkdown = processedMarkdown.replace(match, `{IMAGE_SEQUENCE_${index}}`);
             });
 
-            const htmlContent = marked.parse(processedMarkdown);
+            const htmlContent = marked(processedMarkdown);
+
 
             // Replace placeholders with actual image sequences
             customDelimitedMatches.forEach((match, index) => {
