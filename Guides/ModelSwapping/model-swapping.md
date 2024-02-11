@@ -144,7 +144,7 @@ This is my favorite thing to say whenever somebody asks a modding question. If y
 # Models:
 
 ## Desired Results?
-When modelling in TotK, there are 3 different ways to do so. 
+> When modelling in **TotK**, there are 3 different ways to implement your work. 
 
 ### ModelInfo Swap:
 
