@@ -68,6 +68,7 @@ Materials are incredibly painful to deal with, but hopefully this should make un
 
 Here are some images to help you understand where everything is located in our first requisite, [Switch Toolbox](https://github.com/KillzXGaming/Switch-Toolbox)!
 
+{size}50%{/size}
 ![BasicLayout](./Assets/Screenshot_150.png)
 
 Here, the {#9900ff}purple circle} is surrounding the model. The model's "wireframe" is being diplayed since we have the "Mt_Body" material selected. In Toolbox, when selecting a material, the affected verticies are displayed to help the user visualize what they're doing.
@@ -150,6 +151,7 @@ This is my favorite thing to say whenever somebody asks a modding question. If y
 
 The ModelInfo Swap is the most simple of 3 methods. A good example of said model swap would be the "**Phantom Ganon Glow Removal**" mod by [***Aster***]().
 
+{size}50%{/size}
 <!--image-sequence time="3"-->
 ![GlowRemovalMod](./Assets/655025926ef6d.jpg)
 ![GlowRemovalMod2](./Assets/655025926ada3.jpg)

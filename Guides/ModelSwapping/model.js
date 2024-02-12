@@ -17,6 +17,39 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    function createImageSequenceContainer() {
+        const imageSequenceContainer = document.createElement('div');
+        imageSequenceContainer.classList.add('image-sequence-container');
+        return imageSequenceContainer;
+    }
+    function createImageSequence(images, transitionTime, container, sizeStyle) {
+        let currentIndex = 0;
+        let nextIndex = 1;
+    
+        function updateImage() {
+            const existingImages = container.querySelectorAll('.image-container');
+            existingImages.forEach(img => img.classList.remove('visible'));
+    
+            // Add new image container or make the next one visible
+            if (existingImages.length < images.length) {
+                const imageContainer = document.createElement('div');
+                imageContainer.classList.add('image-container', 'visible');
+                imageContainer.innerHTML = `<img src="${images[currentIndex]}" alt="Image" style="${sizeStyle}">`;
+                container.appendChild(imageContainer);
+            } else {
+                existingImages[nextIndex].classList.add('visible');
+            }
+    
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                nextIndex = (currentIndex + 1) % images.length;
+                updateImage();
+            }, transitionTime);
+        }
+    
+        updateImage();
+    }
+    
     function processSizeTags(text) {
         // Process individual images
         text = text.replace(/{size}(\d+)%{\/size}(.*?)(\!\[.*?\]\(.*?\))/g, (match, size, preText, imageMarkdown) => {
@@ -24,75 +57,35 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     
         // Process image sequences
-        text = text.replace(/{size}(\d+)%{\/size}<!--image-sequence([\s\S]*?)-->/g, (match, size, sequenceContent) => {
-            return `<!--image-sequence style="width: ${size}%; height: auto;"${sequenceContent}-->`;
+        text = text.replace(/{size}(\d+)%{\/size}<!--image-sequence time="(\d+)"-->([\s\S]*?)<!--\/image-sequence-->/g, (match, size, time, sequenceContent) => {
+            return `<!--image-sequence time="${time}" style="width: ${size}%; height: auto;"-->${sequenceContent}<!--/image-sequence-->`;
         });
     
         return text;
     }
-
-    function createImageSequenceContainer() {
-        const imageSequenceContainer = document.createElement('div');
-        imageSequenceContainer.classList.add('image-sequence-container');
-        return imageSequenceContainer;
-    }
-    function createImageSequence(images, transitionTime, container) {
-        let currentIndex = 0;
     
-        function updateImage() {
-            // Ensure only one image container is visible at a time
-            const existingImages = container.querySelectorAll('.image-container');
-            existingImages.forEach((img, index) => {
-                img.classList.remove('visible');
-                img.style.display = 'none'; // Hide all initially
-                if (index === currentIndex) {
-                    img.classList.add('visible');
-                    img.style.display = 'block'; // Show current
-                }
-            });
-    
-            setTimeout(() => {
-                currentIndex = (currentIndex + 1) % images.length;
-                updateImage();
-            }, transitionTime);
-        }
-    
-        // Create and append all image containers initially
-        images.forEach(image => {
-            const imageContainer = document.createElement('div');
-            imageContainer.classList.add('image-container');
-            imageContainer.innerHTML = `<img src="${image}" alt="Image">`;
-            container.appendChild(imageContainer);
-        });
-    
-        updateImage();
-    }
-
     fetch('model-swapping.md')
         .then(response => response.text())
         .then(markdown => {
-            const processedMarkdown = processColors(markdown);
+            let processedMarkdown = processColors(processSizeTags(markdown));
             let htmlContent = marked.parse(processedMarkdown);
-
-            // Insert placeholders for image sequences
-            htmlContent = htmlContent.replace(/<!--image-sequence time="(\d+)"-->([\s\S]*?)<!--\/image-sequence-->/g, () => {
-                const container = createImageSequenceContainer();
-                return container.outerHTML;
-            });
-
             markdownContainer.innerHTML = htmlContent;
-
-            const imageSequenceRegex = /<!--image-sequence time="(\d+)"-->([\s\S]*?)<!--\/image-sequence-->/g;
-            let match, index = 0;
+    
+            const imageSequenceRegex = /<!--image-sequence time="(\d+)" style="(width: \d+%; height: auto;)"-->([\s\S]*?)<!--\/image-sequence-->/g;
+            let match;
             while ((match = imageSequenceRegex.exec(processedMarkdown)) !== null) {
                 const transitionTime = parseInt(match[1]) * 1000;
-                const images = match[2].match(/!\[.*?\]\((.*?)\)/g)
+                const sizeStyle = match[2];
+                const images = match[3].match(/!\[.*?\]\((.*?)\)/g)
                     .map(imgTag => imgTag.match(/!\[.*?\]\((.*?)\)/)[1]);
-
-                const containers = markdownContainer.getElementsByClassName('image-sequence-container');
-                if (images.length > 0 && index < containers.length) {
-                    createImageSequence(images, transitionTime, containers[index]);
-                    index++;
+    
+                const container = document.createElement('div');
+                container.classList.add('image-sequence-container');
+                container.setAttribute('style', sizeStyle);
+                markdownContainer.appendChild(container);
+    
+                if (images.length > 0) {
+                    createImageSequence(images, transitionTime, container, sizeStyle);
                 }
             }
 
