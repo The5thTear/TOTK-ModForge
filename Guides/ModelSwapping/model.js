@@ -17,17 +17,24 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Function to create an image sequence
     function createImageSequence(element) {
         const images = element.getAttribute('data-images').split(',');
         const transitionTime = parseInt(element.getAttribute('data-time'), 10);
         let currentIndex = 0;
-
+    
         function updateImage() {
-            markdownContainer.innerHTML = `<img src="${images[currentIndex]}" alt="Image">`;
-
+            // Create a new container to hold the image
+            const imageContainer = document.createElement('div');
+            imageContainer.innerHTML = `<img src="${images[currentIndex]}" alt="Image">`;
+    
+            // Clear the existing content in markdownContainer
+            markdownContainer.innerHTML = '';
+    
+            // Append the new image container to markdownContainer
+            markdownContainer.appendChild(imageContainer);
+    
             currentIndex = (currentIndex + 1) % images.length;
-
+    
             if (currentIndex === 0) {
                 // If it's the last image, remove the current image sequence element from the DOM
                 element.parentNode.removeChild(element);
@@ -36,10 +43,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(updateImage, transitionTime * 1000);
             }
         }
-
+    
         // Start the image sequence
         updateImage();
     }
+    
 
     fetch('model-swapping.md')
         .then(response => response.text())
