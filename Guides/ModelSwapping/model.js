@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const preprocessedMarkdown = processedMarkdown.replace(/<!--([\s\S]+?)-->/g, '<!-- $1 -->');
 
             // Use marked to convert the preprocessed Markdown to HTML
-            const htmlContent = marked(preprocessedMarkdown);
+            const htmlContent = marked.parse(preprocessedMarkdown);
 
             // Replace placeholders with actual image sequences
             customDelimitedMatches.forEach((match, index) => {
