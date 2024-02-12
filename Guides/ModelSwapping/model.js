@@ -24,25 +24,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     function createImageSequence(images, transitionTime, container) {
         let currentIndex = 0;
-        let nextIndex = 1;
+    
+        // Create and append all image containers initially, but only make the first one visible
+        images.forEach((image, index) => {
+            const imageContainer = document.createElement('div');
+            imageContainer.classList.add('image-container');
+            if (index === 0) { // Only the first container should be visible initially
+                imageContainer.classList.add('visible');
+            }
+            imageContainer.innerHTML = `<img src="${image}" alt="Image">`;
+            container.appendChild(imageContainer);
+        });
     
         function updateImage() {
             const existingImages = container.querySelectorAll('.image-container');
-            existingImages.forEach(img => img.classList.remove('visible'));
-    
-            if (existingImages.length < images.length) {
-                const imageContainer = document.createElement('div');
-                imageContainer.classList.add('image-container', 'visible');
-                imageContainer.innerHTML = `<img src="${images[currentIndex]}" alt="Image">`;
-                container.appendChild(imageContainer);
-            } else {
-                existingImages[nextIndex].classList.add('visible');
-            }
+            existingImages.forEach(img => img.classList.remove('visible')); // Hide all images
+            existingImages[currentIndex].classList.add('visible'); // Show current image
     
             setTimeout(() => {
-                currentIndex = (currentIndex + 1) % images.length;
-                nextIndex = (currentIndex + 1) % images.length;
-                updateImage();
+                currentIndex = (currentIndex + 1) % images.length; // Move to the next image
+                updateImage(); // Recursive call to continue the sequence
             }, transitionTime);
         }
     

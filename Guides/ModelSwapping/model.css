@@ -206,15 +206,9 @@ a:active {
 }
 
 .image-container {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    display: none; /* Hide by default */
+    display: none; /* Hide all image containers by default */
 }
 
 .image-container.visible {
-    opacity: 1;
-    display: block; /* Show only the visible container */
+    display: block; /* Only display the container marked as visible */
 }
-
