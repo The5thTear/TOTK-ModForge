@@ -17,6 +17,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    function processSizeTags(text) {
+        // Process individual images
+        text = text.replace(/{size}(\d+)%{\/size}(.*?)(\!\[.*?\]\(.*?\))/g, (match, size, preText, imageMarkdown) => {
+            return preText + imageMarkdown.replace(/\!\[(.*?)\]\((.*?)\)/, `<img src="$2" alt="$1" style="width: ${size}%; height: auto;">`);
+        });
+    
+        // Process image sequences
+        text = text.replace(/{size}(\d+)%{\/size}<!--image-sequence([\s\S]*?)-->/g, (match, size, sequenceContent) => {
+            return `<!--image-sequence style="width: ${size}%; height: auto;"${sequenceContent}-->`;
+        });
+    
+        return text;
+    }
+
     function createImageSequenceContainer() {
         const imageSequenceContainer = document.createElement('div');
         imageSequenceContainer.classList.add('image-sequence-container');
