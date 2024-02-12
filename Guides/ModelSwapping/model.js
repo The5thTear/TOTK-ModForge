@@ -34,6 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Delay for transitionTime milliseconds
             setTimeout(() => {
+                // Remove the current image container
+                markdownContainer.removeChild(imageContainer);
+
                 currentIndex = (currentIndex + 1) % images.length;
 
                 // Continue the image sequence
