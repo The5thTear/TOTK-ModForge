@@ -152,7 +152,7 @@ The ModelInfo Swap is the most simple of 3 methods. A good example of said model
 
 <!--image-sequence time="3"-->
 ![GlowRemovalMod](./Assets/655025926ef6d.jpg)
-![GlowRemovalMod2](655025926ada3.jpg)
+![GlowRemovalMod2](./Assets/655025926ada3.jpg)
 <!--/image-sequence-->
 
 > This mod is made with a simple ModelInfoRef edit!
