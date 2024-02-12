@@ -17,8 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function createImageSequence(images) {
-        const transitionTime = 3000; // Default transition time in milliseconds
+    function createImageSequence(images, transitionTime) {
         let currentIndex = 0;
 
         function updateImage() {
@@ -32,15 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // Append the new image container to markdownContainer
             markdownContainer.appendChild(imageContainer);
 
-            // Delay for transitionTime milliseconds
+            // Set a timeout for the transition
             setTimeout(() => {
-                // Remove the current image container
-                markdownContainer.removeChild(imageContainer);
-
                 currentIndex = (currentIndex + 1) % images.length;
-
-                // Continue the image sequence
-                updateImage();
+                updateImage(); // Continue the image sequence
             }, transitionTime);
         }
 
@@ -54,16 +48,18 @@ document.addEventListener('DOMContentLoaded', function () {
             // Process color tags in the markdown content
             const processedMarkdown = processColors(markdown);
 
-            // Use a custom delimiter to prevent the Markdown parser from interpreting image sequences
-            const customDelimiter = /<!--image-sequence-->([\s\S]*?)<!--\/image-sequence-->/g;
-            const customDelimitedMatches = processedMarkdown.match(customDelimiter) || [];
+            // Extract image sequences and transition times
+            const imageSequenceRegex = /<!--image-sequence time="(\d+)"-->([\s\S]*?)<!--\/image-sequence-->/g;
+            let match;
+            while ((match = imageSequenceRegex.exec(markdown)) !== null) {
+                const transitionTime = parseInt(match[1]) * 1000; // Convert seconds to milliseconds
+                const images = match[2].match(/!\[.*?\]\((.*?)\)/g)
+                    .map(imgTag => imgTag.match(/!\[.*?\]\((.*?)\)/)[1]);
 
-            // Extract image paths into an array
-            const imagePaths = customDelimitedMatches.map(match => {
-                const imageRegex = /!\[.*?\]\((.*?)\)/;
-                const pathMatch = match.match(imageRegex);
-                return pathMatch ? pathMatch[1].trim() : null;
-            }).filter(path => path !== null);
+                if (images.length > 0) {
+                    createImageSequence(images, transitionTime);
+                }
+            }
 
             // Preprocess the Markdown content by converting HTML comments
             const preprocessedMarkdown = processedMarkdown.replace(/<!--([\s\S]+?)-->/g, '<!-- $1 -->');
@@ -71,17 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Use marked to convert the preprocessed Markdown to HTML
             let htmlContent = marked.parse(preprocessedMarkdown);
 
-            // Replace placeholders with actual image sequences
-            customDelimitedMatches.forEach((match, index) => {
-                htmlContent = htmlContent.replace(`{IMAGE_SEQUENCE_${index}}`, match);
-            });
-
             markdownContainer.innerHTML = htmlContent;
-
-            // Create image sequences after the markdown content is loaded
-            if (imagePaths.length > 0) {
-                createImageSequence(imagePaths);
-            }
 
             // Create markers after the markdown content is loaded
             const headers = document.querySelectorAll('#markdown-container h1, #markdown-container h2');
