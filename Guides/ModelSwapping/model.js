@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         imageSequenceContainer.classList.add('image-sequence-container');
         return imageSequenceContainer;
     }
-    function createImageSequence(images, transitionTime, container, sizeStyle) {
+    function createImageSequence(images, transitionTime, container) {
         let currentIndex = 0;
         let nextIndex = 1;
     
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (existingImages.length < images.length) {
                 const imageContainer = document.createElement('div');
                 imageContainer.classList.add('image-container', 'visible');
-                imageContainer.innerHTML = `<img src="${images[currentIndex]}" alt="Image" style="width: ${sizeStyle}; height: auto;">`;
+                imageContainer.innerHTML = `<img src="${images[currentIndex]}" alt="Image">`;
                 container.appendChild(imageContainer);
             } else {
                 existingImages[nextIndex].classList.add('visible');
@@ -50,17 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     function processSizeTags(text) {
-        // Process individual images
-        text = text.replace(/{size}(\d+)%{\/size}(.*?)(\!\[.*?\]\(.*?\))/g, (match, size, preText, imageMarkdown) => {
+        // Process individual images only
+        return text.replace(/{size}(\d+)%{\/size}(.*?)(\!\[.*?\]\(.*?\))/g, (match, size, preText, imageMarkdown) => {
             return preText + imageMarkdown.replace(/\!\[(.*?)\]\((.*?)\)/, `<img src="$2" alt="$1" style="width: ${size}%; height: auto;">`);
         });
-    
-        // Process image sequences
-        text = text.replace(/{size}(\d+)%{\/size}<!--image-sequence time="(\d+)"-->([\s\S]*?)<!--\/image-sequence-->/g, (match, size, time, sequenceContent) => {
-            return `<!--image-sequence time="${time}" style="width: ${size}%"-->${sequenceContent}<!--/image-sequence-->`;
-        });
-    
-        return text;
     }
     
     fetch('model-swapping.md')
@@ -70,21 +63,19 @@ document.addEventListener('DOMContentLoaded', function () {
             let htmlContent = marked.parse(processedMarkdown);
             markdownContainer.innerHTML = htmlContent;
     
-            const imageSequenceRegex = /<!--image-sequence time="(\d+)" style="(width: \d+%; height: auto;)"-->([\s\S]*?)<!--\/image-sequence-->/g;
+            const imageSequenceRegex = /<!--image-sequence time="(\d+)"-->([\s\S]*?)<!--\/image-sequence-->/g;
             let match;
             while ((match = imageSequenceRegex.exec(processedMarkdown)) !== null) {
                 const transitionTime = parseInt(match[1]) * 1000;
-                const sizeStyle = match[2];
-                const images = match[3].match(/!\[.*?\]\((.*?)\)/g)
+                const images = match[2].match(/!\[.*?\]\((.*?)\)/g)
                     .map(imgTag => imgTag.match(/!\[.*?\]\((.*?)\)/)[1]);
     
                 const container = document.createElement('div');
                 container.classList.add('image-sequence-container');
-                container.setAttribute('style', sizeStyle);
                 markdownContainer.appendChild(container);
     
                 if (images.length > 0) {
-                    createImageSequence(images, transitionTime, container, sizeStyle);
+                    createImageSequence(images, transitionTime, container);
                 }
             }
 
