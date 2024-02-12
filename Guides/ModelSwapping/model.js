@@ -24,29 +24,32 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     function createImageSequence(images, transitionTime, container) {
         let currentIndex = 0;
-        let nextIndex = 1;
     
         function updateImage() {
-            // Remove 'visible' class from all image containers
+            // Ensure only one image container is visible at a time
             const existingImages = container.querySelectorAll('.image-container');
-            existingImages.forEach(img => img.classList.remove('visible'));
-    
-            // Add new image container or make the next one visible
-            if (existingImages.length < images.length) {
-                const imageContainer = document.createElement('div');
-                imageContainer.classList.add('image-container', 'visible');
-                imageContainer.innerHTML = `<img src="${images[currentIndex]}" alt="Image">`;
-                container.appendChild(imageContainer);
-            } else {
-                existingImages[nextIndex].classList.add('visible');
-            }
+            existingImages.forEach((img, index) => {
+                img.classList.remove('visible');
+                img.style.display = 'none'; // Hide all initially
+                if (index === currentIndex) {
+                    img.classList.add('visible');
+                    img.style.display = 'block'; // Show current
+                }
+            });
     
             setTimeout(() => {
                 currentIndex = (currentIndex + 1) % images.length;
-                nextIndex = (currentIndex + 1) % images.length;
                 updateImage();
             }, transitionTime);
         }
+    
+        // Create and append all image containers initially
+        images.forEach(image => {
+            const imageContainer = document.createElement('div');
+            imageContainer.classList.add('image-container');
+            imageContainer.innerHTML = `<img src="${image}" alt="Image">`;
+            container.appendChild(imageContainer);
+        });
     
         updateImage();
     }
