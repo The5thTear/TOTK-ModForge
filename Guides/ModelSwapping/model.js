@@ -30,11 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const existingImages = container.querySelectorAll('.image-container');
             existingImages.forEach(img => img.classList.remove('visible'));
     
-            // Add new image container or make the next one visible
             if (existingImages.length < images.length) {
                 const imageContainer = document.createElement('div');
                 imageContainer.classList.add('image-container', 'visible');
-                imageContainer.innerHTML = `<img src="${images[currentIndex]}" alt="Image" style="${sizeStyle}">`;
+                imageContainer.innerHTML = `<img src="${images[currentIndex]}" alt="Image" style="width: ${sizeStyle}; height: auto;">`;
                 container.appendChild(imageContainer);
             } else {
                 existingImages[nextIndex].classList.add('visible');
@@ -58,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
         // Process image sequences
         text = text.replace(/{size}(\d+)%{\/size}<!--image-sequence time="(\d+)"-->([\s\S]*?)<!--\/image-sequence-->/g, (match, size, time, sequenceContent) => {
-            return `<!--image-sequence time="${time}" style="width: ${size}%; height: auto;"-->${sequenceContent}<!--/image-sequence-->`;
+            return `<!--image-sequence time="${time}" style="width: ${size}%"-->${sequenceContent}<!--/image-sequence-->`;
         });
     
         return text;
