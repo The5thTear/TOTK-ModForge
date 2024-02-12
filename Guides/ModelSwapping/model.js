@@ -22,24 +22,32 @@ document.addEventListener('DOMContentLoaded', function () {
         imageSequenceContainer.classList.add('image-sequence-container');
         return imageSequenceContainer;
     }
-
     function createImageSequence(images, transitionTime, container) {
         let currentIndex = 0;
-
+        let nextIndex = 1;
+    
         function updateImage() {
-            const imageContainer = document.createElement('div');
-            imageContainer.innerHTML = `<img src="${images[currentIndex]}" alt="Image">`;
-
-            // Clear the existing image and append the new one
-            container.innerHTML = '';
-            container.appendChild(imageContainer);
-
+            // Remove 'visible' class from all image containers
+            const existingImages = container.querySelectorAll('.image-container');
+            existingImages.forEach(img => img.classList.remove('visible'));
+    
+            // Add new image container or make the next one visible
+            if (existingImages.length < images.length) {
+                const imageContainer = document.createElement('div');
+                imageContainer.classList.add('image-container', 'visible');
+                imageContainer.innerHTML = `<img src="${images[currentIndex]}" alt="Image">`;
+                container.appendChild(imageContainer);
+            } else {
+                existingImages[nextIndex].classList.add('visible');
+            }
+    
             setTimeout(() => {
                 currentIndex = (currentIndex + 1) % images.length;
+                nextIndex = (currentIndex + 1) % images.length;
                 updateImage();
             }, transitionTime);
         }
-
+    
         updateImage();
     }
 
