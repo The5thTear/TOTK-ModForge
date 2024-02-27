@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function initializeImageSequence(images, transitionTime, container) {
         let currentIndex = 0;
+
+        // Create and append image elements to the container
         images.forEach((image, index) => {
             const imageElement = document.createElement('img');
             imageElement.src = image;
@@ -17,12 +19,16 @@ document.addEventListener('DOMContentLoaded', function () {
             container.appendChild(imageElement);
         });
 
-        setInterval(() => {
+        // Function to handle image transition
+        function transitionImages() {
             const imageElements = container.children;
             imageElements[currentIndex].style.display = 'none';
             currentIndex = (currentIndex + 1) % images.length;
             imageElements[currentIndex].style.display = 'block';
-        }, transitionTime);
+        }
+
+        // Set interval for image transition
+        setInterval(transitionImages, transitionTime);
     }
 
     // Fetch and process the markdown content
@@ -39,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const sequenceContainer = document.createElement('div');
                 sequenceContainer.classList.add('image-sequence-container');
-                initializeImageSequence(images, parseFloat(1.326856) * 1000, sequenceContainer);
+                initializeImageSequence(images, parseFloat(time) * 1000, sequenceContainer);
 
                 return sequenceContainer.outerHTML;
             });

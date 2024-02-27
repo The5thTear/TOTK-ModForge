@@ -150,7 +150,7 @@ This is my favorite thing to say whenever somebody asks a modding question. If y
 
 The ModelInfo Swap is the most simple of 3 methods. A good example of said model swap would be the "**Phantom Ganon Glow Removal**" mod by [***Aster***]().
 
-<!--image-sequence time="3"-->
+<!--image-sequence time="1.326856"-->
 ![GlowRemovalMod](./Assets/655025926ef6d.jpg)
 ![GlowRemovalMod2](./Assets/655025926ada3.jpg)
 <!--/image-sequence-->
