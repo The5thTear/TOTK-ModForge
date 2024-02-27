@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function initializeImageSequence(images, transitionTime, container) {
         let currentIndex = 0;
-        images.forEach((image, index) => {
-            const imageElement = document.createElement('img');
-            imageElement.src = image;
-            imageElement.style.display = index === 0 ? 'block' : 'none';
-            container.appendChild(imageElement);
+        images.forEach((src, index) => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.style.display = index === 0 ? 'block' : 'none';
+            container.appendChild(img);
         });
 
         function transitionImages() {
@@ -33,21 +33,18 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(markdown => {
             let processedMarkdown = processColors(markdown);
 
-            // Replace image sequence markdown with placeholders
-            processedMarkdown = processedMarkdown.replace(/<!--image-sequence time="(\d+(\.\d+)?)s"-->([\s\S]*?)<!--\/image-sequence-->/g, (match, time, _, imagesContent) => {
+            processedMarkdown = processedMarkdown.replace(/<!--image-sequence time="(\d+(\.\d+)?)s"-->([\s\S]*?)<!--\/image-sequence-->/g, (match, time, _, imageMarkdown) => {
+                const imageUrls = imageMarkdown.match(/!\[.*?\]\((.*?)\)/g).map(m => m.match(/\((.*?)\)/)[1]);
                 const placeholderId = `image-sequence-${Math.random().toString(36).substr(2, 9)}`;
-                return `<div id="${placeholderId}" data-time="${time}">${imagesContent}</div>`;
+                return `<div class="image-sequence" id="${placeholderId}" data-images="${imageUrls.join(',')}" data-time="${time}"></div>`;
             });
 
             let htmlContent = marked.parse(processedMarkdown);
             markdownContainer.innerHTML = htmlContent;
 
-            // Find and initialize image sequences
-            document.querySelectorAll('div[id^="image-sequence-"]').forEach(container => {
+            document.querySelectorAll('.image-sequence').forEach(container => {
+                const images = container.getAttribute('data-images').split(',');
                 const time = parseFloat(container.getAttribute('data-time')) * 1000;
-                const images = Array.from(container.querySelectorAll('img')).map(img => img.src);
-
-                container.innerHTML = ''; // Clear existing content
                 initializeImageSequence(images, time, container);
             });
         })
