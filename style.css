@@ -208,6 +208,11 @@ header, nav, .tab-content, .entry {
     50% { color: grey; }
 }
 
+@keyframes flash3 {
+    0%, 100% { color: rgb(0, 89, 255); }
+    50% { color: grey; }
+}
+
 .wip {
     animation: flash 2s linear infinite;
 }
