@@ -203,6 +203,15 @@ header, nav, .tab-content, .entry {
     50% { color: grey; }
 }
 
+@keyframes flash2 {
+    0%, 100% { color: rgb(0, 255, 132); }
+    50% { color: grey; }
+}
+
 .wip {
     animation: flash 2s linear infinite;
+}
+
+.updateimminent {
+    animation: flash2 2s linear infinite;
 }
