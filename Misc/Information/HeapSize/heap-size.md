@@ -1,5 +1,7 @@
 # Ultimate TOTK Modding Guide - Info - Heap Size
 
+!{#ff0000}Some Information In This Article May Be Incorrect!}
+
 ## What Is Heap Size?
 Heap size refers to the allocated memory space for various game systems and resources in "The Legend of Zelda: Tears of the Kingdom" (TOTK). It is critical for ensuring that each component of the game has enough memory to function efficiently without overburdening the system.
 

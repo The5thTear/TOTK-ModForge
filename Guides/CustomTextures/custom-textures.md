@@ -1,28 +1,17 @@
-# Ultimate TOTK Modding Guide - Custom Textures
+# TotK-Modding Resource - Texturing
 
 Greetings modders! Whether you're new or familiar with textures, this comprehensive guide is your key to unlocking the world of custom textures in TOTK and beyond.
 
 - [Ultimate TOTK Modding Guide - Custom Textures](#ultimate-totk-modding-guide---custom-textures)
-  - [1.1: Creating Custom Textures:](#11-creating-custom-textures)
+
+  - [Creating Custom Textures:](#11-creating-custom-textures)
   - [Type Use Cases + Logistics:](#type-use-cases--logistics)
     - [Albedo:](#albedo)
     - [Specular Maps:](#specular-maps)
-  - [Specular textures are incredibly simple, and there are only 2 valuable pieces of info regarding them:](#specular-textures-are-incredibly-simple-and-there-are-only-2-valuable-pieces-of-info-regarding-them)
-    - [Editing the black and white maps is straightforward (with white being the most shiny and black (transparency) being the least);](#editing-the-black-and-white-maps-is-straightforward-with-white-being-the-most-shiny-and-black-transparency-being-the-least)
     - [Normal Maps:](#normal-maps)
-    - [Normal maps are a type of texture used in 3D modeling to simulate the illusion of complex surface details without increasing the model's geometric complexity.](#normal-maps-are-a-type-of-texture-used-in-3d-modeling-to-simulate-the-illusion-of-complex-surface-details-without-increasing-the-models-geometric-complexity)
-      - [Here are examples of both types:](#here-are-examples-of-both-types)
-    - [Emission Maps:](#emission-maps)
-    - [Here is an example of the two common emissive textures:](#here-is-an-example-of-the-two-common-emissive-textures)
-    - [There is also another thing to keep in mind, some emission is controlled by the Albedo texture, as well as the Emc/Emm texture, (co-dependance)!:](#there-is-also-another-thing-to-keep-in-mind-some-emission-is-controlled-by-the-albedo-texture-as-well-as-the-emcemm-texture-co-dependance)
-  - [So for this case, if you wanted to change the pattern of emission, you would have to change both textures!](#so-for-this-case-if-you-wanted-to-change-the-pattern-of-emission-you-would-have-to-change-both-textures)
-  - [If you wanted the entire mesh to glow, you would have to make the Albedo fully green, and the Emission completely white!](#if-you-wanted-the-entire-mesh-to-glow-you-would-have-to-make-the-albedo-fully-green-and-the-emission-completely-white)
-    - [Gn(#):](#gn)
-    - [em0:](#em0)
-    - [Now that you have a basic understanding of how the game handles textures, let's discuss creating them.](#now-that-you-have-a-basic-understanding-of-how-the-game-handles-textures-lets-discuss-creating-them)
   - [Texture Import Formats:](#texture-import-formats)
     - [Import Types](#import-types)
-      - [I will now provide a list of textures, and the reccomended import types to avoid issues:](#i-will-now-provide-a-list-of-textures-and-the-reccomended-import-types-to-avoid-issues)
+
   - [STB Alpha Option:](#stb-alpha-option)
   - [RESTBL Tool Usage:](#restbl-tool-usage)
 

@@ -1,4 +1,4 @@
-# Ultimate TOTK Modding Guide - Model Swapping + Materials
+# TotK-Modding Resource - Model Swapping + Materials
 
 **Greetings modders!**   
   

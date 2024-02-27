@@ -127,7 +127,7 @@ nav ul li.active {
     width: 100%;
     height: 120px; /* Fixed height for your image strip */
     object-fit: cover;
-    filter: blur(8px);
+    filter: blur(0px);
     transition: filter 0.3s ease, height 0.3s ease; /* Smooth transition for filter and height */
 }
 
