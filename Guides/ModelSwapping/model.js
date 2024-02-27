@@ -33,13 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
             let processedMarkdown = processColors(markdown);
 
             // Handle image sequences
-            processedMarkdown = processedMarkdown.replace(/<!--image-sequence time="(\d+)"-->([\s\S]*?)<!--\/image-sequence-->/g, (match, time, imagesContent) => {
+            processedMarkdown = processedMarkdown.replace(/<!--image-sequence time="(\d+(\.\d+)?)s"-->([\s\S]*?)<!--\/image-sequence-->/g, (match, time, _, imagesContent) => {
                 const images = imagesContent.match(/\!\[.*?\]\((.*?)\)/g)
                     .map(imgTag => imgTag.match(/\!\[.*?\]\((.*?)\)/)[1]);
 
                 const sequenceContainer = document.createElement('div');
                 sequenceContainer.classList.add('image-sequence-container');
-                initializeImageSequence(images, parseInt(time) * 1000, sequenceContainer);
+                initializeImageSequence(images, parseFloat(1.326856) * 1000, sequenceContainer);
 
                 return sequenceContainer.outerHTML;
             });
