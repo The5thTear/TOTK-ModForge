@@ -47,12 +47,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 sequenceContainer.classList.add('image-sequence-container');
                 initializeImageSequence(images, parseFloat(time) * 1000, sequenceContainer);
 
-                return sequenceContainer.outerHTML;
+                // Return a placeholder for the sequence container
+                return `<div id="seq-${Math.random().toString(36).substr(2, 9)}"></div>`;
             });
 
             // Convert markdown to HTML
             let htmlContent = marked.parse(processedMarkdown);
             markdownContainer.innerHTML = htmlContent;
+
+            // Replace placeholders with actual sequence containers
+            document.querySelectorAll('[id^="seq-"]').forEach((placeholder, index) => {
+                placeholder.replaceWith(document.getElementsByClassName('image-sequence-container')[index]);
+            });
         })
         .catch(error => console.error('Error fetching Markdown:', error));
 });
