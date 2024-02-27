@@ -1,0 +1,578 @@
+{
+    "Info": {
+        "Magic": "AIB ",
+        "Version": "0x407",
+        "Filename": "Player.scheduler.root",
+        "File Category": "AI"
+    },
+    "Commands": [
+        {
+            "Name": "Root",
+            "GUID": "5687d6d4-e5c2-433c-5189-0172f095dcd6",
+            "Left Node Index": 12,
+            "Right Node Index": -1
+        }
+    ],
+    "Embedded AINB Files": [
+        {
+            "File Path": "Player.scheduler.module.ainb",
+            "File Category": "AI",
+            "Count": 1
+        },
+        {
+            "File Path": "Player.sub.scheduler.module.ainb",
+            "File Category": "AI",
+            "Count": 1
+        },
+        {
+            "File Path": "Player.sp.scheduler.module.ainb",
+            "File Category": "AI",
+            "Count": 1
+        }
+    ],
+    "Nodes": [
+        {
+            "Node Type": "UserDefined",
+            "Node Index": 0,
+            "Flags": [
+                "Is External AINB"
+            ],
+            "Name": "Player.scheduler.module",
+            "Base Precondition Node": 0,
+            "GUID": "61f0adb1-2a8a-4957-eb97-41d4e7b80f6b"
+        },
+        {
+            "Node Type": "Element_Simultaneous",
+            "Node Index": 1,
+            "Flags": [
+                "Is Resident Node"
+            ],
+            "Name": "",
+            "Base Precondition Node": 0,
+            "GUID": "8c2dd056-4c84-422e-dcad-a01a4415a575",
+            "Immediate Parameters": {
+                "int": [
+                    {
+                        "Name": "EndPolicy",
+                        "Value": 0
+                    },
+                    {
+                        "Name": "ResultPolicy",
+                        "Value": 0
+                    }
+                ]
+            },
+            "Linked Nodes": {
+                "Standard Link": [
+                    {
+                        "Node Index": 0,
+                        "Connection Name": ""
+                    },
+                    {
+                        "Node Index": 2,
+                        "Connection Name": ""
+                    },
+                    {
+                        "Node Index": 3,
+                        "Connection Name": ""
+                    }
+                ]
+            }
+        },
+        {
+            "Node Type": "UserDefined",
+            "Node Index": 2,
+            "Flags": [
+                "Is External AINB"
+            ],
+            "Name": "Player.sub.scheduler.module",
+            "Base Precondition Node": 0,
+            "GUID": "4c34cb-9ce2-40bb-dd8b-a110bb48974b"
+        },
+        {
+            "Node Type": "UserDefined",
+            "Node Index": 3,
+            "Flags": [
+                "Is External AINB"
+            ],
+            "Name": "Player.sp.scheduler.module",
+            "Base Precondition Node": 0,
+            "GUID": "d8afd994-569c-40b5-ce87-bf8cba368dd1"
+        },
+        {
+            "Node Type": "UserDefined",
+            "Node Index": 4,
+            "Name": "ExecuteGenericDummyAction",
+            "Base Precondition Node": 0,
+            "GUID": "3faffa9d-e69c-404b-ea97-41cbbeeff4d3"
+        },
+        {
+            "Node Type": "UserDefined",
+            "Node Index": 5,
+            "Flags": [
+                "Is Precondition Node"
+            ],
+            "Name": "QueryControllerGetMask",
+            "Base Precondition Node": 0,
+            "GUID": "c97965c0-8213-489c-f9a0-979d8412625c",
+            "Immediate Parameters": {
+                "bool": [
+                    {
+                        "Name": "OutputOnlyOnEnter",
+                        "Value": false
+                    }
+                ]
+            },
+            "Input Parameters": {
+                "int": [
+                    {
+                        "Name": "ControllerIndex",
+                        "Node Index": -1,
+                        "Parameter Index": 0,
+                        "Flags": [
+                            "Pulse Thread Local Storage"
+                        ],
+                        "Value": 0
+                    }
+                ],
+                "string": [
+                    {
+                        "Name": "ControllerUserName",
+                        "Node Index": -1,
+                        "Parameter Index": 0,
+                        "Flags": [
+                            "Pulse Thread Local Storage",
+                            "Set Pointer Flag Bit Zero"
+                        ],
+                        "Value": ""
+                    }
+                ]
+            },
+            "Output Parameters": {
+                "userdefined": [
+                    {
+                        "Name": "ControllerHoldMask",
+                        "Class": "const u32"
+                    },
+                    {
+                        "Name": "ControllerReleaseMask",
+                        "Class": "const u32"
+                    },
+                    {
+                        "Name": "ControllerRepeatMask",
+                        "Class": "const u32"
+                    },
+                    {
+                        "Name": "ControllerTrigMask",
+                        "Set Pointer Flag Bit Zero": true,
+                        "Class": "const u32"
+                    },
+                    {
+                        "Name": "ControllerTrigWithRepeatMask",
+                        "Class": "const u32"
+                    }
+                ]
+            },
+            "Linked Nodes": {
+                "Output/bool Input/float Input Link": [
+                    {
+                        "Node Index": 6,
+                        "Parameter": "ControllerTrigMask"
+                    }
+                ]
+            }
+        },
+        {
+            "Node Type": "UserDefined",
+            "Node Index": 6,
+            "Flags": [
+                "Is Precondition Node"
+            ],
+            "Name": "QueryControllerTrigMaskChecker",
+            "Base Precondition Node": 0,
+            "GUID": "39ddb5b1-e6d8-4bb3-b6b8-ebe412457231",
+            "Precondition Nodes": [
+                0
+            ],
+            "Immediate Parameters": {
+                "bool": [
+                    {
+                        "Name": "OutputOnlyOnEnter",
+                        "Value": false
+                    }
+                ]
+            },
+            "Input Parameters": {
+                "userdefined": [
+                    {
+                        "Name": "ControllerTrigMask",
+                        "Class": "const u32",
+                        "Node Index": 5,
+                        "Parameter Index": 3,
+                        "Value": 0
+                    }
+                ]
+            },
+            "Output Parameters": {
+                "bool": [
+                    {
+                        "Name": "TrigA",
+                        "Set Pointer Flag Bit Zero": true
+                    },
+                    {
+                        "Name": "TrigB",
+                        "Set Pointer Flag Bit Zero": true
+                    },
+                    {
+                        "Name": "TrigDown"
+                    },
+                    {
+                        "Name": "TrigL"
+                    },
+                    {
+                        "Name": "TrigLeft"
+                    },
+                    {
+                        "Name": "TrigLSPush"
+                    },
+                    {
+                        "Name": "TrigMinus"
+                    },
+                    {
+                        "Name": "TrigPlus"
+                    },
+                    {
+                        "Name": "TrigR"
+                    },
+                    {
+                        "Name": "TrigRight"
+                    },
+                    {
+                        "Name": "TrigRSPush"
+                    },
+                    {
+                        "Name": "TrigUp"
+                    },
+                    {
+                        "Name": "TrigX",
+                        "Set Pointer Flag Bit Zero": true
+                    },
+                    {
+                        "Name": "TrigY",
+                        "Set Pointer Flag Bit Zero": true
+                    },
+                    {
+                        "Name": "TrigZL"
+                    },
+                    {
+                        "Name": "TrigZR"
+                    }
+                ]
+            }
+        },
+        {
+            "Node Type": "UserDefined",
+            "Node Index": 7,
+            "Name": "ExecuteActorChangeScale",
+            "Base Precondition Node": 1,
+            "GUID": "414281e2-20a8-4309-ae26-fffa6f9f3fce",
+            "Precondition Nodes": [
+                2
+            ],
+            "Input Parameters": {
+                "float": [
+                    {
+                        "Name": "Scale",
+                        "Node Index": 8,
+                        "Parameter Index": 0,
+                        "Value": 1.0
+                    }
+                ]
+            }
+        },
+        {
+            "Node Type": "UserDefined",
+            "Node Index": 8,
+            "Flags": [
+                "Is Precondition Node"
+            ],
+            "Name": "QueryMathMulF32",
+            "Base Precondition Node": 2,
+            "GUID": "2dc990d0-803b-4f34-8ba5-5be86eee57e8",
+            "Precondition Nodes": [
+                3
+            ],
+            "Input Parameters": {
+                "float": [
+                    {
+                        "Name": "InputA",
+                        "Node Index": -1,
+                        "Parameter Index": 0,
+                        "Value": 1.15
+                    },
+                    {
+                        "Name": "InputB",
+                        "Node Index": 9,
+                        "Parameter Index": 1,
+                        "Value": 1.0
+                    }
+                ]
+            },
+            "Output Parameters": {
+                "float": [
+                    {
+                        "Name": "Result",
+                        "Set Pointer Flag Bit Zero": true
+                    }
+                ]
+            }
+        },
+        {
+            "Node Type": "UserDefined",
+            "Node Index": 9,
+            "Flags": [
+                "Is Precondition Node"
+            ],
+            "Name": "QueryMathVector3fGetElements",
+            "Base Precondition Node": 3,
+            "GUID": "7dac796b-ad53-478d-8097-6f29cb002cdf",
+            "Precondition Nodes": [
+                4
+            ],
+            "Immediate Parameters": {
+                "bool": [
+                    {
+                        "Name": "OutputOnlyOnEnter",
+                        "Value": false
+                    }
+                ]
+            },
+            "Input Parameters": {
+                "vec3f": [
+                    {
+                        "Name": "Vector",
+                        "Node Index": 10,
+                        "Parameter Index": 0,
+                        "Value": [
+                            2.0,
+                            2.0,
+                            2.0
+                        ]
+                    }
+                ]
+            },
+            "Output Parameters": {
+                "float": [
+                    {
+                        "Name": "f32_X"
+                    },
+                    {
+                        "Name": "f32_Y",
+                        "Set Pointer Flag Bit Zero": true
+                    },
+                    {
+                        "Name": "f32_Z"
+                    }
+                ]
+            }
+        },
+        {
+            "Node Type": "UserDefined",
+            "Node Index": 10,
+            "Flags": [
+                "Is Precondition Node"
+            ],
+            "Name": "QueryActorGetScale",
+            "Base Precondition Node": 3,
+            "GUID": "a2cb4f87-c39d-4730-aabe-4ae961986c31",
+            "Immediate Parameters": {
+                "bool": [
+                    {
+                        "Name": "OutputOnlyOnEnter",
+                        "Value": false
+                    }
+                ]
+            },
+            "Output Parameters": {
+                "vec3f": [
+                    {
+                        "Name": "Scale",
+                        "Set Pointer Flag Bit Zero": true
+                    }
+                ]
+            }
+        },
+        {
+            "Node Type": "Element_BoolSelector",
+            "Node Index": 11,
+            "Name": "",
+            "Base Precondition Node": 4,
+            "GUID": "626f7a7e-d4ba-46c0-dfa0-e515a92e0671",
+            "Precondition Nodes": [
+                1
+            ],
+            "Immediate Parameters": {
+                "int": [
+                    {
+                        "Name": "CalculateTiming",
+                        "Value": 0
+                    }
+                ],
+                "bool": [
+                    {
+                        "Name": "ChildFrameSync",
+                        "Value": false
+                    },
+                    {
+                        "Name": "InputValue",
+                        "Value": false
+                    },
+                    {
+                        "Name": "IsNoSelectWhenChildBusy",
+                        "Value": false
+                    }
+                ]
+            },
+            "Input Parameters": {
+                "bool": [
+                    {
+                        "Name": "Input",
+                        "Node Index": 6,
+                        "Parameter Index": 0,
+                        "Value": false
+                    }
+                ]
+            },
+            "Linked Nodes": {
+                "Output/bool Input/float Input Link": [
+                    {
+                        "Node Index": 6,
+                        "Parameter": "Input"
+                    }
+                ],
+                "Standard Link": [
+                    {
+                        "Node Index": 13,
+                        "Condition": "True"
+                    },
+                    {
+                        "Node Index": 1,
+                        "Condition": "False"
+                    }
+                ]
+            }
+        },
+        {
+            "Node Type": "Element_Sequential",
+            "Node Index": 12,
+            "Flags": [
+                "Is Resident Node"
+            ],
+            "Name": "",
+            "Base Precondition Node": 0,
+            "GUID": "5e4ac0de-6309-48fb-3c88-d60a9db78e68",
+            "Immediate Parameters": {
+                "int": [
+                    {
+                        "Name": "BusyPolicy",
+                        "Value": 0
+                    },
+                    {
+                        "Name": "NumLoop",
+                        "Value": 0
+                    },
+                    {
+                        "Name": "PlayPolicy",
+                        "Value": 0
+                    },
+                    {
+                        "Name": "ResultPolicy",
+                        "Value": 0
+                    }
+                ],
+                "bool": [
+                    {
+                        "Name": "IsDelayJudge",
+                        "Value": false
+                    },
+                    {
+                        "Name": "IsLoop",
+                        "Value": false
+                    },
+                    {
+                        "Name": "IsUpdateNextInFrame",
+                        "Value": true
+                    }
+                ]
+            },
+            "Linked Nodes": {
+                "Standard Link": [
+                    {
+                        "Node Index": 1,
+                        "Connection Name": ""
+                    },
+                    {
+                        "Node Index": 11,
+                        "Connection Name": ""
+                    }
+                ]
+            }
+        },
+        {
+            "Node Type": "Element_Sequential",
+            "Node Index": 13,
+            "Name": "",
+            "Base Precondition Node": 0,
+            "GUID": "5e4ac0de-6309-48fb-3c88-d60a9db78e68",
+            "Immediate Parameters": {
+                "int": [
+                    {
+                        "Name": "BusyPolicy",
+                        "Value": 0
+                    },
+                    {
+                        "Name": "NumLoop",
+                        "Value": 0
+                    },
+                    {
+                        "Name": "PlayPolicy",
+                        "Value": 0
+                    },
+                    {
+                        "Name": "ResultPolicy",
+                        "Value": 0
+                    }
+                ],
+                "bool": [
+                    {
+                        "Name": "IsDelayJudge",
+                        "Value": false
+                    },
+                    {
+                        "Name": "IsLoop",
+                        "Value": false
+                    },
+                    {
+                        "Name": "IsUpdateNextInFrame",
+                        "Value": true
+                    }
+                ]
+            },
+            "Linked Nodes": {
+                "Standard Link": [
+                    {
+                        "Node Index": 7,
+                        "Connection Name": ""
+                    },
+                    {
+                        "Node Index": 1,
+                        "Connection Name": ""
+                    }
+                ]
+            }
+        }
+    ],
+    "File Hashes": {
+        "Unknown File Hash": "0x12d51ab9"
+    }
+}

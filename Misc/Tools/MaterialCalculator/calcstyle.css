@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Hylia+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@700&display=swap');
+
+@font-face {
+    font-family: 'Hylia Serif';
+    src: url('HyliaSerifBeta-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Lexend', sans-serif;
+    background-color: #121212; /* Darker grey background */
+    color: #00ff6e; /* Light grey text color */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Hylia Serif', serif;
+    color: rgb(0, 255, 149); /* White color for the title */
+}
+
+.controls {
+    font-family: 'Hylia Serif', serif;
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the search button */
+button {
+    font-family: 'Hylia Serif', serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #303030;
+    color: rgb(0, 255, 115);
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #484848;
+}
+
+/* Style for skin count label and selector */
+.controls label, .controls select {
+    margin-right: 10px;
+    color: rgb(0, 255, 128); /* White text color for better visibility */
+}
+
+select#skinCount {
+    font-family: 'Hylia Serif', serif;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: rgb(0, 255, 157);
+    font-size: 16px;
+}
+
+/* Custom checkbox styles */
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #333; /* Dark grey background */
+    border-radius: 3px;
+    border: 2px solid #777; /* Grey border */
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: rgb(0, 255, 136); /* White background when checked */
+}
+
+input[type="checkbox"]:checked:after {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: black; /* Checkmark color */
+}
+
+/* Checkbox label styling when not checked */
+input[type="checkbox"] + label {
+    font-family: 'Hylia Serif', serif;
+    color: #00ff88;
+    padding-left: 30px; /* Space for custom checkbox */
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.material-button {
+    background-color: #1d1d1d;
+    color: rgb(0, 255, 132);
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.4s ease;
+    border-bottom: 1px solid #777;
+    cursor: pointer;
+    margin-bottom: 20px; /* This adds space between the dropdowns */
+}
+
+.material-button:hover {
+    background-color: #444;
+}
+
+.material-info {
+    padding-left: 15px; /* This adds padding on the left side */
+    background-color: #0e0e0e;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    display: none;
+    color: rgb(159, 255, 158);
+}
+
+.material-info.active {
+    display: block;
+}
+
+ul li::before {
+    content: "- "; /* Add a dash before each list item */
+    padding-right: 5px; /* Add space after the dash */
+}
+
+
+ul {
+    list-style-type: none; /* Remove default list styling */
+    padding-left: 15px; /* Add padding to align with the material-info div */
+}
+
+#searchResults {
+    margin-top: 30px; /* Adjust the value as needed for more or less space */
+}
+
+#skinCountToggle {
+    color: #00ff6e;
+}
+
+* {
+    font-weight: normal;
+}

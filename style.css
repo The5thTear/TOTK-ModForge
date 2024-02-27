@@ -1,100 +1,209 @@
+/* Import Fira Sans */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between; /* This will push the logo-title group and the paragraph to opposite ends */
+    align-items: center;
+    background-color: #252526; /* Header background */
+}
+
+/* Grouping logo and title together */
+.logo-title-group {
+    display: flex;
+    align-items: left;
+}
+
+#site-logo {
+    max-width: 100px; /* Adjust as needed */
+    margin-right: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+/* Style for the welcome text */
+p {
+    font-size: 1em;
+    opacity: 0.7;
+    margin-left: 20px; /* Add space if needed */
+}
+
+/* Set base font and background */
 body {
-    font-family: 'Lexend', sans-serif; /* Use Lexend as the primary font */
+    font-family: 'Fira Sans', sans-serif;
     background-color: #1e1e1e; /* Dark background similar to VS Code */
     color: #d4d4d4; /* Light grey text color for contrast */
 }
 
-.grid-container {
+/* Header styles */
+header {
     display: flex;
-    flex-direction: row; /* Align children horizontally */
     align-items: center;
+    padding: 20px;
+    background-color: #252526; /* Header background */
+}
+
+/* Logo styles */
+#site-logo {
+    max-width: 100px; /* Adjust as needed */
+    margin-right: 20px;
+}
+
+/* Title and description container */
+.title-description {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-left: 20px; /* This adds space between the logo and the description */
+}
+
+/* Title styles */
+.title-description h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    margin-left: 20px; /* Add more space between the logo and the text */
+}
+
+/* Description styles */
+.title-description p {
+    font-size: 1em;
+    opacity: 0.7;
+}
+
+/* Navigation tabs styles */
+nav {
+    background-color: #333333;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
     justify-content: center;
-    gap: 15px;
+    font-size: 1.2em;
+}
+
+nav ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+nav ul li:hover,
+nav ul li.active {
+    color: #00ff99; /* Active/hover state color */
+}
+
+/* Entry grid system */
+.entry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust minmax() for your preferred size */
+    gap: 20px;
     padding: 20px;
 }
 
-.grid-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.entry {
     position: relative;
-    width: 100%;
-    height: 80vh; /* Adjust based on your design, considering a 9:16 ratio */
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border: 1px solid #3c3c3c; /* Slightly lighter border for visibility */
+    background-color: #333;
+    border-radius: 10px;
     overflow: hidden;
-    color: white; /* Set the text color to white */
-    font-weight: 700; /* Lexend Bold */
-    filter: grayscale(100%); /* Start with the item in grayscale */
-    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Include filter in the transition */
-    flex: 1; /* Each item will take up equal space */
-    border-radius: 15px; /* Round the corners */
-    cursor: pointer; /* Change cursor to indicate item is interactive */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    margin-bottom: 20px; /* Add space between entries */
 }
 
-.grid-item:hover {
-    transform: scale(1.1); /* Scale up on hover */
-    filter: grayscale(0%); /* Remove grayscale filter to show full color */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Add more shadow for a lifting effect */
-    z-index: 10;
+.entry img {
+    width: 100%;
+    height: 120px; /* Fixed height for your image strip */
+    object-fit: cover;
+    filter: blur(8px);
+    transition: filter 0.3s ease, height 0.3s ease; /* Smooth transition for filter and height */
 }
 
-.about-me {
-    position: fixed;
-    right: 10px; /* Adjust as necessary */
-    bottom: 50px; /* Adjust so it does not overlap the question mark */
-    background: #252526; 
-    color: #d4d4d4; 
-    padding: 10px;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    display: none; /* Start hidden */
-    white-space: nowrap;
-    z-index: 100; 
+.entry:hover img {
+    height: 156px; /* Increase height by 30% */
+    filter: blur(0px); /* Almost remove the blur */
 }
 
-.question-mark {
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    color: darkgrey;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.question-mark:hover {
-    color: white;
-}
-
-/* Styling for text inside about-me to ensure it's readable */
-.about-me p {
-    margin: 0;
-    color: white; /* Set the text color to white */
-    font-family: 'Lexend', sans-serif; /* Use Lexend for the text */
-    font-weight: 700; /* Lexend Bold */
-}
-
-.question-mark:hover ~ .about-me {
-    width: 300px; /* Width to reveal the text; adjust as needed */
-    visibility: visible; /* Show the text */
-}
-
-/* Add styles for the video */
-.video-overlay {
+.entry-title {
     position: absolute;
+    bottom: 0; /* Align to the bottom of the image */
+    left: 0;
+    right: 0; /* Ensure the title does not exceed the width of the entry */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for the title */
+    color: white;
+    padding: 10px;
+    font-size: 1.5em;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    text-align: center; /* Center the text */
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+.entry-description {
+    padding: 15px;
+    font-size: 1em;
+    color: #d4d4d4; /* Light grey text color for contrast */
+    background-color: #252526; /* Slightly lighter background for the description */
+    border-bottom-left-radius: 10px; /* Match the border radius of the entry */
+    border-bottom-right-radius: 10px; /* Match the border radius of the entry */
+}
+
+.background-gif {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: none;
-    justify-content: center;
-    align-items: center;
+    background: url('Assets/HomeImages/background.gif') no-repeat center center fixed; 
+    background-size: cover;
+    filter: blur(50%);
+    z-index: -1; /* Ensures the GIF stays in the background */
 }
 
-.video-overlay video {
-    max-width: 100%;
-    max-height: 100%;
+/* Apply to all major containers */
+header, nav, .tab-content, .entry {
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust color as needed */
+}
+
+.visit-button {
+    position: absolute;
+    top: 87%;
+    right: 10px; /* Adjust as needed */
+    transform: translateY(-50%); /* Vertically center the button */
+    padding: 5px 10px; /* Smaller padding for a smaller button */
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.8em; /* Smaller font size */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.visit-button:hover {
+    background-color: #005f8c;
+}
+
+.button-link {
+    text-decoration: none; /* Removes underline from links */
+}
+
+@keyframes flash {
+    0%, 100% { color: red; }
+    50% { color: grey; }
+}
+
+.wip {
+    animation: flash 2s linear infinite;
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Texture and Skin Count Search Tool</title>
+    <link rel="stylesheet" type="text/css" href="calcstyle.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Texture and Skin Count Search Tool</h1>
+        <div class="controls">
+            <label for="restrictedSearch">Restricted Search</label><input type="checkbox" id="restrictedSearch">
+            <label for="skinCountToggle">Skincount?</label><input type="checkbox" id="skinCountToggle" />
+            <select id="skinCount" name="skinCount" style="display: none;"> <!-- Initially hidden -->
+                <!-- Options for skin count -->
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+            <button onclick="searchTextures()">Search</button>
+        </div>
+    </div>
+    <div class="checkboxes">
+        <!-- Texture checkboxes -->
+        <label><input type="checkbox" name="texture" value="Alb"> Alb</label>
+        <label><input type="checkbox" name="texture" value="Spm"> Spm</label>
+        <label><input type="checkbox" name="texture" value="Nrm"> Nrm</label>
+        <label><input type="checkbox" name="texture" value="Emm"> Emm</label>
+        <label><input type="checkbox" name="texture" value="Emc"> Emc</label>
+        <label><input type="checkbox" name="texture" value="EmmMsk"> EmmMsk</label>
+        <label><input type="checkbox" name="texture" value="Ind"> Ind</label>
+        <label><input type="checkbox" name="texture" value="AO"> AO</label>
+        <label><input type="checkbox" name="texture" value="Gn0"> Gn0</label>
+        <label><input type="checkbox" name="texture" value="Gn1"> Gn1</label>
+        <label><input type="checkbox" name="texture" value="Gn2"> Gn2</label>
+        <label><input type="checkbox" name="texture" value="Gn3"> Gn3</label>
+        <label><input type="checkbox" name="texture" value="Gn4"> Gn4</label>
+        <label><input type="checkbox" name="texture" value="Gn5"> Gn5</label>
+        <!-- Add more checkboxes for each texture type -->
+    </div>
+
+    <div id="searchResults"></div>
+
+    <script src="caclJS.js"></script>
+</body>
+</html>

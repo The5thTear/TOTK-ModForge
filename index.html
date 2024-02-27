@@ -1,25 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOTK ModForge - Ultimate Modding Guide</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 <body>
-    <div class="grid-container">
-        <div class="grid-item" style="background-image: url('Assets/HomeImages/Info.png');" data-url="Information/information.html">
-            <p>Information</p>
+    <header>
+        <div class="logo-title-group">
+            <img src="Assets/HomeImages/Modforge_Square.png" alt="Modding Community Logo" id="site-logo">
+            <h1>TotK Modding Resource</h1>
         </div>
-        <div class="grid-item" style="background-image: url('Assets/HomeImages/Guides.jpg');" data-url="Guides/guides.html">
-            <p>Guides</p>
-        </div>
-        <div class="grid-item" style="background-image: url('Assets/HomeImages/Tips.jpg');" data-url="Information/tips.html">
-            <p>Tips</p>
+        <p>Welcome to the modding hub.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li data-tab="information">Information</li>
+            <li data-tab="guides">Guides</li>
+            <li data-tab="news">News</li>
+        </ul>
+    </nav>
+
+    <section id="information" class="tab-content">
+        <!-- Content for Information -->
+    </section>
+    <section id="guides" class="tab-content" style="display: none;">
+        <!-- Content for Guides -->
+    </section>
+    <section id="news" class="tab-content" style="display: none;">
+        <!-- Content for News -->
+    </section>
+
+
+    <div class="entry" data-category="news">
+        <img src="Assets/HomeImages/ModForge_Banner.png" alt="News Entry">
+        <div class="entry-title">Site Revamp!</div>
+        <div class="entry-description">
+            The website has been revamped, you should check it out!
         </div>
     </div>
-    <!-- ... Your existing About Me Section ... -->
+    
+    <div class="entry" data-category="guides">
+        <img src="Assets/HomeImages/ModelSwap_Banner.png" alt="Guides Entry">
+        <div class="entry-title">Model Swapping</div>
+        <div class="entry-description">Full model swapping guide
+            <span class="wip"> {WIP} </span>
+        </div>
+        <a href="Guides/ModelSwapping/model.html" class="button-link">
+            <button class="visit-button">Visit</button>
+        </a>
+    </div>
+    
+    <!-- <div class="entry" data-category="information">
+        <img src="information-image.jpg" alt="Information Entry">
+        <div class="entry-title">Information Title</div>
+        <div class="entry-description">Information description goes here...</div>
+    </div> -->
+      
+    <div class="background-gif"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
