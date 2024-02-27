@@ -1,17 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const markdownContainer = document.getElementById('markdown-container');
 
-    // Function to extract color from the color tag
-    function extractColor(text) {
-        const colorRegex = /\{#([0-9a-fA-F]{6})\}/;
-        const match = text.match(colorRegex);
-        return match ? '#' + match[1] : null;
-    }
-
     // Function to replace color tags with span elements
     function processColors(text) {
-        return text.replace(/\{#([0-9a-fA-F]{6})\}(.*?)\}/g, (match, color, content) => {
-            return `<span style="color: ${color}">${content}</span>`;
+        // Adjusted regex to match your markdown format
+        return text.replace(/\{#([0-9a-fA-F]{6})\}(.*?)}/g, (match, color, content) => {
+            return `<span style="color: #${color}">${content}</span>`;
         });
     }
 
@@ -62,16 +56,17 @@ document.addEventListener('DOMContentLoaded', function () {
             markdownContainer.innerHTML = htmlContent;
 
             // Replace placeholders with actual image sequences
-            imageSequenceData.forEach((data) => {
-                let placeholderElement = document.createTextNode(data.placeholder);
-                markdownContainer.appendChild(placeholderElement);
+            imageSequenceData.forEach((data, index) => {
                 let sequenceContainer = createImageSequenceContainer();
-                placeholderElement.replaceWith(sequenceContainer);
                 const images = data.imagesContent.match(/\!\[.*?\]\((.*?)\)/g)
                     .map(imgTag => imgTag.match(/\!\[.*?\]\((.*?)\)/)[1]);
                 if (images.length > 0) {
-                    createImageSequence(images, parseInt(data.time) * 1000, sequenceContainer);
+                    createImageSequence(images, parseInt(data.time) * 2000, sequenceContainer);
                 }
+
+                // Find the placeholder and replace it with the image sequence container
+                let placeholderRegex = new RegExp(`##image-sequence-placeholder-${index}##`);
+                markdownContainer.innerHTML = markdownContainer.innerHTML.replace(placeholderRegex, sequenceContainer.outerHTML);
             });
         })
         .catch(error => console.error('Error fetching Markdown:', error));
