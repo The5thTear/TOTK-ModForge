@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to replace color tags with span elements
     function processColors(text) {
-        // Adjusted regex to match your markdown format
         return text.replace(/\{#([0-9a-fA-F]{6})\}(.*?)}/g, (match, color, content) => {
             return `<span style="color: #${color}">${content}</span>`;
         });
@@ -15,9 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
         return imageSequenceContainer;
     }
 
-    function createImageSequence(images, transitionTime, container) {
+    function initializeImageSequence(images, transitionTime, container) {
         let currentIndex = 0;
-
         images.forEach((image, index) => {
             const imageContainer = document.createElement('div');
             imageContainer.classList.add('image-container');
@@ -47,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let imageSequenceData = [];
             processedMarkdown = processedMarkdown.replace(/<!--image-sequence time="(\d+)"-->([\s\S]*?)<!--\/image-sequence-->/g, (match, time, imagesContent) => {
                 let placeholder = `##image-sequence-placeholder-${imageSequenceData.length}##`;
-                imageSequenceData.push({ placeholder, time, imagesContent });
+                imageSequenceData.push({ placeholder, time, imagesContent, sequenceContainer: createImageSequenceContainer() });
                 return placeholder;
             });
 
@@ -55,18 +53,19 @@ document.addEventListener('DOMContentLoaded', function () {
             let htmlContent = marked.parse(processedMarkdown);
             markdownContainer.innerHTML = htmlContent;
 
-            // Replace placeholders with actual image sequences
-            imageSequenceData.forEach((data, index) => {
-                let sequenceContainer = createImageSequenceContainer();
+            // Replace placeholders and initialize image sequences
+            imageSequenceData.forEach(data => {
                 const images = data.imagesContent.match(/\!\[.*?\]\((.*?)\)/g)
                     .map(imgTag => imgTag.match(/\!\[.*?\]\((.*?)\)/)[1]);
-                if (images.length > 0) {
-                    createImageSequence(images, parseInt(data.time) * 2000, sequenceContainer);
-                }
 
-                // Find the placeholder and replace it with the image sequence container
-                let placeholderRegex = new RegExp(`##image-sequence-placeholder-${index}##`);
-                markdownContainer.innerHTML = markdownContainer.innerHTML.replace(placeholderRegex, sequenceContainer.outerHTML);
+                if (images.length > 0) {
+                    // Replace the placeholder with the image sequence container
+                    let placeholderRegex = new RegExp(`##image-sequence-placeholder-${imageSequenceData.indexOf(data)}##`);
+                    markdownContainer.innerHTML = markdownContainer.innerHTML.replace(placeholderRegex, data.sequenceContainer.outerHTML);
+
+                    // Initialize the image sequence
+                    initializeImageSequence(images, parseInt(data.time) * 1000, data.sequenceContainer);
+                }
             });
         })
         .catch(error => console.error('Error fetching Markdown:', error));
