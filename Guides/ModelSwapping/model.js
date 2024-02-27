@@ -15,27 +15,28 @@ document.addEventListener('DOMContentLoaded', function () {
         images.forEach((image, index) => {
             const imageElement = document.createElement('img');
             imageElement.src = image;
-            imageElement.style.display = index === 0 ? 'block' : 'none';
+            imageElement.style.display = index === 0 ? 'block' : 'none'; // Only the first image is displayed initially
             container.appendChild(imageElement);
         });
 
         // Function to handle image transition
         function transitionImages() {
-            const imageElements = container.children;
+            const imageElements = container.getElementsByTagName('img');
             imageElements[currentIndex].style.display = 'none';
             currentIndex = (currentIndex + 1) % images.length;
             imageElements[currentIndex].style.display = 'block';
         }
 
         // Set interval for image transition
-        setInterval(transitionImages, transitionTime);
+        if (images.length > 1) {
+            setInterval(transitionImages, transitionTime);
+        }
     }
 
     // Fetch and process the markdown content
     fetch('model-swapping.md')
         .then(response => response.text())
         .then(markdown => {
-            // Process colors
             let processedMarkdown = processColors(markdown);
 
             // Handle image sequences
@@ -47,18 +48,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 sequenceContainer.classList.add('image-sequence-container');
                 initializeImageSequence(images, parseFloat(time) * 1000, sequenceContainer);
 
-                // Return a placeholder for the sequence container
-                return `<div id="seq-${Math.random().toString(36).substr(2, 9)}"></div>`;
+                return sequenceContainer.outerHTML;
             });
 
-            // Convert markdown to HTML
             let htmlContent = marked.parse(processedMarkdown);
             markdownContainer.innerHTML = htmlContent;
-
-            // Replace placeholders with actual sequence containers
-            document.querySelectorAll('[id^="seq-"]').forEach((placeholder, index) => {
-                placeholder.replaceWith(document.getElementsByClassName('image-sequence-container')[index]);
-            });
         })
         .catch(error => console.error('Error fetching Markdown:', error));
 });
